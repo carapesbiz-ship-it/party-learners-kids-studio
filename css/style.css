@@ -335,38 +335,39 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 .c-yellow { color: var(--yellow-deep); }
 
 /* =========================
-   Hero (home) — boutique premium
+   Hero (home) — editorial boutique premium
    ========================= */
 .hero {
   position: relative;
-  padding: 88px 0 120px;
+  padding: 80px 0 140px;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 720px 520px at 78% 22%, rgba(232, 213, 240, 0.55) 0%, transparent 65%),
-    radial-gradient(ellipse 600px 480px at 5% 95%, rgba(248, 195, 216, 0.45) 0%, transparent 65%),
-    linear-gradient(180deg, #FFFAF3 0%, #FFFAF3 100%);
+    radial-gradient(ellipse 780px 580px at 80% 18%, rgba(232, 213, 240, 0.65) 0%, transparent 65%),
+    radial-gradient(ellipse 640px 500px at 5% 92%, rgba(248, 195, 216, 0.55) 0%, transparent 65%),
+    radial-gradient(ellipse 500px 400px at 50% 50%, rgba(255, 245, 220, 0.3) 0%, transparent 70%),
+    linear-gradient(180deg, #FFFAF3 0%, #FFF5F8 60%, #FFFAF3 100%);
 }
 .hero::before {
-  content: ""; position: absolute; top: -180px; right: -120px;
-  width: 460px; height: 460px;
+  content: ""; position: absolute; top: -160px; right: -140px;
+  width: 520px; height: 520px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 200, 61, .22), transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
 .hero::after {
-  content: ""; position: absolute; bottom: -140px; left: -100px;
-  width: 360px; height: 360px;
+  content: ""; position: absolute; bottom: -140px; left: -120px;
+  width: 420px; height: 420px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(43, 191, 180, .2), transparent 70%);
+  background: radial-gradient(circle, rgba(43, 191, 180, .22), transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1.25fr;
-  gap: 72px;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 80px;
   align-items: center;
   position: relative;
   z-index: 1;
@@ -424,86 +425,122 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   display: flex; flex-wrap: wrap; gap: 10px;
 }
 
-/* Image: arch top, white frame, soft glow blob behind */
-.hero-image-wrap {
+/* ===========================
+   Editorial composition — main image + 2 layered supports + 2 floating cards
+   =========================== */
+.hero-composition {
   position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.05;
   z-index: 1;
 }
-.hero-image-wrap::before {
+/* Soft glow blob behind composition */
+.hero-composition::before {
   content: "";
   position: absolute;
-  inset: -28px -18px -18px -28px;
-  border-radius: 160px 160px var(--r-xl) var(--r-xl);
+  inset: -40px -30px -30px -40px;
+  border-radius: 200px 80px 80px 80px;
   background:
-    radial-gradient(60% 60% at 30% 20%, rgba(232, 62, 140, .22), transparent 70%),
-    radial-gradient(60% 60% at 80% 80%, rgba(43, 191, 180, .22), transparent 70%);
-  filter: blur(28px);
+    radial-gradient(60% 60% at 25% 25%, rgba(232, 62, 140, .22), transparent 70%),
+    radial-gradient(60% 60% at 80% 80%, rgba(255, 200, 61, .22), transparent 70%);
+  filter: blur(32px);
   z-index: -1;
 }
-.hero-image {
-  position: relative;
-  border-radius: 140px 140px var(--r-xl) var(--r-xl);
+
+/* MAIN image — dominant, top-left, arch top */
+.hero-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 76%;
+  height: 70%;
+  border-radius: 140px 32px 32px 32px;
   overflow: hidden;
   border: 6px solid #fff;
-  box-shadow: 0 32px 70px -20px rgba(75, 42, 120, .35), 0 0 0 1px var(--line);
-  background: linear-gradient(135deg, #FFD4E5 0%, #C8A3D9 60%, #BDE6E2 100%);
-  aspect-ratio: 4 / 4.3;
+  box-shadow: 0 30px 70px -22px rgba(75, 42, 120, .42), 0 0 0 1px var(--line);
+  z-index: 2;
 }
-.hero-image img {
+.hero-main img {
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: 50% 50%;
   display: block;
   animation: heroPan 22s ease-in-out infinite alternate;
-  will-change: object-position;
 }
 @keyframes heroPan {
   0%   { object-position: 0% 50%; }
   100% { object-position: 100% 50%; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .hero-image img { animation: none; object-position: 50% 50%; }
-}
-.hero-image-placeholder {
-  position: absolute; inset: 0;
-  display: grid; place-items: center;
-  text-align: center; padding: 32px;
-  color: rgba(75, 42, 120, .55);
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-}
-.hero-image:has(img) .hero-image-placeholder { display: none; }
 
-/* Floating review badge (bottom-right) */
-.hero-badge {
+/* SUB image 1 — top-right, slight rotation */
+.hero-sub-1 {
   position: absolute;
-  bottom: -24px;
-  right: -20px;
+  top: 4%;
+  right: 0;
+  width: 38%;
+  aspect-ratio: 1 / 1;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 5px solid #fff;
+  box-shadow: 0 20px 45px -16px rgba(75, 42, 120, .38);
+  z-index: 4;
+  transform: rotate(2.5deg);
+  transition: transform .4s ease;
+}
+.hero-sub-1:hover { transform: rotate(0deg) scale(1.02); }
+.hero-sub-1 img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* SUB image 2 — bottom-right, overlapping main */
+.hero-sub-2 {
+  position: absolute;
+  bottom: 0;
+  right: 8%;
+  width: 50%;
+  aspect-ratio: 4 / 3;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 5px solid #fff;
+  box-shadow: 0 22px 50px -18px rgba(75, 42, 120, .4);
+  z-index: 3;
+  transform: rotate(-1.5deg);
+  transition: transform .4s ease;
+}
+.hero-sub-2:hover { transform: rotate(0deg) scale(1.02); }
+.hero-sub-2 img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-main img { animation: none; }
+}
+
+/* Floating REVIEW card — bottom-left, hanging off main */
+.hero-card-reviews {
+  position: absolute;
+  bottom: 14%;
+  left: -24px;
   background: #fff;
   border-radius: var(--r-lg);
-  padding: 14px 20px;
+  padding: 14px 20px 14px 16px;
   border: 2px solid var(--line);
-  box-shadow: 0 22px 45px -18px rgba(75, 42, 120, .35);
+  box-shadow: 0 24px 50px -18px rgba(75, 42, 120, .4);
   display: flex; align-items: center; gap: 12px;
   font-family: var(--font-body);
-  font-size: 0.88rem;
-  z-index: 3;
-  max-width: 260px;
+  z-index: 5;
+  max-width: 230px;
 }
-.hero-badge-stars { color: var(--yellow); letter-spacing: 2px; font-size: 0.95rem; line-height: 1; }
-.hero-badge strong { display: block; color: var(--purple-deep); font-weight: 800; font-size: 0.92rem; line-height: 1.15; }
-.hero-badge small { display: block; color: var(--ink-soft); font-size: 0.78rem; font-weight: 600; margin-top: 2px; }
+.hero-card-reviews .stars { color: var(--yellow); letter-spacing: 2px; font-size: 0.95rem; line-height: 1; }
+.hero-card-reviews strong { display: block; color: var(--purple-deep); font-weight: 800; font-size: 0.92rem; line-height: 1.15; }
+.hero-card-reviews small { display: block; color: var(--ink-soft); font-size: 0.76rem; font-weight: 600; margin-top: 2px; }
 
-/* Floating service card (top-left) */
-.hero-service-card {
+/* Floating SERVICE card — top-left, sitting above main image */
+.hero-card-service {
   position: absolute;
-  top: 36px;
-  left: -28px;
+  top: -18px;
+  left: 16%;
   background: #fff;
   border-radius: var(--r-md);
   padding: 12px 16px 12px 12px;
   border: 2px solid var(--line);
-  box-shadow: 0 18px 40px -16px rgba(75, 42, 120, .3);
+  box-shadow: 0 20px 40px -16px rgba(75, 42, 120, .35);
   display: flex; align-items: center; gap: 10px;
   font-family: var(--font-body);
   font-weight: 700;
@@ -511,35 +548,79 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   color: var(--purple-deep);
   line-height: 1.3;
   max-width: 240px;
-  z-index: 3;
+  z-index: 5;
 }
-.hero-service-card .icon {
-  width: 36px; height: 36px;
+.hero-card-service .icon {
+  width: 34px; height: 34px;
   border-radius: var(--r-sm);
   background: linear-gradient(135deg, var(--pink), var(--purple));
   color: #fff;
-  display: grid;
-  place-items: center;
+  display: grid; place-items: center;
   flex-shrink: 0;
 }
-.hero-service-card .icon svg { width: 18px; height: 18px; }
+.hero-card-service .icon svg { width: 16px; height: 16px; }
+
+/* ===========================
+   Trust pills (4 mini badges under CTAs)
+   =========================== */
+.trust-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, .85);
+  border: 1px solid var(--line);
+  padding: 7px 14px;
+  border-radius: var(--r-pill);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: var(--purple-deep);
+  letter-spacing: 0.01em;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(75, 42, 120, .06);
+}
+.trust-pill::before {
+  content: "";
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--pink);
+  flex-shrink: 0;
+}
+.trust-pill.gold::before { background: var(--yellow); }
+.trust-pill.teal::before { background: var(--teal); }
+.trust-pill.purple::before { background: var(--purple); }
+.trust-pill.stars::before {
+  content: "★";
+  color: var(--yellow);
+  background: transparent;
+  width: auto; height: auto;
+  font-size: 0.92rem;
+  line-height: 1;
+  margin-top: -1px;
+}
 
 @media (max-width: 980px) {
-  .hero { padding: 56px 0 80px; }
-  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-  .hero-image { aspect-ratio: 4 / 3.2; border-radius: 100px 100px var(--r-xl) var(--r-xl); }
-  .hero-image-wrap::before { border-radius: 100px 100px var(--r-xl) var(--r-xl); }
-  .hero-badge { right: 12px; bottom: -18px; padding: 12px 16px; }
-  .hero-service-card { left: 12px; top: 16px; max-width: 200px; font-size: 0.78rem; }
+  .hero { padding: 48px 0 80px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+  .hero-composition { aspect-ratio: 1 / 1; max-width: 560px; margin: 0 auto; }
+  .hero-card-service { left: 12px; top: -16px; max-width: 200px; font-size: 0.76rem; padding: 10px 14px 10px 10px; }
+  .hero-card-reviews { left: 0; bottom: 18%; max-width: 200px; padding: 12px 16px; }
 }
 @media (max-width: 600px) {
   .hero h1 { font-size: clamp(2.2rem, 9vw, 3.2rem); }
   .hero-eyebrow { font-size: 1.4rem; }
   .hero-lead { font-size: 1.02rem; }
   .hero-actions .btn { flex: 1 1 auto; min-width: 140px; }
-  .hero-service-card { display: none; }
-  .hero-badge { padding: 10px 14px; max-width: 200px; }
-  .hero-badge small { font-size: 0.72rem; }
+  .hero-card-service { display: none; }
+  .hero-card-reviews { padding: 10px 14px; max-width: 190px; }
+  .hero-card-reviews small { font-size: 0.7rem; }
+  .trust-pill { font-size: 0.72rem; padding: 6px 12px; }
 }
 
 /* =========================
