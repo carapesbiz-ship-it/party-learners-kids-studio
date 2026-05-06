@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=6" />
+  <link rel="stylesheet" href="css/style.css?v=7" />
   <link rel="icon" href="images/logo.jpeg" />
 </head>
 <body>
@@ -223,32 +223,69 @@
   </div>
 </section>
 
-<!-- ============== MAKE IT THEMED YOUR WAY ============== -->
-<section class="section" style="background:linear-gradient(135deg, rgba(232,62,140,.04), rgba(43,191,180,.04), rgba(255,200,61,.06)),#fff">
+<!-- ============== MAKE IT THEMED YOUR WAY — inspiration showcase ============== -->
+<section class="section themed-section">
+  <span class="theme-sparkle t1" aria-hidden="true"></span>
+  <span class="theme-sparkle t2" aria-hidden="true"></span>
+  <span class="theme-sparkle t3" aria-hidden="true"></span>
+
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">step two ✿</span>
-      <h2>Make It Themed Your Way</h2>
-      <p class="lead">Every party experience can be customized around your child's favorite colors, characters, trends or celebration style. Choose from popular styles like Barbie-inspired, Frozen-inspired, Capybara Fun, Pink Bow, Harry Potter-inspired and more — or tell us your idea and we'll help bring it to life.</p>
-    </div>
+    <div class="themed-grid">
+      <!-- LEFT: content + chips -->
+      <div class="themed-content">
+        <span class="eyebrow">step two ✿</span>
+        <h2>Make It Themed Your Way</h2>
+        <p class="lead">Every party experience can be styled around your child's favorite colors, characters, trends or celebration style. From Barbie-inspired and Frozen-inspired to Capybara Fun, Pink Bow and more, we help bring each theme to life in a way that feels magical and memorable.</p>
 
-    <div class="chip-grid">
-      <span class="chip"><span class="dot pink"></span> Barbie-inspired</span>
-      <span class="chip"><span class="dot teal"></span> Frozen-inspired</span>
-      <span class="chip"><span class="dot yellow"></span> Capybara Fun</span>
-      <span class="chip"><span class="dot purple"></span> Harry Potter-inspired</span>
-      <span class="chip"><span class="dot pink"></span> Pink Bow</span>
-      <span class="chip"><span class="dot teal"></span> Hello Kitty-inspired</span>
-      <span class="chip"><span class="dot yellow"></span> Stitch-inspired</span>
-      <span class="chip"><span class="dot purple"></span> Coquette-inspired</span>
-      <span class="chip"><span class="dot pink"></span> Angel Girl</span>
-      <span class="chip"><span class="dot teal"></span> Have another idea? Ask us.</span>
-    </div>
+        <div class="chip-grid">
+          <span class="chip tint-barbie"><span class="dot pink"></span> Barbie-inspired</span>
+          <span class="chip tint-frozen"><span class="dot teal"></span> Frozen-inspired</span>
+          <span class="chip tint-capybara"><span class="dot yellow"></span> Capybara Fun</span>
+          <span class="chip tint-harry"><span class="dot purple"></span> Harry Potter-inspired</span>
+          <span class="chip tint-pinkbow"><span class="dot pink"></span> Pink Bow</span>
+          <span class="chip tint-hello"><span class="dot teal"></span> Hello Kitty-inspired</span>
+          <span class="chip tint-stitch"><span class="dot yellow"></span> Stitch-inspired</span>
+          <span class="chip tint-coquette"><span class="dot purple"></span> Coquette-inspired</span>
+          <span class="chip tint-angel"><span class="dot pink"></span> Angel Girl</span>
+          <span class="chip tint-custom"><span class="dot teal"></span> Custom idea? Ask us.</span>
+        </div>
 
-    <p class="text-center muted mt-3" style="font-size:.82rem;max-width:560px;margin-left:auto;margin-right:auto;font-weight:600">Themes labeled "inspired" reflect a creative aesthetic and are not affiliated with or endorsed by any character or brand owners.</p>
+        <span class="ask-line">Don't see your idea here? Ask us — we love custom themes ♥</span>
 
-    <div class="text-center mt-3">
-      <a href="contact.html" class="btn btn-primary">Ask About a Theme →</a>
+        <p class="muted" style="font-size:.82rem;max-width:520px;font-weight:600;margin-top:18px">Themes labeled "inspired" reflect a creative aesthetic and are not affiliated with or endorsed by any character or brand owners.</p>
+
+        <div style="margin-top:24px">
+          <a href="contact.html" class="btn btn-primary">Ask About a Theme →</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: theme moodboard -->
+      <div class="theme-moodboard" aria-label="Theme inspiration moodboard">
+        <div class="theme-card barbie">
+          <span class="deco" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4-7-11a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 7-7 11-7 11z"/></svg>
+          </span>
+          <span class="name">Barbie<br/>inspired</span>
+        </div>
+        <div class="theme-card frozen">
+          <span class="deco" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg>
+          </span>
+          <span class="name">Frozen<br/>inspired</span>
+        </div>
+        <div class="theme-card capybara">
+          <span class="deco" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6.4 6.9.6-5.3 4.6 1.7 6.7L12 16.9 6.1 20.3l1.7-6.7-5.3-4.6 6.9-.6L12 2z"/></svg>
+          </span>
+          <span class="name">Capybara<br/>fun</span>
+        </div>
+        <div class="theme-card pink-bow">
+          <span class="deco" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c0-3 3-5 6-5s3 2 3 5-0 5-3 5-6-2-6-5z"/><path d="M21 12c0-3-3-5-6-5s-3 2-3 5 0 5 3 5 6-2 6-5z"/><circle cx="12" cy="12" r="2.2" fill="currentColor"/></svg>
+          </span>
+          <span class="name">Pink<br/>bow</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -479,7 +516,7 @@
   </span>
 </a>
 
-<script src="js/main.js?v=6"></script>
+<script src="js/main.js?v=7"></script>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
