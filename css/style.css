@@ -1244,12 +1244,25 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   gap: 14px;
 }
 
-/* Editorial gallery — 1 large feature image + supporting tiles */
+/* Editorial gallery — 1 large feature image + supporting tiles
+   Override aspect-ratio so items respect grid cell size (no overflow) */
 .gallery-editorial {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 180px;
+  grid-auto-rows: 220px;
   gap: 14px;
+  align-items: stretch;
+}
+.gallery-editorial .gallery-item {
+  aspect-ratio: auto;
+  height: 100%;
+  width: 100%;
+}
+.gallery-editorial .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .gallery-editorial .gallery-item.feature {
   grid-column: span 2;
@@ -1258,7 +1271,7 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 @media (max-width: 880px) {
   .gallery-editorial {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 160px;
+    grid-auto-rows: 170px;
   }
   .gallery-editorial .gallery-item.feature {
     grid-column: span 2;
