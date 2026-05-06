@@ -1,0 +1,11 @@
+# Netlify
+.netlify/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Node
+node_modules/
