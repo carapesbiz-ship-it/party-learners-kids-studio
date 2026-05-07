@@ -89,7 +89,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
   const viewportSafeY = window.innerHeight * 0.85;
   const isAboveFold = (el) => el.getBoundingClientRect().top < viewportSafeY;
 
-  const fadeSelectors = ['.section-head', '.feature-card', '.theme-card'];
+  const fadeSelectors = ['.section-head', '.feature-card', '.theme-card', '.review', '.cta-band'];
   const imageSelectors = ['.feature-block-visual', '.gallery-item'];
 
   fadeSelectors.forEach(sel => {
@@ -108,7 +108,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
   });
 
   // Stagger sibling cards within the same grid (max delay tier 5)
-  ['.feature-card', '.theme-card', '.gallery-item'].forEach(sel => {
+  ['.feature-card', '.theme-card', '.gallery-item', '.review'].forEach(sel => {
     const groups = new Map();
     document.querySelectorAll(sel).forEach(el => {
       const parent = el.parentElement;

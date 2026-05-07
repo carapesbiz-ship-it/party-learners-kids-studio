@@ -860,6 +860,22 @@ img, video, svg { max-width: 100%; }
   width: 9px; height: 9px;
   border-radius: 50%;
 }
+.trust-strip-item .dot.pink   { background: var(--pink); }
+.trust-strip-item .dot.teal   { background: var(--teal); }
+.trust-strip-item .dot.yellow { background: var(--yellow); }
+.trust-strip-item .dot.purple { background: var(--purple); }
+.trust-strip-item .dot.stars {
+  width: auto; height: auto;
+  background: transparent;
+  color: var(--yellow);
+  font-size: 1rem;
+  line-height: 1;
+}
+@media (max-width: 600px) {
+  .trust-strip { padding: 16px 0; }
+  .trust-strip-inner { gap: 10px 18px; }
+  .trust-strip-item { font-size: 0.78rem; }
+}
 
 /* =========================
    Feature cards (themes)
@@ -2795,10 +2811,14 @@ h2.divas-glam-title {
     0 0 0 4px rgba(255, 200, 61, 0.18);
 }
 .btn-primary:active,
-.btn-secondary:active,
 .btn-glam:active,
 .btn-ghost:active {
-  transform: translateY(0);
+  transform: scale(.97);
+  filter: brightness(.96);
+  transition-duration: 80ms;
+}
+.btn-secondary:active {
+  transform: scale(.98);
   filter: brightness(.96);
   transition-duration: 80ms;
 }
@@ -2827,9 +2847,10 @@ h2.divas-glam-title {
   transition: transform .45s cubic-bezier(.2,.7,.3,1);
 }
 .feature-card:hover {
+  transform: translateY(-7px);
   box-shadow:
-    0 30px 60px -28px rgba(75, 42, 120, .45),
-    0 12px 24px -16px rgba(75, 42, 120, .25);
+    0 36px 70px -28px rgba(75, 42, 120, .5),
+    0 16px 30px -16px rgba(75, 42, 120, .28);
 }
 .feature-card:hover .feature-card-image img {
   transform: scale(1.05);
@@ -2848,24 +2869,36 @@ h2.divas-glam-title {
   background-size: 100% 1.5px;
 }
 
-/* ----- Theme chip glow (extra polish on top of existing tint hovers) ----- */
+/* ----- Theme chip glow + tiny rotate (extra polish on top of existing tint hovers) ----- */
 .themed-section .chip:hover {
-  filter: drop-shadow(0 6px 14px rgba(232, 62, 140, .18));
+  transform: translateY(-2px) rotate(1deg);
+  filter: drop-shadow(0 6px 14px rgba(232, 62, 140, .22));
 }
 
-/* ----- Gallery — overlay + view icon + lazy zoom ----- */
+/* ----- Gallery — overlay + view icon + soft pink/lavender glow on hover ----- */
 .gallery-item {
   cursor: zoom-in;
+  transition: transform .25s cubic-bezier(.2,.7,.3,1), box-shadow .25s ease;
 }
 .gallery-item::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(75, 42, 120, 0) 50%, rgba(75, 42, 120, .35) 100%);
+  background:
+    radial-gradient(80% 60% at 50% 100%, rgba(232, 62, 140, .35), transparent 70%),
+    linear-gradient(180deg, rgba(107, 63, 160, 0) 55%, rgba(107, 63, 160, .35) 100%);
   opacity: 0;
   transition: opacity .25s ease;
   z-index: 1;
   pointer-events: none;
+}
+.gallery-item:hover {
+  box-shadow:
+    0 22px 44px -18px rgba(232, 62, 140, .45),
+    0 12px 24px -16px rgba(184, 90, 184, .35);
+}
+.gallery-item:hover img {
+  transform: scale(1.07);
 }
 .gallery-item .view-icon {
   position: absolute;
@@ -2965,26 +2998,32 @@ h2.divas-glam-title {
 }
 body.lightbox-open { overflow: hidden; }
 
-/* ----- Scroll reveals ----- */
+/* ----- Scroll reveals — fade-up with subtle blur removal ----- */
 [data-reveal] {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity .6s cubic-bezier(.2,.7,.3,1), transform .6s cubic-bezier(.2,.7,.3,1);
-  will-change: opacity, transform;
+  transform: translateY(20px);
+  filter: blur(4px);
+  transition:
+    opacity .6s cubic-bezier(.2,.7,.3,1),
+    transform .6s cubic-bezier(.2,.7,.3,1),
+    filter .55s ease;
+  will-change: opacity, transform, filter;
 }
 [data-reveal="image"] {
   transform: translateY(0) scale(.96);
+  filter: blur(2px);
   transition-duration: .65s;
 }
 [data-reveal].is-visible {
   opacity: 1;
   transform: translateY(0) scale(1);
+  filter: blur(0);
 }
-[data-reveal][data-delay="1"].is-visible { transition-delay: 60ms; }
-[data-reveal][data-delay="2"].is-visible { transition-delay: 120ms; }
-[data-reveal][data-delay="3"].is-visible { transition-delay: 180ms; }
-[data-reveal][data-delay="4"].is-visible { transition-delay: 240ms; }
-[data-reveal][data-delay="5"].is-visible { transition-delay: 300ms; }
+[data-reveal][data-delay="1"].is-visible { transition-delay: 80ms; }
+[data-reveal][data-delay="2"].is-visible { transition-delay: 160ms; }
+[data-reveal][data-delay="3"].is-visible { transition-delay: 240ms; }
+[data-reveal][data-delay="4"].is-visible { transition-delay: 320ms; }
+[data-reveal][data-delay="5"].is-visible { transition-delay: 400ms; }
 
 /* ----- Subtle animated gradients (Divas Glam + final CTA only) ----- */
 .feature-block.divas-glam-feature {
