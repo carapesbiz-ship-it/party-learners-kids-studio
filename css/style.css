@@ -235,18 +235,18 @@ img, video, svg { max-width: 100%; }
   max-width: 280px;
 }
 
-/* Tablet & mobile — clean two-column header: logo LEFT, hamburger RIGHT.
-   Boutique feel: stable logo size, balanced padding, no shrinking on scroll. */
+/* Tablet & mobile — BIG centered logo, hamburger floats absolute right.
+   Stable size on scroll, no shrinking thumbnail. */
 @media (max-width: 980px) {
   .nav-wrap {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 12px 0;
-    gap: 12px;
+    padding: 14px 0;
+    gap: 0;
     position: relative;
-    min-height: 88px;
+    min-height: 132px;
   }
   .brand {
     display: flex;
@@ -254,17 +254,18 @@ img, video, svg { max-width: 100%; }
     grid-column: auto;
     grid-row: auto;
     justify-self: initial;
-    margin: 0;
+    margin: 0 auto;
     flex: 0 1 auto;
     min-width: 0;
+    max-width: calc(100% - 80px); /* leave room for hamburger on right */
   }
   .brand-logo {
-    height: 64px;
-    max-height: 64px;
+    height: 116px;
+    max-height: 116px;
     max-width: 100%;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 4px 12px rgba(75, 42, 120, .12));
+    filter: drop-shadow(0 6px 16px rgba(75, 42, 120, .18));
   }
   .nav-wrap > nav {
     grid-column: auto;
@@ -277,29 +278,37 @@ img, video, svg { max-width: 100%; }
     grid-row: auto;
     justify-self: initial;
     align-self: center;
-    position: static;
-    transform: none;
     display: flex;
     align-items: center;
     gap: 8px;
     flex-shrink: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
   /* Hide the standalone "Book a Party" button from mobile header — lives inside the menu */
   .nav-wrap .nav-cta .btn-primary { display: none; }
   /* Stable logo on scroll — no shrinking thumbnail behavior on mobile */
-  .site-header.compact .nav-wrap { padding: 12px 0; min-height: 88px; gap: 12px; }
-  .site-header.compact .brand-logo { height: 64px; max-height: 64px; max-width: 100%; }
+  .site-header.compact .nav-wrap { padding: 14px 0; min-height: 132px; gap: 0; }
+  .site-header.compact .brand-logo { height: 116px; max-height: 116px; max-width: 100%; }
 }
 @media (max-width: 600px) {
-  .nav-wrap { min-height: 80px; padding: 10px 0; }
-  .brand-logo { height: 60px; max-height: 60px; }
-  .site-header.compact .nav-wrap { min-height: 80px; padding: 10px 0; }
-  .site-header.compact .brand-logo { height: 60px; max-height: 60px; }
+  .nav-wrap { min-height: 116px; padding: 12px 0; }
+  .brand-logo { height: 100px; max-height: 100px; }
+  .site-header.compact .nav-wrap { min-height: 116px; padding: 12px 0; }
+  .site-header.compact .brand-logo { height: 100px; max-height: 100px; }
 }
-@media (max-width: 400px) {
-  .nav-wrap { min-height: 76px; padding: 10px 0; }
-  .brand-logo { height: 54px; max-height: 54px; }
-  .site-header.compact .brand-logo { height: 54px; max-height: 54px; }
+@media (max-width: 430px) {
+  .nav-wrap { min-height: 104px; padding: 10px 0; }
+  .brand-logo { height: 88px; max-height: 88px; }
+  .site-header.compact .nav-wrap { min-height: 104px; padding: 10px 0; }
+  .site-header.compact .brand-logo { height: 88px; max-height: 88px; }
+}
+@media (max-width: 360px) {
+  .nav-wrap { min-height: 92px; padding: 10px 0; }
+  .brand-logo { height: 76px; max-height: 76px; }
+  .site-header.compact .brand-logo { height: 76px; max-height: 76px; }
 }
 .brand-mark, .brand-name { display: none; }
 
