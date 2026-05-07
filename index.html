@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=20" />
+  <link rel="stylesheet" href="css/style.css?v=21" />
   <link rel="icon" href="images/logo.jpeg" />
 </head>
 <body>
@@ -161,7 +161,9 @@
       <div class="divas-glam-content">
         <span class="premium-label">Most Loved Experience</span>
 
-        <div class="divas-glam-title-wrap">
+        <div class="divas-glam-medallion-wrap">
+          <h2 class="visually-hidden">Divas Glam Spa Party</h2>
+
           <span class="glam-crown" aria-hidden="true">
             <svg viewBox="0 0 64 36" xmlns="http://www.w3.org/2000/svg">
               <defs>
@@ -179,12 +181,17 @@
             </svg>
           </span>
 
-          <h2 class="divas-glam-title" aria-label="Divas Glam Spa Party">
-            <span class="line">Divas</span>
-            <span class="line">Glam</span>
-          </h2>
-
-          <span class="glam-underline" aria-hidden="true"></span>
+          <div class="glam-medallion">
+            <span class="glam-medallion__halo" aria-hidden="true"></span>
+            <span class="glam-medallion__rotor" aria-hidden="true"></span>
+            <span class="glam-medallion__inner">
+              <img src="images/divas-glam-logo.jpg?v=1"
+                   alt="Divas Glam — sparkle, glam and self-care for kids"
+                   class="glam-medallion__img"
+                   width="340" height="340" />
+              <span class="glam-medallion__shine" aria-hidden="true"></span>
+            </span>
+          </div>
 
           <span class="sparkle gold s1" aria-hidden="true"></span>
           <span class="sparkle white s2" aria-hidden="true"></span>
@@ -589,7 +596,7 @@
   </span>
 </a>
 
-<script src="js/main.js?v=20"></script>
+<script src="js/main.js?v=21"></script>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

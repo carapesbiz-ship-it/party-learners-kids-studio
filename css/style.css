@@ -1095,7 +1095,177 @@ img, video, svg { max-width: 100%; }
   margin-top: -1px;
 }
 
-/* Crown — refined, single accent above wordmark */
+/* Visually hidden but accessible to screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================
+   Divas Glam medallion — premium logo treatment
+   Circular crop, gold ring, pulsing halo, slow float, hover lift.
+   ========================= */
+.divas-glam-medallion-wrap {
+  position: relative;
+  display: inline-block;
+  margin: 14px 0 22px;
+  padding: 38px 30px;
+  z-index: 2;
+}
+
+.glam-medallion {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  animation: medallionFloat 5.5s ease-in-out infinite alternate;
+  cursor: pointer;
+  transition: transform .4s cubic-bezier(.2,.7,.3,1);
+}
+.glam-medallion:hover {
+  transform: scale(1.025) translateY(-4px);
+}
+
+/* Pulsing pink/gold halo behind the medallion */
+.glam-medallion__halo {
+  position: absolute;
+  inset: -34px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 35%, rgba(255, 130, 181, .65), transparent 62%),
+    radial-gradient(circle at 70% 65%, rgba(255, 200, 61, .42), transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(184, 90, 184, .35), transparent 70%);
+  filter: blur(28px);
+  z-index: 0;
+  animation: medallionHalo 4.2s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+/* Rotating gold gradient ring (ornament effect) */
+.glam-medallion__rotor {
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(255, 239, 196, .9) 0deg,
+    rgba(241, 194, 92, .35) 60deg,
+    rgba(255, 215, 120, .95) 120deg,
+    rgba(184, 134, 42, .25) 180deg,
+    rgba(255, 239, 196, .9) 240deg,
+    rgba(241, 194, 92, .35) 300deg,
+    rgba(255, 239, 196, .9) 360deg
+  );
+  z-index: 1;
+  -webkit-mask: radial-gradient(circle, transparent 0 calc(50% - 5px), #000 calc(50% - 4px) calc(50% + 0px), transparent calc(50% + 1px));
+          mask: radial-gradient(circle, transparent 0 calc(50% - 5px), #000 calc(50% - 4px) calc(50% + 0px), transparent calc(50% + 1px));
+  animation: rotorSpin 22s linear infinite;
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px rgba(241, 194, 92, .6));
+}
+
+/* Inner cream + gold double-ring layered via box-shadow on the image clip */
+.glam-medallion__inner {
+  position: relative;
+  width: 92%;
+  height: 92%;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow:
+    0 0 0 4px rgba(255, 250, 243, .85),
+    0 0 0 6px rgba(241, 194, 92, .9),
+    0 0 0 9px rgba(255, 239, 196, .35),
+    0 30px 60px -22px rgba(232, 62, 140, .55),
+    0 14px 30px rgba(75, 42, 120, .35);
+}
+.glam-medallion__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s cubic-bezier(.2,.7,.3,1), filter .35s ease;
+}
+.glam-medallion:hover .glam-medallion__img {
+  transform: scale(1.05);
+  filter: brightness(1.06) saturate(1.08);
+}
+
+/* Glassy highlight sweep at top of medallion */
+.glam-medallion__shine {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(120% 70% at 30% 0%, rgba(255, 255, 255, .35), transparent 55%),
+    linear-gradient(160deg, rgba(255, 255, 255, .12) 0%, transparent 30%, transparent 70%, rgba(255, 255, 255, .08) 100%);
+  pointer-events: none;
+  z-index: 3;
+  mix-blend-mode: screen;
+}
+
+/* Reposition crown above the medallion */
+.divas-glam-medallion-wrap .glam-crown {
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 64px;
+  height: 36px;
+  z-index: 6;
+  animation: medallionCrownFloat 4.2s ease-in-out infinite alternate;
+}
+
+/* Medallion animation keyframes */
+@keyframes medallionFloat {
+  0%   { transform: translateY(0)     rotate(-1deg); }
+  100% { transform: translateY(-7px)  rotate(1deg); }
+}
+@keyframes medallionHalo {
+  0%   { opacity: .55; transform: scale(.93); }
+  100% { opacity: 1;   transform: scale(1.07); }
+}
+@keyframes rotorSpin {
+  to { transform: rotate(360deg); }
+}
+@keyframes medallionCrownFloat {
+  0%   { transform: translateX(-50%) rotate(-3deg) translateY(0); }
+  100% { transform: translateX(-50%) rotate(-3deg) translateY(-5px); }
+}
+
+/* Responsive sizes */
+@media (max-width: 880px) {
+  .divas-glam-medallion-wrap { padding: 32px 22px; }
+  .glam-medallion { width: 270px; height: 270px; }
+  .divas-glam-medallion-wrap .glam-crown { width: 54px; height: 32px; top: 4px; }
+}
+@media (max-width: 480px) {
+  .divas-glam-medallion-wrap { padding: 28px 14px; }
+  .glam-medallion { width: 230px; height: 230px; }
+  .divas-glam-medallion-wrap .glam-crown { width: 46px; height: 28px; top: 2px; }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .glam-medallion,
+  .glam-medallion__halo,
+  .glam-medallion__rotor,
+  .divas-glam-medallion-wrap .glam-crown {
+    animation: none;
+  }
+  .glam-medallion:hover {
+    transform: none;
+  }
+}
+
+/* Crown float keyframes (preserved from previous) */
 .glam-crown {
   position: absolute;
   top: -30px;
