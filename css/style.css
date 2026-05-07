@@ -33,6 +33,34 @@
   --font-display: 'Fredoka', system-ui, sans-serif;
   --font-body: 'Nunito', system-ui, sans-serif;
   --font-script: 'Caveat', cursive;
+  --serif: 'Playfair Display', Georgia, serif;
+
+  /* Editorial palette additions */
+  --pink-50: #FDF1F6;
+  --pink-100: #FBE2EE;
+  --lav-50: #F4EEFB;
+  --lav-100: #E8DCF6;
+  --gold-50: #FBF1D9;
+  --champagne: #F5E9D6;
+  --rose-gold: #E9B8A7;
+
+  /* Hero gradient blobs */
+  --blob-pink: #F6C9DC;
+  --blob-lav: #D9C8F3;
+  --blob-peach: #FFE0B6;
+
+  /* Hero background gradient stops */
+  --hero-bg-1: #FFF8F1;
+  --hero-bg-2: #FBF3FB;
+
+  /* Signature Divas Glam wash */
+  --sig-bg-1: #FFF7F3;
+  --sig-bg-2: #FBF3F8;
+  --sig-bg-3: #F6EEF8;
+
+  /* Premium gradients */
+  --grad-wordmark: linear-gradient(135deg, #C04C82 0%, #E26FA0 25%, #B973CF 55%, #A86BD4 75%, #D4A84B 100%);
+  --grad-glam-cta: linear-gradient(135deg, #C04C82 0%, #A86BD4 60%, #D4A84B 130%);
 
   /* Shadows */
   --shadow-card: 0 24px 50px -30px rgba(75, 42, 120, 0.35);
@@ -450,17 +478,18 @@ img, video, svg { max-width: 100%; }
 .hero h1 span { display: inline; }
 .hero h1 .hero-line { display: block; }
 .hero h1 .shine {
-  font-family: var(--font-script);
+  font-family: var(--serif);
+  font-style: italic;
   font-weight: 700;
-  font-size: 1.15em;
-  background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 70%);
+  font-size: 1.05em;
+  background: var(--grad-wordmark);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-  transform: rotate(-1.5deg);
-  padding: 0 .12em;
+  padding: 0 .08em;
   line-height: 1;
+  letter-spacing: -0.01em;
 }
 
 .hero-lead {
@@ -712,6 +741,65 @@ img, video, svg { max-width: 100%; }
 .chip .dot.teal { background: var(--teal); }
 .chip .dot.yellow { background: var(--yellow); }
 .chip .dot.purple { background: var(--purple); }
+
+/* =========================
+   Moving marquee — themed experiences ticker
+   ========================= */
+.marquee {
+  background: linear-gradient(90deg, #2A1547, #4B2A78 50%, #6B3FA0);
+  color: #fff;
+  padding: 18px 0;
+  overflow: hidden;
+  position: relative;
+}
+.marquee-track {
+  display: flex;
+  gap: 48px;
+  white-space: nowrap;
+  width: max-content;
+  animation: marqueeScroll 50s linear infinite;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 17px;
+  color: rgba(255, 255, 255, .92);
+}
+.marquee-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.marquee-track .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--yellow);
+  flex-shrink: 0;
+}
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (max-width: 720px) {
+  .marquee { padding: 14px 0; }
+  .marquee-track { gap: 36px; font-size: 14px; }
+  .marquee-track .dot { width: 5px; height: 5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+/* Glam CTA — premium gradient button for Divas Glam section */
+.btn-glam {
+  background: var(--grad-glam-cta) !important;
+  color: #fff !important;
+  border: none;
+  box-shadow: 0 10px 28px rgba(192, 76, 130, .4);
+}
+.btn-glam:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(192, 76, 130, .5);
+}
 
 /* =========================
    Trust strip
@@ -1041,14 +1129,14 @@ img, video, svg { max-width: 100%; }
 }
 .divas-glam-title .line {
   display: block;
-  background: linear-gradient(180deg, #FFE0EE 0%, #FF98C3 22%, #E83E8C 50%, #C42B73 80%, #8B1F5B 100%);
+  background: var(--grad-wordmark);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   filter:
-    drop-shadow(0 1px 0 rgba(255, 255, 255, .45))
-    drop-shadow(0 3px 0 rgba(75, 42, 120, .6))
-    drop-shadow(0 14px 36px rgba(232, 62, 140, .55));
+    drop-shadow(0 1px 0 rgba(255, 255, 255, .35))
+    drop-shadow(0 3px 0 rgba(75, 42, 120, .55))
+    drop-shadow(0 14px 36px rgba(232, 62, 140, .5));
 }
 .divas-glam-title .line:nth-child(2) {
   margin-left: 0.15em;
