@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: Update Sitemap URL with final domain when launched
+Sitemap: https://carapesbiz-ship-it.github.io/party-learners-kids-studio/sitemap.xml

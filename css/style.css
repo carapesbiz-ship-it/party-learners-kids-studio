@@ -86,6 +86,9 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   margin: 0 auto;
   padding: 0 32px;
 }
+/* Global horizontal overflow guard — prevents any element from breaking the viewport */
+html, body { overflow-x: hidden; max-width: 100%; }
+img, video, svg { max-width: 100%; }
 @media (max-width: 720px) { .container { padding: 0 22px; } }
 
 /* =========================
@@ -1023,12 +1026,12 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   100% { opacity: 1;   transform: scale(1.08); }
 }
 
-/* DIVAS GLAM title — dimensional gradient text */
+/* DIVAS GLAM title — dimensional gradient text (2x premium scale) */
 .divas-glam-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(3rem, 7.4vw, 5.4rem);
-  line-height: 0.92;
+  font-size: clamp(4rem, 10vw, 7rem);
+  line-height: 0.9;
   letter-spacing: 0.005em;
   text-transform: uppercase;
   margin: 0;
@@ -1762,9 +1765,12 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 .package.is-popular {
   border: 2px solid var(--pink);
   background: linear-gradient(180deg, rgba(232, 62, 140, .04) 0%, #fff 100%);
+  margin-top: 18px; /* extra space so the popular tag is never clipped */
+  overflow: visible;
 }
+.packages { padding-top: 14px; } /* parent grid breathing room for absolute tag */
 .package-popular-tag {
-  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  position: absolute; top: -16px; left: 50%; transform: translateX(-50%);
   background: var(--yellow);
   color: var(--purple-deep);
   font-family: var(--font-body);
@@ -1772,9 +1778,11 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 6px 18px;
+  padding: 7px 20px;
   border-radius: var(--r-pill);
   box-shadow: 0 6px 16px rgba(255, 200, 61, .4);
+  white-space: nowrap;
+  z-index: 2;
 }
 .package-name {
   font-family: var(--font-display);
