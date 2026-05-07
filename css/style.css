@@ -2151,10 +2151,29 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 }
 @media (max-width: 880px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
 @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; gap: 28px; } }
-.footer-brand .brand-logo {
-  filter: brightness(0) invert(1);
-  height: 50px;
-  margin-bottom: 14px;
+.footer-brand .brand-logo { display: none; }
+.footer-wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1.02;
+  margin-bottom: 16px;
+  text-decoration: none;
+}
+.footer-wordmark .wm-line1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+.footer-wordmark .wm-line2 {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.74rem;
+  color: var(--yellow);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 6px;
 }
 .footer-brand p { font-size: 0.92rem; max-width: 320px; color: rgba(255, 255, 255, .85); }
 .site-footer h4 {
