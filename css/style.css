@@ -1349,20 +1349,106 @@ h2.divas-glam-wordmark {
   height: 260px;
 }
 
-/* ===== Mobile reductions ===== */
+/* =========================
+   Divas Glam — MOBILE redesign (≤880px)
+   Reorder: badge → photo → wordmark → copy → highlight pills → CTAs.
+   Wordmark medallion shrinks and overlaps the bottom edge of the photo.
+   Highlights become rounded pill cards in a 2-col grid.
+   ========================= */
 @media (max-width: 880px) {
-  .divas-glam-feature .divas-glam-medallion-wrap { padding: 26px 14px 22px; margin: 6px auto 18px; }
-  .divas-glam-feature .glam-medallion { width: 220px; height: 220px; }
-  .divas-glam-feature ul.divas-glam-highlights { grid-template-columns: 1fr 1fr; }
-  .divas-glam-visual img { max-height: 520px; }
+  /* Flatten .divas-glam-content so its children become direct grid items
+     and can be reordered alongside the photo */
+  .divas-glam-feature .divas-glam-content { display: contents; }
+
+  /* Mobile order: badge → photo → wordmark → copy → highlights → CTAs */
+  .divas-glam-feature .premium-label         { order: 1; align-self: start; margin-bottom: 4px; position: relative; z-index: 2; }
+  .divas-glam-feature .feature-block-visual  { order: 2; position: relative; z-index: 1; }
+  .divas-glam-feature .divas-glam-medallion-wrap { order: 3; position: relative; z-index: 4; align-self: center; }
+  .divas-glam-feature .divas-glam-lead       { order: 4; position: relative; z-index: 2; }
+  .divas-glam-feature .divas-glam-highlights { order: 5; position: relative; z-index: 2; }
+  .divas-glam-feature .hero-actions          { order: 6; position: relative; z-index: 2; }
+
+  /* Smaller, supporting medallion that overlaps the bottom edge of the photo */
+  .divas-glam-feature .divas-glam-medallion-wrap {
+    margin: -56px auto 14px;
+    padding: 24px 18px 14px;
+  }
+  .divas-glam-feature .glam-medallion {
+    width: 168px;
+    height: 168px;
+  }
+  /* Crown smaller in this overlapping context */
+  .divas-glam-feature .divas-glam-medallion-wrap .glam-crown {
+    width: 44px; height: 26px;
+    top: 6px;
+  }
+
+  /* Stronger pink glow behind the photo on mobile */
+  .dg-photo-glow { inset: -22px; filter: blur(28px); }
+  .divas-glam-visual img { max-height: 540px; border-width: 5px; }
+
+  /* Hide the floating "Real Divas Glam setup" label so it doesn't
+     compete with the medallion sitting on top of the photo */
+  .dg-photo-label { display: none; }
+
+  /* Tighter lead copy */
+  .divas-glam-feature .divas-glam-lead {
+    font-size: 1rem;
+    line-height: 1.55;
+    margin: 6px 0 14px;
+    text-align: center;
+  }
+
+  /* Highlights → premium pill cards in 2-col grid (replaces vertical bullets) */
+  .divas-glam-feature ul.divas-glam-highlights {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+  .divas-glam-feature ul.divas-glam-highlights li {
+    padding: 12px 12px 12px 28px;
+    background: linear-gradient(180deg, #ffffff 0%, #FFF6FA 100%);
+    border: 1.5px solid rgba(232, 62, 140, .18);
+    border-radius: 14px;
+    box-shadow: 0 6px 14px -8px rgba(232, 62, 140, .25);
+    font-size: 0.86rem;
+    line-height: 1.2;
+    color: var(--purple-deep);
+  }
+  .divas-glam-feature ul.divas-glam-highlights li::before {
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 7px; height: 7px;
+    background: var(--pink);
+    box-shadow: 0 0 0 3px rgba(232, 62, 140, .14);
+  }
+
+  /* CTAs — stack and full-width on mobile, primary feels stronger */
+  .divas-glam-feature .hero-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .divas-glam-feature .hero-actions .btn { width: 100%; }
+  .divas-glam-feature .hero-actions .btn-glam {
+    box-shadow:
+      0 14px 30px rgba(192, 76, 130, .45),
+      0 0 0 4px rgba(255, 200, 61, .14);
+  }
+
+  /* Background sparkle reduction on mobile (already applied) */
   .dg-bg-sparkle.dg5,
   .dg-bg-sparkle.dg4 { display: none; }
-  .dg-photo-label { font-size: 1.05rem; padding: 8px 16px; bottom: -10px; }
 }
+
 @media (max-width: 480px) {
-  .divas-glam-feature .glam-medallion { width: 200px; height: 200px; }
-  .divas-glam-feature ul.divas-glam-highlights { grid-template-columns: 1fr; }
-  .divas-glam-visual img { max-height: 460px; }
+  .divas-glam-feature .glam-medallion { width: 148px; height: 148px; }
+  .divas-glam-feature .divas-glam-medallion-wrap {
+    margin-top: -50px;
+    padding: 22px 14px 10px;
+  }
+  .divas-glam-visual img { max-height: 480px; }
+  .divas-glam-feature ul.divas-glam-highlights li { font-size: 0.82rem; padding: 10px 10px 10px 26px; }
   .dg-bg-sparkle.dg3 { display: none; }
 }
 
