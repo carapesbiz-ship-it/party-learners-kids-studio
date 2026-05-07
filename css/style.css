@@ -1368,28 +1368,82 @@ h2.divas-glam-wordmark {
   .divas-glam-feature .divas-glam-highlights { order: 5; position: relative; z-index: 2; }
   .divas-glam-feature .hero-actions          { order: 6; position: relative; z-index: 2; }
 
-  /* Smaller, supporting medallion that overlaps the bottom edge of the photo */
-  .divas-glam-feature .divas-glam-medallion-wrap {
-    margin: -56px auto 14px;
-    padding: 24px 18px 14px;
-  }
-  .divas-glam-feature .glam-medallion {
-    width: 168px;
-    height: 168px;
-  }
-  /* Crown smaller in this overlapping context */
-  .divas-glam-feature .divas-glam-medallion-wrap .glam-crown {
-    width: 44px; height: 26px;
-    top: 6px;
-  }
+  /* Hide the original (large) medallion-wrap on mobile — replaced by
+     the photo overlay sticker below */
+  .divas-glam-feature .divas-glam-medallion-wrap { display: none; }
 
-  /* Stronger pink glow behind the photo on mobile */
+  /* Make .feature-block-visual the positioning anchor for the sticker
+     and let the sticker overhang past the photo edges */
+  .divas-glam-feature .feature-block-visual {
+    position: relative;
+    z-index: 2;
+    overflow: visible;
+  }
   .dg-photo-glow { inset: -22px; filter: blur(28px); }
   .divas-glam-visual img { max-height: 540px; border-width: 5px; }
 
   /* Hide the floating "Real Divas Glam setup" label so it doesn't
-     compete with the medallion sitting on top of the photo */
+     compete with the overlay sticker */
   .dg-photo-label { display: none; }
+
+  /* DG STICKER — circular brand badge overlaid on the bottom-right
+     corner of the main photo. Mobile-only. */
+  .dg-photo-sticker {
+    position: absolute;
+    right: -8px;
+    bottom: -18px;
+    width: clamp(110px, 28vw, 150px);
+    height: clamp(110px, 28vw, 150px);
+    z-index: 6;
+    transform: rotate(-9deg);
+    transform-origin: center center;
+    animation: stickerFloat 6.5s ease-in-out infinite alternate;
+    pointer-events: none;
+    display: block;
+  }
+  .dg-photo-sticker__halo {
+    position: absolute;
+    inset: -14px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 30% 35%, rgba(255, 130, 181, .7), transparent 60%),
+      radial-gradient(circle at 70% 65%, rgba(255, 200, 61, .4), transparent 60%);
+    filter: blur(18px);
+    z-index: 0;
+    animation: stickerHalo 4.5s ease-in-out infinite alternate;
+  }
+  .dg-photo-sticker__inner {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow:
+      0 0 0 3px #ffffff,
+      0 0 0 5px #F1C25C,
+      0 0 0 7px rgba(255, 239, 196, .35),
+      0 14px 26px -10px rgba(232, 62, 140, .55),
+      0 6px 14px rgba(75, 42, 120, .35);
+  }
+  .dg-photo-sticker__inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .dg-photo-sticker__sparkle {
+    position: absolute;
+    width: 14px; height: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F1C25C'%3E%3Cpath d='M12 0 L13.4 10.6 L24 12 L13.4 13.4 L12 24 L10.6 13.4 L0 12 L10.6 10.6 Z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 2;
+    filter: drop-shadow(0 0 6px rgba(241, 194, 92, .85));
+    opacity: 0;
+    animation: stickerTwinkle 4.5s ease-in-out infinite;
+  }
+  .dg-photo-sticker__sparkle.s1 { top: -6px;  right: -4px; animation-delay: 0s;   }
+  .dg-photo-sticker__sparkle.s2 { bottom: -2px; left: 30%; width: 11px; height: 11px; animation-delay: 1.8s; }
 
   /* Tighter lead copy */
   .divas-glam-feature .divas-glam-lead {
@@ -1442,14 +1496,42 @@ h2.divas-glam-wordmark {
 }
 
 @media (max-width: 480px) {
-  .divas-glam-feature .glam-medallion { width: 148px; height: 148px; }
-  .divas-glam-feature .divas-glam-medallion-wrap {
-    margin-top: -50px;
-    padding: 22px 14px 10px;
+  .dg-photo-sticker {
+    right: -6px;
+    bottom: -16px;
   }
   .divas-glam-visual img { max-height: 480px; }
   .divas-glam-feature ul.divas-glam-highlights li { font-size: 0.82rem; padding: 10px 10px 10px 26px; }
   .dg-bg-sparkle.dg3 { display: none; }
+}
+
+/* Hide the mobile-only sticker on desktop */
+@media (min-width: 881px) {
+  .dg-photo-sticker { display: none; }
+}
+
+/* DG sticker keyframes — gentle float + halo pulse + occasional twinkle */
+@keyframes stickerFloat {
+  0%   { transform: rotate(-9deg) translateY(0); }
+  100% { transform: rotate(-9deg) translateY(-6px); }
+}
+@keyframes stickerHalo {
+  0%   { opacity: .6; transform: scale(.92); }
+  100% { opacity: 1;  transform: scale(1.1); }
+}
+@keyframes stickerTwinkle {
+  0%, 100% { opacity: 0; transform: scale(.4) rotate(0deg); }
+  45%, 55% { opacity: 1; transform: scale(1)  rotate(180deg); }
+}
+
+/* Reduced-motion guard for the sticker */
+@media (prefers-reduced-motion: reduce) {
+  .dg-photo-sticker,
+  .dg-photo-sticker__halo,
+  .dg-photo-sticker__sparkle {
+    animation: none !important;
+  }
+  .dg-photo-sticker { transform: rotate(-9deg); }
 }
 
 /* ===== Reduced motion ===== */
