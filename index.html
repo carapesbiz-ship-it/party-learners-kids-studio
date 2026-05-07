@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=25" />
+  <link rel="stylesheet" href="css/style.css?v=26" />
   <link rel="icon" href="images/logo.jpeg" />
 </head>
 <body>
@@ -177,54 +177,34 @@
 </div>
 
 <!-- ============== SIGNATURE EXPERIENCE — DIVAS GLAM ============== -->
-<section class="section">
+<section class="section divas-glam-section">
+  <span class="dg-bg-sparkle dg1" aria-hidden="true"></span>
+  <span class="dg-bg-sparkle dg2" aria-hidden="true"></span>
+  <span class="dg-bg-sparkle dg3" aria-hidden="true"></span>
+  <span class="dg-bg-sparkle dg4" aria-hidden="true"></span>
+  <span class="dg-bg-sparkle dg5" aria-hidden="true"></span>
+
   <div class="container">
     <div class="feature-block divas-glam-feature">
       <div class="divas-glam-content">
         <span class="premium-label">Most Loved Experience</span>
 
-        <div class="divas-glam-medallion-wrap">
-          <h2 class="visually-hidden">Divas Glam Spa Party</h2>
-
-          <span class="glam-crown" aria-hidden="true">
-            <svg viewBox="0 0 64 36" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="crownGold2" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="0%" stop-color="#FFEFC4"/>
-                  <stop offset="55%" stop-color="#F1C25C"/>
-                  <stop offset="100%" stop-color="#B8862A"/>
-                </linearGradient>
-              </defs>
-              <path d="M5 30 L5 12 L19 22 L32 4 L45 22 L59 12 L59 30 Z"
-                    fill="url(#crownGold2)" stroke="#7E5A14" stroke-width="1.1" stroke-linejoin="round"/>
-              <circle cx="5"  cy="12" r="2.2" fill="#FFEFC4" stroke="#7E5A14" stroke-width="0.7"/>
-              <circle cx="32" cy="4"  r="2.6" fill="#FFEFC4" stroke="#7E5A14" stroke-width="0.7"/>
-              <circle cx="59" cy="12" r="2.2" fill="#FFEFC4" stroke="#7E5A14" stroke-width="0.7"/>
-            </svg>
-          </span>
-
-          <div class="glam-medallion">
-            <span class="glam-medallion__halo" aria-hidden="true"></span>
-            <span class="glam-medallion__rotor" aria-hidden="true"></span>
-            <span class="glam-medallion__inner">
-              <img src="images/divas-glam-logo.jpg?v=1"
-                   alt="Divas Glam — sparkle, glam and self-care for kids"
-                   class="glam-medallion__img"
-                   width="340" height="340" />
-              <span class="glam-medallion__shine" aria-hidden="true"></span>
-            </span>
-          </div>
-
+        <div class="divas-glam-wordmark-wrap">
+          <h2 class="divas-glam-wordmark" aria-label="Divas Glam Spa Party">
+            <span class="dg-line">Divas</span>
+            <span class="dg-line">Glam</span>
+          </h2>
+          <span class="dg-shimmer" aria-hidden="true"></span>
           <span class="sparkle gold s1" aria-hidden="true"></span>
           <span class="sparkle white s2" aria-hidden="true"></span>
           <span class="sparkle gold s3" aria-hidden="true"></span>
           <span class="sparkle white s4" aria-hidden="true"></span>
         </div>
 
-        <p>
-          Step into a world of sparkle, self-care and celebration. Our most popular party experience — designed for kids to enjoy mini makeovers, spa moments, glam activities, music, games and memories that shine.
+        <p class="divas-glam-lead">
+          Step into a world of sparkle, self-care and celebration. Our most loved party experience brings the full glam spa setup to life — pink robes, spa trays, mini makeovers, music, games and a runway moment kids will remember.
         </p>
-        <ul>
+        <ul class="divas-glam-highlights">
           <li>Mini makeovers</li>
           <li>Spa activities</li>
           <li>Nail art</li>
@@ -238,8 +218,15 @@
         </div>
       </div>
 
-      <div class="feature-block-visual">
-        <img src="images/divas-glam-setup.jpg" alt="Divas Glam Spa Party setup with teepee, robes and spa party backdrop" />
+      <div class="feature-block-visual divas-glam-visual">
+        <span class="dg-photo-glow" aria-hidden="true"></span>
+        <img src="images/divas_glam_spa_party_fun.jpg?v=1"
+             alt="Group of girls in pink robes at a real Divas Glam Spa Party setup with teepee, spa trays and themed backdrop"
+             loading="lazy"
+             decoding="async"
+             width="1086"
+             height="1448" />
+        <span class="dg-photo-label">Real Divas Glam setup ✿</span>
       </div>
     </div>
   </div>
@@ -620,7 +607,7 @@
   </span>
 </a>
 
-<script src="js/main.js?v=25"></script>
+<script src="js/main.js?v=26"></script>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

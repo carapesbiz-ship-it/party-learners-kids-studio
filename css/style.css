@@ -1063,32 +1063,97 @@ img, video, svg { max-width: 100%; }
 }
 
 /* =========================
-   Divas Glam Signature — Premium Glam Treatment
+   Divas Glam Signature — Blush, sparkle and a real-photo hero
    ========================= */
-.feature-block.divas-glam-feature {
+.divas-glam-section {
+  position: relative;
+  overflow: hidden;
   background:
-    radial-gradient(ellipse 600px 500px at 5% 5%, rgba(255, 130, 181, .35) 0%, transparent 55%),
-    radial-gradient(ellipse 520px 420px at 95% 95%, rgba(255, 200, 61, .22) 0%, transparent 55%),
-    radial-gradient(ellipse 800px 600px at 50% 50%, rgba(255, 255, 255, .04), transparent 70%),
-    linear-gradient(135deg, #5B2A87 0%, #4B2A78 50%, #6B3FA0 80%, #C42B73 100%);
+    radial-gradient(ellipse 1100px 700px at 12% 0%, rgba(255, 184, 220, .55), transparent 60%),
+    radial-gradient(ellipse 900px 600px at 92% 100%, rgba(220, 198, 245, .55), transparent 65%),
+    radial-gradient(ellipse 700px 500px at 50% 50%, rgba(255, 232, 200, .35), transparent 70%),
+    linear-gradient(135deg, #FFEFF6 0%, #FBE7F2 35%, #F4E8FB 70%, #FFF1E0 100%);
 }
 
-/* Ambient glow blobs */
+.feature-block.divas-glam-feature {
+  background:
+    radial-gradient(ellipse 600px 480px at 8% 8%, rgba(255, 170, 210, .55) 0%, transparent 55%),
+    radial-gradient(ellipse 520px 420px at 95% 95%, rgba(229, 201, 125, .35) 0%, transparent 60%),
+    radial-gradient(ellipse 700px 500px at 50% 50%, rgba(255, 255, 255, .55), transparent 70%),
+    linear-gradient(135deg, #FFE2EE 0%, #FFD4E5 32%, #F0DCFB 68%, #FFE9D2 100%);
+  border: 1px solid rgba(232, 62, 140, .14);
+  box-shadow:
+    0 30px 60px -28px rgba(232, 62, 140, .35),
+    0 12px 30px -16px rgba(184, 90, 184, .22),
+    inset 0 0 0 1px rgba(255, 255, 255, .65);
+}
+
+/* Soft ambient glow blobs (pink + champagne) */
 .feature-block.divas-glam-feature::before {
   content: ""; position: absolute;
-  top: -130px; right: -120px;
+  top: -130px; right: -100px;
   width: 380px; height: 380px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 200, 61, .35), transparent 60%);
   pointer-events: none;
+  filter: blur(2px);
 }
 .feature-block.divas-glam-feature::after {
   content: ""; position: absolute;
-  bottom: -110px; left: -60px;
-  width: 320px; height: 320px;
+  bottom: -120px; left: -70px;
+  width: 340px; height: 340px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 130, 181, .35), transparent 60%);
+  background: radial-gradient(circle, rgba(255, 130, 181, .45), transparent 60%);
   pointer-events: none;
+  filter: blur(2px);
+}
+
+/* CSS sparkles dotted across the section background */
+.dg-bg-sparkle {
+  position: absolute;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: dgBgTwinkle 5s ease-in-out infinite;
+  z-index: 0;
+}
+.dg-bg-sparkle::before {
+  content: "";
+  display: block;
+  width: 100%; height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F1C25C'%3E%3Cpath d='M12 0 L13.4 10.6 L24 12 L13.4 13.4 L12 24 L10.6 13.4 L0 12 L10.6 10.6 Z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 0 6px rgba(241, 194, 92, .55));
+}
+.dg-bg-sparkle.dg1 { top: 6%;  left: 4%;  width: 22px; height: 22px; animation-delay: 0s;   }
+.dg-bg-sparkle.dg2 { top: 14%; right: 8%; width: 16px; height: 16px; animation-delay: 1.2s; }
+.dg-bg-sparkle.dg3 { bottom: 18%; left: 6%; width: 18px; height: 18px; animation-delay: 2.4s; }
+.dg-bg-sparkle.dg4 { bottom: 10%; right: 14%; width: 14px; height: 14px; animation-delay: 0.7s; }
+.dg-bg-sparkle.dg5 { top: 50%; left: 48%; width: 12px; height: 12px; animation-delay: 1.8s; }
+@keyframes dgBgTwinkle {
+  0%, 100% { opacity: 0;   transform: scale(.4) rotate(0deg); }
+  45%, 55% { opacity: .9;  transform: scale(1)  rotate(180deg); }
+}
+
+/* Override generic feature-block ink-on-dark colors for the blush variant */
+.divas-glam-feature p,
+.divas-glam-feature .divas-glam-lead {
+  color: var(--ink);
+  font-weight: 600;
+}
+.divas-glam-feature .divas-glam-lead {
+  font-size: 1.08rem;
+  line-height: 1.55;
+  margin-bottom: 24px;
+}
+.divas-glam-feature ul.divas-glam-highlights li {
+  color: var(--purple-deep);
+  font-weight: 700;
+}
+.divas-glam-feature ul.divas-glam-highlights li::before {
+  background: var(--pink);
+  box-shadow: 0 2px 6px rgba(232, 62, 140, .45);
 }
 
 .divas-glam-content {
@@ -1118,6 +1183,187 @@ img, video, svg { max-width: 100%; }
   color: var(--purple-deep);
   font-size: 0.9rem;
   margin-top: -1px;
+}
+
+/* ===== Divas Glam clean CSS wordmark (replaces medallion image) ===== */
+.divas-glam-wordmark-wrap {
+  position: relative;
+  display: inline-block;
+  margin: 12px 0 22px;
+  padding: 16px 14px 22px;
+  z-index: 2;
+}
+.divas-glam-wordmark-wrap::before {
+  content: ""; position: absolute;
+  inset: -18px -10px;
+  background:
+    radial-gradient(60% 70% at 30% 40%, rgba(255, 130, 181, .55), transparent 70%),
+    radial-gradient(60% 70% at 75% 70%, rgba(189, 145, 230, .42), transparent 70%);
+  filter: blur(28px);
+  z-index: 0;
+  border-radius: 50%;
+  animation: dgWordmarkPulse 5.5s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+@keyframes dgWordmarkPulse {
+  0%   { opacity: .55; transform: scale(.94); }
+  100% { opacity: 1;   transform: scale(1.07); }
+}
+
+h2.divas-glam-wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(3.4rem, 8.4vw, 6rem);
+  line-height: 0.92;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+}
+.divas-glam-wordmark .dg-line {
+  display: block;
+  background: linear-gradient(
+    135deg,
+    #FBD6E6 0%,
+    #F2A6C9 16%,
+    #E83E8C 36%,
+    #B85AB8 58%,
+    #8E5BC2 76%,
+    #E5C97D 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter:
+    drop-shadow(0 1px 0 rgba(255, 255, 255, .7))
+    drop-shadow(0 8px 22px rgba(232, 62, 140, .35));
+  animation: dgGradientShift 9s ease-in-out infinite alternate;
+}
+.divas-glam-wordmark .dg-line:nth-child(2) {
+  margin-left: 0.18em;
+  animation-delay: 0.6s;
+}
+@keyframes dgGradientShift {
+  0%   { background-position: 0%   0%; }
+  100% { background-position: 100% 0%; }
+}
+
+/* Soft shimmer light sweep across the wordmark */
+.dg-shimmer {
+  position: absolute;
+  inset: 16px 14px 22px;
+  background: linear-gradient(110deg,
+    transparent 35%,
+    rgba(255, 255, 255, .55) 49%,
+    rgba(255, 255, 255, .85) 50%,
+    rgba(255, 255, 255, .55) 51%,
+    transparent 65%);
+  background-size: 280% 100%;
+  background-position: 280% 0;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 4;
+  animation: dgShimmerSweep 6.5s ease-in-out infinite;
+  border-radius: 8px;
+}
+@keyframes dgShimmerSweep {
+  0%, 30%  { background-position: 280% 0; }
+  70%, 100% { background-position: -280% 0; }
+}
+
+/* ===== Divas Glam featured photo — full setup, soft white frame, pink halo ===== */
+.divas-glam-feature .feature-block-visual.divas-glam-visual {
+  position: relative;
+  aspect-ratio: auto;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+  z-index: 1;
+}
+.divas-glam-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 620px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--r-lg);
+  border: 6px solid #fff;
+  box-shadow:
+    0 36px 70px -22px rgba(232, 62, 140, .45),
+    0 18px 40px -20px rgba(184, 90, 184, .4),
+    0 0 0 1px rgba(232, 62, 140, .14);
+  position: relative;
+  z-index: 1;
+}
+
+.dg-photo-glow {
+  position: absolute;
+  inset: -28px;
+  border-radius: var(--r-xl);
+  background:
+    radial-gradient(60% 60% at 30% 40%, rgba(255, 130, 181, .6), transparent 70%),
+    radial-gradient(60% 60% at 70% 70%, rgba(189, 145, 230, .45), transparent 70%);
+  filter: blur(34px);
+  z-index: 0;
+  pointer-events: none;
+  animation: dgPhotoGlow 5.5s ease-in-out infinite alternate;
+}
+@keyframes dgPhotoGlow {
+  0%   { opacity: .6; transform: scale(.96); }
+  100% { opacity: 1;  transform: scale(1.05); }
+}
+
+.dg-photo-label {
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  font-family: var(--font-script);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--purple-deep);
+  background: #fff;
+  padding: 10px 22px;
+  border-radius: var(--r-pill);
+  border: 2px solid var(--pink);
+  box-shadow:
+    0 12px 24px -10px rgba(232, 62, 140, .4),
+    0 0 0 4px rgba(255, 200, 61, .18);
+  white-space: nowrap;
+  z-index: 2;
+}
+
+/* ===== Mobile reductions ===== */
+@media (max-width: 880px) {
+  .divas-glam-wordmark-wrap { margin: 10px 0 18px; padding: 14px 10px 18px; }
+  .divas-glam-feature ul.divas-glam-highlights { grid-template-columns: 1fr 1fr; }
+  .divas-glam-visual img { max-height: 520px; }
+  .dg-bg-sparkle.dg5,
+  .dg-bg-sparkle.dg4 { display: none; }
+  .dg-photo-label { font-size: 1.05rem; padding: 8px 16px; bottom: -10px; }
+}
+@media (max-width: 480px) {
+  .divas-glam-feature ul.divas-glam-highlights { grid-template-columns: 1fr; }
+  .divas-glam-visual img { max-height: 460px; }
+  .dg-bg-sparkle.dg3 { display: none; }
+}
+
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  .dg-bg-sparkle,
+  .divas-glam-wordmark-wrap::before,
+  .divas-glam-wordmark .dg-line,
+  .dg-shimmer,
+  .dg-photo-glow {
+    animation: none;
+  }
+  .dg-bg-sparkle { opacity: .7; }
 }
 
 /* Visually hidden but accessible to screen readers */
