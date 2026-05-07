@@ -1749,7 +1749,7 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   100% { transform: translateY(-6px); }
 }
 .theme-card {
-  aspect-ratio: 1 / 1.05;
+  aspect-ratio: 1 / 1.15;
   border-radius: var(--r-lg);
   position: relative;
   overflow: hidden;
@@ -1760,18 +1760,37 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   align-items: flex-end;
   justify-content: flex-start;
   padding: 18px;
+  background: #f5e8ee; /* fallback if image fails */
 }
 .theme-card:hover {
   transform: translateY(-5px) rotate(.8deg);
   box-shadow: 0 24px 50px -16px rgba(75, 42, 120, .45);
 }
+.theme-card > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform .6s ease;
+}
+.theme-card:hover > img {
+  transform: scale(1.05);
+}
+/* Gradient overlay for text legibility */
+.theme-card::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.55) 100%);
+  z-index: 1;
+}
 .theme-card .name {
   font-family: var(--font-script);
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: #fff;
-  line-height: 1;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, .55);
   position: relative;
   z-index: 2;
 }
@@ -1779,30 +1798,20 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   position: absolute;
   top: 14px;
   right: 14px;
-  width: 28px;
-  height: 28px;
-  color: rgba(255, 255, 255, .9);
+  width: 32px;
+  height: 32px;
+  color: #fff;
   z-index: 2;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .2));
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .4));
+  background: rgba(255, 255, 255, .18);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  padding: 6px;
 }
 .theme-card .deco svg { width: 100%; height: 100%; }
-/* Subtle pattern overlay for texture */
-.theme-card::before {
-  content: ""; position: absolute; inset: 0;
-  background:
-    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, .25), transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(0, 0, 0, .08), transparent 50%);
-  z-index: 1;
-}
-
-/* Theme-specific gradients */
-.theme-card.barbie    { background: linear-gradient(135deg, #FFB7D0 0%, #E83E8C 100%); }
-.theme-card.frozen    { background: linear-gradient(135deg, #DCE7FF 0%, #8FB4E5 60%, #5B7FB8 100%); }
-.theme-card.capybara  { background: linear-gradient(135deg, #FFE0B5 0%, #D89C5C 100%); }
-.theme-card.pink-bow  { background: linear-gradient(135deg, #FFE7EE 0%, #FFA6C0 100%); }
-
-.theme-card.frozen .name { color: #fff; text-shadow: 0 2px 10px rgba(91, 127, 184, .55); }
-.theme-card.capybara .name { color: #FFFAF0; }
 
 /* Enhanced chip hover (with theme tint via class) */
 .themed-section .chip-grid {
