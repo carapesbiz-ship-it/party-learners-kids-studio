@@ -1990,6 +1990,49 @@ h2.divas-glam-title {
 }
 .service-hero-image img { width: 100%; height: 100%; object-fit: cover; }
 
+/* ----- Divas Glam service hero — medallion + text side-by-side ----- */
+.service-hero--glam .service-hero-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.service-hero--glam .service-hero-medallion {
+  margin: 0;
+  padding: 30px 22px;
+  flex-shrink: 0;
+}
+/* Slightly smaller medallion in this context so the H1 still leads */
+.service-hero--glam .glam-medallion {
+  width: 280px;
+  height: 280px;
+}
+.service-hero--glam .service-hero-text h1 { margin-top: 6px; }
+
+@media (max-width: 880px) {
+  .service-hero--glam .service-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    text-align: center;
+  }
+  .service-hero--glam .service-hero-medallion {
+    margin: 0 auto;
+    padding: 26px 14px 14px;
+  }
+  .service-hero--glam .glam-medallion {
+    width: 240px;
+    height: 240px;
+  }
+  .service-hero--glam .service-hero-text { text-align: left; }
+  .service-hero--glam .service-hero-text .hero-actions { justify-content: flex-start; }
+}
+@media (max-width: 480px) {
+  .service-hero--glam .glam-medallion {
+    width: 210px;
+    height: 210px;
+  }
+}
+
 /* =========================
    Detail cards
    ========================= */

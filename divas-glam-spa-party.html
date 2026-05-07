@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=22" />
+  <link rel="stylesheet" href="css/style.css?v=23" />
   <link rel="icon" href="images/logo.jpeg" />
 </head>
 <body>
@@ -33,18 +33,59 @@
   </div>
 </header>
 
-<section class="service-hero">
+<section class="service-hero service-hero--glam">
   <div class="container">
-    <span class="service-hero-eyebrow">most loved ♥</span>
-    <h1>
-      <span class="c-pink">Divas</span> <span class="c-purple">Glam</span><br />
-      <span class="c-teal">Spa</span> <span class="c-yellow">Party</span>
-    </h1>
-    <p class="hero-lead service-hero-lead">Our most popular party experience — full of sparkle, self-care, glam activities, music, games and unforgettable memories.</p>
-    <div class="hero-actions">
-      <a href="contact.html" class="btn btn-primary">Contact for Pricing</a>
-      <a href="gallery.html" class="btn btn-secondary">View Gallery</a>
+    <div class="service-hero-grid">
+      <div class="service-hero-medallion divas-glam-medallion-wrap">
+        <span class="glam-crown" aria-hidden="true">
+          <svg viewBox="0 0 64 36" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="crownGoldS" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#FFEFC4"/>
+                <stop offset="55%" stop-color="#F1C25C"/>
+                <stop offset="100%" stop-color="#B8862A"/>
+              </linearGradient>
+            </defs>
+            <path d="M5 30 L5 12 L19 22 L32 4 L45 22 L59 12 L59 30 Z"
+                  fill="url(#crownGoldS)" stroke="#7E5A14" stroke-width="1.1" stroke-linejoin="round"/>
+            <circle cx="5"  cy="12" r="2.2" fill="#FFEFC4" stroke="#7E5A14" stroke-width="0.7"/>
+            <circle cx="32" cy="4"  r="2.6" fill="#FFEFC4" stroke="#7E5A14" stroke-width="0.7"/>
+            <circle cx="59" cy="12" r="2.2" fill="#FFEFC4" stroke="#7E5A14" stroke-width="0.7"/>
+          </svg>
+        </span>
+
+        <div class="glam-medallion">
+          <span class="glam-medallion__halo" aria-hidden="true"></span>
+          <span class="glam-medallion__rotor" aria-hidden="true"></span>
+          <span class="glam-medallion__inner">
+            <img src="images/divas-glam-logo.jpg?v=1"
+                 alt="Divas Glam — sparkle, glam and self-care for kids"
+                 class="glam-medallion__img"
+                 width="340" height="340" />
+            <span class="glam-medallion__shine" aria-hidden="true"></span>
+          </span>
+        </div>
+
+        <span class="sparkle gold s1" aria-hidden="true"></span>
+        <span class="sparkle white s2" aria-hidden="true"></span>
+        <span class="sparkle gold s3" aria-hidden="true"></span>
+        <span class="sparkle white s4" aria-hidden="true"></span>
+      </div>
+
+      <div class="service-hero-text">
+        <span class="service-hero-eyebrow">most loved ♥</span>
+        <h1>
+          <span class="c-pink">Divas</span> <span class="c-purple">Glam</span><br />
+          <span class="c-teal">Spa</span> <span class="c-yellow">Party</span>
+        </h1>
+        <p class="hero-lead service-hero-lead">Our most popular party experience — full of sparkle, self-care, glam activities, music, games and unforgettable memories.</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">Contact for Pricing</a>
+          <a href="gallery.html" class="btn btn-secondary">View Gallery</a>
+        </div>
+      </div>
     </div>
+
     <div class="service-hero-image">
       <img src="images/divas-glam-setup.jpg" alt="Divas Glam Spa Party setup with teepee and SPA PARTY backdrop" />
     </div>
@@ -320,7 +361,7 @@
   </span>
 </a>
 
-<script src="js/main.js?v=22"></script>
+<script src="js/main.js?v=23"></script>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
