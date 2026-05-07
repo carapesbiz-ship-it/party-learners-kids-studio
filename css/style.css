@@ -2697,27 +2697,25 @@ h2.divas-glam-title {
 
 .themed-section .container { position: relative; z-index: 1; }
 
+/* Themed grid — DESKTOP: 2-col with text-side and image collage side
+   MOBILE: stacked, with images split before/after the text wall */
 .themed-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 520px);
-  gap: 64px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  grid-template-areas:
+    "heading      top-mood"
+    "text         bottom-mood"
+    "cta          bottom-mood";
+  gap: 28px 56px;
+  align-items: start;
 }
-.theme-showcase-right {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.theme-moodboard-caption {
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 600;
-  text-align: center;
-  color: var(--ink-soft);
-  margin: 0 0 14px;
-  letter-spacing: 0.02em;
-}
-.themed-content .eyebrow {
+.themed-heading        { grid-area: heading; }
+.themed-text           { grid-area: text; }
+.themed-cta            { grid-area: cta; align-self: start; }
+.theme-moodboard--top  { grid-area: top-mood; align-self: start; }
+.theme-moodboard--bottom { grid-area: bottom-mood; align-self: start; }
+
+.themed-heading .eyebrow {
   display: inline-block;
   font-family: var(--font-script);
   font-weight: 700;
@@ -2726,28 +2724,42 @@ h2.divas-glam-title {
   transform: rotate(-2deg);
   margin-bottom: 6px;
 }
-.themed-content h2 {
+.themed-heading h2 {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(2rem, 4vw, 2.6rem);
   color: var(--purple-deep);
   line-height: 1.1;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 }
-.themed-content .lead {
-  font-size: 1.05rem;
-  line-height: 1.65;
+.themed-intro {
+  font-size: 1rem;
+  line-height: 1.55;
   color: var(--ink-soft);
-  margin-bottom: 24px;
+  margin: 0;
+  max-width: 48ch;
+  font-weight: 600;
+}
+.themed-text .lead {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0 0 18px;
   max-width: 52ch;
 }
-.themed-content .ask-line {
+.themed-text .ask-line {
   font-family: var(--font-script);
   font-weight: 700;
   font-size: 1.3rem;
   color: var(--purple-deep);
-  margin-top: 18px;
+  margin-top: 14px;
   display: inline-block;
+}
+.themed-disclaimer {
+  font-size: 0.82rem;
+  font-weight: 600;
+  max-width: 520px;
+  margin-top: 14px;
 }
 
 /* Sparkles in themed section — only 3, subtle */
@@ -2770,14 +2782,26 @@ h2.divas-glam-title {
   40%, 60% { opacity: .85; transform: scale(1) rotate(180deg); }
 }
 
-/* Theme moodboard — 2x2 grid of themed mood cards on the right */
+/* Theme moodboard — split into top (2 cards) + bottom (3 cards) */
 .theme-moodboard {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 14px;
   position: relative;
-  animation: moodboardFloat 6s ease-in-out infinite alternate;
 }
+.theme-moodboard--top {
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 16px;
+}
+.theme-moodboard--bottom {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.theme-moodboard--top .theme-card,
+.theme-moodboard--bottom .theme-card { aspect-ratio: 1 / 1.15; }
+/* Feature card — slightly bigger / wider */
+.theme-card--feature { grid-column: span 2; aspect-ratio: 16 / 10 !important; }
+.theme-card--feature .name { font-size: 2rem; }
+/* Hide the float — the cards already lift on hover */
+@keyframes moodboardFloat { 0% { transform: translateY(0); } 100% { transform: translateY(0); } }
 @keyframes moodboardFloat {
   0% { transform: translateY(0); }
   100% { transform: translateY(-6px); }
@@ -2873,14 +2897,58 @@ h2.divas-glam-title {
 .themed-section .chip.tint-demon:hover       { background: #2D1B47; border-color: #6B3FA0; color: #FFD158; }
 .themed-section .chip.tint-custom:hover      { background: #DFF7F2; border-color: #98DBCB; color: var(--teal-deep); }
 
+/* MOBILE / TABLET — stacked: heading → top images → text → bottom images → CTA */
 @media (max-width: 900px) {
   .themed-section { padding: 72px 0; }
-  .themed-grid { grid-template-columns: 1fr; gap: 36px; }
-  .theme-showcase-right { max-width: 520px; margin: 0 auto; }
-  .theme-moodboard { animation: none; }
-  .themed-section .chip-grid { justify-content: center; }
-  .themed-content { text-align: center; }
-  .themed-content .lead { margin-left: auto; margin-right: auto; }
+  .themed-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "heading"
+      "top-mood"
+      "text"
+      "bottom-mood"
+      "cta";
+    gap: 24px;
+  }
+  .themed-heading        { text-align: center; max-width: 560px; margin: 0 auto; }
+  .themed-text           { text-align: center; max-width: 560px; margin: 0 auto; }
+  .themed-text .lead     { margin-left: auto; margin-right: auto; }
+  .themed-text .chip-grid { justify-content: center; }
+  .themed-disclaimer     { margin-left: auto; margin-right: auto; }
+  .themed-cta            { text-align: center; }
+  .themed-intro          { margin-left: auto; margin-right: auto; }
+
+  /* Top moodboard on mobile: 1 large feature + 1 smaller below it */
+  .theme-moodboard--top {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto 0;
+    gap: 12px;
+  }
+  .theme-moodboard--top .theme-card--feature {
+    grid-column: 1 / -1 !important;
+    aspect-ratio: 16 / 9 !important;
+    width: 100%;
+  }
+  .theme-moodboard--top .theme-card:nth-child(2) {
+    aspect-ratio: 4 / 3 !important;
+    width: 70%;
+    justify-self: center;
+  }
+
+  /* Bottom moodboard on mobile: 1 wide on top + 2 below */
+  .theme-moodboard--bottom {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    gap: 10px;
+  }
+  .theme-moodboard--bottom .theme-card:first-child {
+    grid-column: 1 / -1 !important;
+    aspect-ratio: 16 / 9 !important;
+  }
 }
 @media (max-width: 600px) {
   .theme-card { padding: 14px; }

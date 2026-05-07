@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=32" />
+  <link rel="stylesheet" href="css/style.css?v=33" />
   <link rel="icon" href="images/logo.jpeg" />
 </head>
 <body>
@@ -321,7 +321,7 @@
   </div>
 </section>
 
-<!-- ============== MAKE IT THEMED YOUR WAY — inspiration showcase ============== -->
+<!-- ============== MAKE IT THEMED YOUR WAY — real-photo inspiration showcase ============== -->
 <section class="section themed-section">
   <span class="theme-sparkle t1" aria-hidden="true"></span>
   <span class="theme-sparkle t2" aria-hidden="true"></span>
@@ -329,11 +329,35 @@
 
   <div class="container">
     <div class="themed-grid">
-      <!-- LEFT: content + chips -->
-      <div class="themed-content">
+
+      <!-- HEADING -->
+      <header class="themed-heading">
         <span class="eyebrow">step two ✿</span>
         <h2>Make It Themed Your Way</h2>
-        <p class="lead">Every party experience can be styled around your child's favorite colors, characters, trends or celebration style. From Barbie-inspired and Frozen-inspired to Capybara Fun, Pink Bow and more, we help bring each theme to life in a way that feels magical and memorable.</p>
+        <p class="themed-intro">Customize any party around your child's favorite character, color story or trend. These are real theme examples — not separate packages.</p>
+      </header>
+
+      <!-- TOP MOODBOARD — 1 feature + 1 supporting (mobile shows these BEFORE long text) -->
+      <div class="theme-moodboard theme-moodboard--top" aria-label="Featured theme examples">
+        <div class="theme-card theme-card--feature is-demon">
+          <img src="images/theme-demon-hunters.jpg" alt="Demon Hunters themed Divas Glam Spa Party setup with K-Pop backdrop, robes rack and spa trays" loading="lazy" decoding="async" />
+          <span class="deco" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6.4 6.9.6-5.3 4.6 1.7 6.7L12 16.9 6.1 20.3l1.7-6.7-5.3-4.6 6.9-.6L12 2z"/></svg>
+          </span>
+          <span class="name">Demon<br/>Hunters</span>
+        </div>
+        <div class="theme-card is-anglestitch">
+          <img src="images/theme-angel-stitch.jpg" alt="Angel and Stitch themed party setup outdoors with pink teepee and spa trays" loading="lazy" decoding="async" />
+          <span class="deco" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4-7-11a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 7-7 11-7 11z"/></svg>
+          </span>
+          <span class="name">Angel &amp;<br/>Stitch</span>
+        </div>
+      </div>
+
+      <!-- TEXT + CHIPS -->
+      <div class="themed-text">
+        <p class="lead">From Demon Hunters and Angel &amp; Stitch to Frozen, Labubu, Capibara and beyond — we'll style your party so it feels just right for the birthday star.</p>
 
         <div class="chip-grid">
           <span class="chip tint-barbie"><span class="dot pink"></span> Barbie-inspired</span>
@@ -352,47 +376,39 @@
 
         <span class="ask-line">Don't see your idea here? Ask us — we love custom themes ♥</span>
 
-        <p class="muted" style="font-size:.82rem;max-width:520px;font-weight:600;margin-top:18px">Themes labeled "inspired" reflect a creative aesthetic and are not affiliated with or endorsed by any character or brand owners.</p>
-
-        <div style="margin-top:24px">
-          <a href="contact.html" class="btn btn-primary">Ask About a Theme →</a>
-        </div>
+        <p class="muted themed-disclaimer">Themes labeled "inspired" reflect a creative aesthetic and are not affiliated with or endorsed by any character or brand owners.</p>
       </div>
 
-      <!-- RIGHT: caption + theme moodboard wrapped in a single grid column -->
-      <div class="theme-showcase-right">
-        <p class="theme-moodboard-caption">Popular theme examples — ask us about more custom ideas.</p>
-        <div class="theme-moodboard" aria-label="Theme inspiration moodboard — real themed party setups">
-        <div class="theme-card barbie">
-          <img src="images/theme-barbie-setup.jpg" alt="Barbie-inspired pink party setup with balloon arch and silhouette banner" />
-          <span class="deco" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4-7-11a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 7-7 11-7 11z"/></svg>
-          </span>
-          <span class="name">Barbie<br/>inspired</span>
-        </div>
-        <div class="theme-card frozen">
-          <img src="images/theme-frozen-setup.jpg" alt="Frozen-inspired purple and blue party setup with snowflakes" />
+      <!-- BOTTOM MOODBOARD — remaining 3 themes -->
+      <div class="theme-moodboard theme-moodboard--bottom" aria-label="More theme examples">
+        <div class="theme-card theme-card--wide is-frozen">
+          <img src="images/theme-frozen.jpg" alt="Frozen themed party setup with Happy Birthday backdrop, white teepee and paint easels" loading="lazy" decoding="async" />
           <span class="deco" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg>
           </span>
-          <span class="name">Frozen<br/>inspired</span>
+          <span class="name">Frozen</span>
         </div>
-        <div class="theme-card capybara">
-          <img src="images/theme-capybara-setup.jpg" alt="Capybara fun party setup with peach balloons and capybara backdrop" />
+        <div class="theme-card is-labubu">
+          <img src="images/theme-labubu.jpg" alt="Labubu themed party setup with pink bunny backdrop and treat-filled table" loading="lazy" decoding="async" />
           <span class="deco" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6.4 6.9.6-5.3 4.6 1.7 6.7L12 16.9 6.1 20.3l1.7-6.7-5.3-4.6 6.9-.6L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C9 2 7 4 7 7v3c-2 1-3 3-3 5 0 4 4 7 8 7s8-3 8-7c0-2-1-4-3-5V7c0-3-2-5-5-5z"/></svg>
           </span>
-          <span class="name">Capybara<br/>fun</span>
+          <span class="name">Labubu</span>
         </div>
-        <div class="theme-card pink-bow">
-          <img src="images/theme-pinkbow-setup.jpg" alt="Pink Bow party setup with bow garland and elegant cake" />
+        <div class="theme-card is-capibara">
+          <img src="images/theme-capibara.jpg" alt="Capibara themed party setup with bubble tea backdrop, pink teepee and spa trays" loading="lazy" decoding="async" />
           <span class="deco" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c0-3 3-5 6-5s3 2 3 5-0 5-3 5-6-2-6-5z"/><path d="M21 12c0-3-3-5-6-5s-3 2-3 5 0 5 3 5 6-2 6-5z"/><circle cx="12" cy="12" r="2.2" fill="currentColor"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1.2" fill="#fff"/><circle cx="15" cy="10" r="1.2" fill="#fff"/></svg>
           </span>
-          <span class="name">Pink<br/>bow</span>
+          <span class="name">Capibara</span>
         </div>
-        </div><!-- /.theme-moodboard -->
-      </div><!-- /.theme-showcase-right -->
+      </div>
+
+      <!-- CTA -->
+      <div class="themed-cta">
+        <a href="contact.html" class="btn btn-primary">Ask About a Theme →</a>
+      </div>
+
     </div>
   </div>
 </section>
