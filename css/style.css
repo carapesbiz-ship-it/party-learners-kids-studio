@@ -235,50 +235,71 @@ img, video, svg { max-width: 100%; }
   max-width: 280px;
 }
 
-/* Tablet & mobile — CENTERED logo, hamburger ABSOLUTE right */
+/* Tablet & mobile — clean two-column header: logo LEFT, hamburger RIGHT.
+   Boutique feel: stable logo size, balanced padding, no shrinking on scroll. */
 @media (max-width: 980px) {
   .nav-wrap {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 14px 0;
-    gap: 0;
+    padding: 12px 0;
+    gap: 12px;
     position: relative;
+    min-height: 88px;
   }
   .brand {
     display: flex;
+    align-items: center;
+    grid-column: auto;
+    grid-row: auto;
     justify-self: initial;
-    margin: 0 auto;
+    margin: 0;
+    flex: 0 1 auto;
+    min-width: 0;
   }
   .brand-logo {
-    height: 110px;
-    max-width: 380px;
+    height: 64px;
+    max-height: 64px;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(75, 42, 120, .12));
   }
-  .nav-wrap > nav { justify-self: initial; width: auto; }
-  .nav-wrap .nav-cta {
+  .nav-wrap > nav {
+    grid-column: auto;
+    grid-row: auto;
     justify-self: initial;
+    width: auto;
+  }
+  .nav-wrap .nav-cta {
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: initial;
+    align-self: center;
+    position: static;
+    transform: none;
     display: flex;
     align-items: center;
     gap: 8px;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    flex-shrink: 0;
   }
-  /* Hide the "Book a Party" CTA from mobile header — it lives inside the menu */
+  /* Hide the standalone "Book a Party" button from mobile header — lives inside the menu */
   .nav-wrap .nav-cta .btn-primary { display: none; }
-  .site-header.compact .brand-logo { height: 80px; max-width: 280px; }
-  .site-header.compact .nav-wrap { padding: 10px 0; }
+  /* Stable logo on scroll — no shrinking thumbnail behavior on mobile */
+  .site-header.compact .nav-wrap { padding: 12px 0; min-height: 88px; gap: 12px; }
+  .site-header.compact .brand-logo { height: 64px; max-height: 64px; max-width: 100%; }
 }
 @media (max-width: 600px) {
-  .brand-logo { height: 96px; max-width: 320px; }
-  .site-header.compact .brand-logo { height: 70px; max-width: 240px; }
-  .nav-wrap { padding: 12px 0; }
+  .nav-wrap { min-height: 80px; padding: 10px 0; }
+  .brand-logo { height: 60px; max-height: 60px; }
+  .site-header.compact .nav-wrap { min-height: 80px; padding: 10px 0; }
+  .site-header.compact .brand-logo { height: 60px; max-height: 60px; }
 }
 @media (max-width: 400px) {
-  .brand-logo { height: 80px; max-width: 270px; }
-  .site-header.compact .brand-logo { height: 60px; max-width: 210px; }
+  .nav-wrap { min-height: 76px; padding: 10px 0; }
+  .brand-logo { height: 54px; max-height: 54px; }
+  .site-header.compact .brand-logo { height: 54px; max-height: 54px; }
 }
 .brand-mark, .brand-name { display: none; }
 
