@@ -1339,9 +1339,20 @@ h2.divas-glam-wordmark {
   z-index: 2;
 }
 
+/* ===== Medallion sizing inside the new blush section (smaller than home-only) ===== */
+.divas-glam-feature .divas-glam-medallion-wrap {
+  margin: 12px 0 22px;
+  padding: 30px 22px 26px;
+}
+.divas-glam-feature .glam-medallion {
+  width: 260px;
+  height: 260px;
+}
+
 /* ===== Mobile reductions ===== */
 @media (max-width: 880px) {
-  .divas-glam-wordmark-wrap { margin: 10px 0 18px; padding: 14px 10px 18px; }
+  .divas-glam-feature .divas-glam-medallion-wrap { padding: 26px 14px 22px; margin: 6px auto 18px; }
+  .divas-glam-feature .glam-medallion { width: 220px; height: 220px; }
   .divas-glam-feature ul.divas-glam-highlights { grid-template-columns: 1fr 1fr; }
   .divas-glam-visual img { max-height: 520px; }
   .dg-bg-sparkle.dg5,
@@ -1349,6 +1360,7 @@ h2.divas-glam-wordmark {
   .dg-photo-label { font-size: 1.05rem; padding: 8px 16px; bottom: -10px; }
 }
 @media (max-width: 480px) {
+  .divas-glam-feature .glam-medallion { width: 200px; height: 200px; }
   .divas-glam-feature ul.divas-glam-highlights { grid-template-columns: 1fr; }
   .divas-glam-visual img { max-height: 460px; }
   .dg-bg-sparkle.dg3 { display: none; }
@@ -1357,9 +1369,6 @@ h2.divas-glam-wordmark {
 /* ===== Reduced motion ===== */
 @media (prefers-reduced-motion: reduce) {
   .dg-bg-sparkle,
-  .divas-glam-wordmark-wrap::before,
-  .divas-glam-wordmark .dg-line,
-  .dg-shimmer,
   .dg-photo-glow {
     animation: none;
   }
