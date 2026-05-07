@@ -2421,16 +2421,18 @@ h2.divas-glam-title {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(75, 42, 120, .18);
 }
-.themed-section .chip.tint-barbie:hover    { background: #FFE0EC; border-color: #FFB7D0; color: var(--pink-deep); }
-.themed-section .chip.tint-frozen:hover    { background: #E5EDFF; border-color: #B4C7E7; color: #3F5F8F; }
-.themed-section .chip.tint-capybara:hover  { background: #FFEED8; border-color: #E8B47A; color: #8C5B26; }
-.themed-section .chip.tint-harry:hover     { background: #ECE0F8; border-color: #C8A3D9; color: var(--purple-deep); }
-.themed-section .chip.tint-pinkbow:hover   { background: #FFE7EE; border-color: #FFA6C0; color: var(--pink-deep); }
-.themed-section .chip.tint-hello:hover     { background: #FFF0F4; border-color: #FFC7D8; color: var(--pink-deep); }
-.themed-section .chip.tint-stitch:hover    { background: #DDF2FA; border-color: #9CD2E8; color: #246684; }
-.themed-section .chip.tint-coquette:hover  { background: #FBE6F0; border-color: #F0BAD4; color: var(--pink-deep); }
-.themed-section .chip.tint-angel:hover     { background: #FFF6E8; border-color: #FFDFA0; color: #8C5B26; }
-.themed-section .chip.tint-custom:hover    { background: #DFF7F2; border-color: #98DBCB; color: var(--teal-deep); }
+.themed-section .chip.tint-barbie:hover      { background: #FFE0EC; border-color: #FFB7D0; color: var(--pink-deep); }
+.themed-section .chip.tint-frozen:hover      { background: #E5EDFF; border-color: #B4C7E7; color: #3F5F8F; }
+.themed-section .chip.tint-princess:hover    { background: #FFF4D6; border-color: #F0D27A; color: #8C5B26; }
+.themed-section .chip.tint-hello:hover       { background: #FFF0F4; border-color: #FFC7D8; color: var(--pink-deep); }
+.themed-section .chip.tint-pinkbow:hover     { background: #FFE7EE; border-color: #FFA6C0; color: var(--pink-deep); }
+.themed-section .chip.tint-coquette:hover    { background: #FBE6F0; border-color: #F0BAD4; color: var(--pink-deep); }
+.themed-section .chip.tint-anglestitch:hover { background: #DDF2FA; border-color: #9CD2E8; color: #246684; }
+.themed-section .chip.tint-capybara:hover    { background: #FFEED8; border-color: #E8B47A; color: #8C5B26; }
+.themed-section .chip.tint-axolotl:hover     { background: #FFE4EC; border-color: #FFB6C8; color: #C44A86; }
+.themed-section .chip.tint-harry:hover       { background: #ECE0F8; border-color: #C8A3D9; color: var(--purple-deep); }
+.themed-section .chip.tint-demon:hover       { background: #2D1B47; border-color: #6B3FA0; color: #FFD158; }
+.themed-section .chip.tint-custom:hover      { background: #DFF7F2; border-color: #98DBCB; color: var(--teal-deep); }
 
 @media (max-width: 900px) {
   .themed-section { padding: 72px 0; }
