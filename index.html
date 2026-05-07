@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=15" />
+  <link rel="stylesheet" href="css/style.css?v=16" />
   <link rel="icon" href="images/logo.jpeg" />
 </head>
 <body>
@@ -276,9 +276,10 @@
         </div>
       </div>
 
-      <!-- RIGHT: theme moodboard with REAL party setup photos -->
-      <p class="muted" style="font-size:.78rem;font-weight:600;margin:0 0 12px;text-align:center;color:var(--ink-soft)">Popular theme examples — ask us about more custom ideas.</p>
-      <div class="theme-moodboard" aria-label="Theme inspiration moodboard — real themed party setups">
+      <!-- RIGHT: caption + theme moodboard wrapped in a single grid column -->
+      <div class="theme-showcase-right">
+        <p class="theme-moodboard-caption">Popular theme examples — ask us about more custom ideas.</p>
+        <div class="theme-moodboard" aria-label="Theme inspiration moodboard — real themed party setups">
         <div class="theme-card barbie">
           <img src="images/theme-barbie-setup.jpg" alt="Barbie-inspired pink party setup with balloon arch and silhouette banner" />
           <span class="deco" aria-hidden="true">
@@ -307,7 +308,8 @@
           </span>
           <span class="name">Pink<br/>bow</span>
         </div>
-      </div>
+        </div><!-- /.theme-moodboard -->
+      </div><!-- /.theme-showcase-right -->
     </div>
   </div>
 </section>
@@ -558,7 +560,7 @@
   </span>
 </a>
 
-<script src="js/main.js?v=15"></script>
+<script src="js/main.js?v=16"></script>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
