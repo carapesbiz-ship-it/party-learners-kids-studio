@@ -2557,3 +2557,257 @@ h2.divas-glam-title {
 @media (max-width: 720px) {
   .section { padding: 64px 0; }
 }
+
+/* =========================
+   Premium polish pass — micro-interactions, lightbox,
+   scroll reveals, animated gradients, WhatsApp pulse
+   ========================= */
+
+/* ----- Button micro-interactions ----- */
+.btn { transform: translateZ(0); will-change: transform; }
+.btn-primary:hover {
+  box-shadow:
+    0 12px 30px rgba(232, 62, 140, 0.45),
+    0 0 0 4px rgba(255, 200, 61, 0.18);
+}
+.btn-primary:active,
+.btn-secondary:active,
+.btn-glam:active,
+.btn-ghost:active {
+  transform: translateY(0);
+  filter: brightness(.96);
+  transition-duration: 80ms;
+}
+.btn-secondary {
+  position: relative;
+  overflow: hidden;
+}
+.btn-secondary::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 0;
+  background: var(--purple-deep);
+  z-index: -1;
+  transition: height .25s ease;
+}
+.btn-secondary:hover::after { height: 100%; }
+.btn-glam:hover {
+  box-shadow:
+    0 16px 40px rgba(192, 76, 130, .55),
+    0 0 0 4px rgba(255, 200, 61, 0.18);
+}
+
+/* ----- Feature card image zoom + deeper hover shadow ----- */
+.feature-card-image img {
+  transition: transform .45s cubic-bezier(.2,.7,.3,1);
+}
+.feature-card:hover {
+  box-shadow:
+    0 30px 60px -28px rgba(75, 42, 120, .45),
+    0 12px 24px -16px rgba(75, 42, 120, .25);
+}
+.feature-card:hover .feature-card-image img {
+  transform: scale(1.05);
+}
+
+/* ----- Elegant text-link underline animation (content area only) ----- */
+.section a:not(.btn):not(.menu-cta):not(.gallery-filter):not(.brand):not(.gallery-item):not(.theme-card):not(.feature-card-link) {
+  position: relative;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1.5px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size .25s ease;
+}
+.section a:not(.btn):not(.menu-cta):not(.gallery-filter):not(.brand):not(.gallery-item):not(.theme-card):not(.feature-card-link):hover {
+  background-size: 100% 1.5px;
+}
+
+/* ----- Theme chip glow (extra polish on top of existing tint hovers) ----- */
+.themed-section .chip:hover {
+  filter: drop-shadow(0 6px 14px rgba(232, 62, 140, .18));
+}
+
+/* ----- Gallery — overlay + view icon + lazy zoom ----- */
+.gallery-item {
+  cursor: zoom-in;
+}
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(75, 42, 120, 0) 50%, rgba(75, 42, 120, .35) 100%);
+  opacity: 0;
+  transition: opacity .25s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+.gallery-item .view-icon {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(.85);
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .92);
+  color: var(--purple-deep);
+  display: grid; place-items: center;
+  opacity: 0;
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 10px 22px rgba(75, 42, 120, .25);
+}
+.gallery-item .view-icon svg {
+  width: 22px; height: 22px;
+  display: block;
+}
+.gallery-item:hover::before { opacity: 1; }
+.gallery-item:hover .view-icon {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* ----- Lightbox ----- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 10, 40, .92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity .25s ease;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.lightbox.is-open {
+  display: flex;
+  opacity: 1;
+}
+.lightbox__img {
+  max-width: min(1200px, 96vw);
+  max-height: 88vh;
+  width: auto; height: auto;
+  border-radius: var(--r-md);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .6);
+  object-fit: contain;
+  background: #1a0e2e;
+  transform: scale(.96);
+  transition: transform .25s cubic-bezier(.2,.7,.3,1);
+}
+.lightbox.is-open .lightbox__img { transform: scale(1); }
+.lightbox__caption {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, .9);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-align: center;
+  max-width: 80vw;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, .35);
+  border-radius: var(--r-pill);
+  pointer-events: none;
+}
+.lightbox__btn {
+  position: absolute;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .14);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .25);
+  display: grid; place-items: center;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
+  z-index: 1;
+}
+.lightbox__btn:hover { background: rgba(255, 255, 255, .26); transform: scale(1.06); }
+.lightbox__btn svg { width: 22px; height: 22px; }
+.lightbox__close { top: 18px; right: 18px; }
+.lightbox__prev { left: 18px; top: 50%; transform: translateY(-50%); }
+.lightbox__next { right: 18px; top: 50%; transform: translateY(-50%); }
+.lightbox__prev:hover, .lightbox__next:hover { transform: translateY(-50%) scale(1.06); }
+@media (max-width: 600px) {
+  .lightbox__btn { width: 38px; height: 38px; }
+  .lightbox__prev { left: 8px; }
+  .lightbox__next { right: 8px; }
+  .lightbox__close { top: 12px; right: 12px; }
+}
+body.lightbox-open { overflow: hidden; }
+
+/* ----- Scroll reveals ----- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s cubic-bezier(.2,.7,.3,1), transform .6s cubic-bezier(.2,.7,.3,1);
+  will-change: opacity, transform;
+}
+[data-reveal="image"] {
+  transform: translateY(0) scale(.96);
+  transition-duration: .65s;
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+[data-reveal][data-delay="1"].is-visible { transition-delay: 60ms; }
+[data-reveal][data-delay="2"].is-visible { transition-delay: 120ms; }
+[data-reveal][data-delay="3"].is-visible { transition-delay: 180ms; }
+[data-reveal][data-delay="4"].is-visible { transition-delay: 240ms; }
+[data-reveal][data-delay="5"].is-visible { transition-delay: 300ms; }
+
+/* ----- Subtle animated gradients (Divas Glam + final CTA only) ----- */
+.feature-block.divas-glam-feature {
+  background-size: 200% 200%;
+  animation: glamPanShift 28s ease-in-out infinite alternate;
+}
+.cta-band {
+  background-size: 200% 200%;
+  animation: ctaPanShift 24s ease-in-out infinite alternate;
+}
+@keyframes glamPanShift {
+  0%   { background-position: 0% 0%, 100% 100%, 50% 50%, 0% 0%; }
+  100% { background-position: 100% 100%, 0% 0%, 50% 50%, 100% 100%; }
+}
+@keyframes ctaPanShift {
+  0%   { background-position: 0% 100%, 100% 0%, 0% 0%; }
+  100% { background-position: 100% 0%, 0% 100%, 100% 100%; }
+}
+
+/* ----- WhatsApp icon idle pulse ----- */
+.whatsapp-float__icon {
+  animation: waPulse 4s ease-in-out infinite;
+}
+@keyframes waPulse {
+  0%, 70%, 100% {
+    box-shadow: 0 6px 16px rgba(37, 211, 102, .35), 0 0 0 0 rgba(37, 211, 102, .45);
+  }
+  85% {
+    box-shadow: 0 6px 16px rgba(37, 211, 102, .35), 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+}
+.whatsapp-float:hover .whatsapp-float__icon,
+.whatsapp-float:focus-visible .whatsapp-float__icon {
+  animation: none;
+}
+
+/* ----- Reduced motion guard for everything in this polish pass ----- */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .feature-block.divas-glam-feature,
+  .cta-band,
+  .whatsapp-float__icon { animation: none !important; }
+  .lightbox, .lightbox__img { transition: none !important; }
+  .feature-card-image img,
+  .gallery-item img { transition: none; }
+}
