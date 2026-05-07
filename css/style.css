@@ -172,9 +172,9 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   transition: opacity .3s ease, transform .3s ease;
 }
 .brand-logo {
-  height: 180px;
+  height: 252px;
   width: auto;
-  max-width: 520px;
+  max-width: 730px;
   object-fit: contain;
   display: block;
   flex-shrink: 0;
@@ -200,8 +200,8 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   gap: 6px 24px;
 }
 .site-header.compact .brand-logo {
-  height: 52px;
-  max-width: 200px;
+  height: 72px;
+  max-width: 280px;
 }
 
 /* Tablet & mobile — keep centered logo on top, action row below */
@@ -227,12 +227,12 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
     align-items: center;
     gap: 8px;
   }
-  .brand-logo { height: 64px; max-width: 260px; }
-  .site-header.compact .brand-logo { height: 52px; max-width: 200px; }
+  .brand-logo { height: 90px; max-width: 360px; }
+  .site-header.compact .brand-logo { height: 72px; max-width: 280px; }
   .site-header.compact .nav-wrap { padding: 10px 0 8px; gap: 8px; }
 }
 @media (max-width: 600px) {
-  .brand-logo { height: 56px; max-width: 220px; }
+  .brand-logo { height: 80px; max-width: 310px; }
   .nav-wrap { padding: 12px 0 8px; gap: 10px; }
 }
 .brand-mark, .brand-name { display: none; }
