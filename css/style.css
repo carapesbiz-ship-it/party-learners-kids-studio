@@ -486,6 +486,105 @@ img, video, svg { max-width: 100%; }
   z-index: 1;
 }
 
+/* ============== HERO — collage variant (Home page) ============== */
+.hero--collage {
+  padding: 0;
+  background: #FFF8F0;
+}
+.hero--collage::before,
+.hero--collage::after { display: none; }
+
+/* Collage background image — full-bleed; positioned to favor the text-safe (white-confetti) area on desktop */
+.hero-collage-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero-collage-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Bias toward right side on desktop so the chef/paint/divas tiles stay visible while the white text-safe area sits on the left */
+  object-position: 70% 50%;
+  display: block;
+}
+
+/* Soft white→transparent gradient over the LEFT half on desktop, to ensure text contrast over the collage's white text-safe area
+   (very subtle; collage is already light there). */
+.hero-collage-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(255, 248, 240, .92) 0%,
+    rgba(255, 248, 240, .70) 30%,
+    rgba(255, 248, 240, .25) 50%,
+    rgba(255, 248, 240, 0) 65%
+  );
+  pointer-events: none;
+}
+
+/* Text container — overlays the collage on the left in desktop */
+.hero-collage-text {
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+  padding: 110px 24px 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+.hero-collage-text > * { max-width: 560px; }
+
+.hero--collage .hero-eyebrow { margin-bottom: 12px; }
+.hero--collage h1 { margin-bottom: 24px; }
+.hero--collage .hero-lead {
+  font-size: 1.12rem;
+  margin-bottom: 26px;
+  color: #3a2a4d;
+}
+.hero--collage .hero-lead strong { color: var(--purple-deep); font-weight: 700; }
+.hero--collage .hero-actions { margin-bottom: 22px; }
+
+/* Mobile / tablet — stack: collage on top, text below */
+@media (max-width: 980px) {
+  .hero--collage {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  .hero-collage-bg {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    aspect-ratio: 1672 / 941;
+    height: auto;
+    background: #FFF8F0;
+  }
+  .hero-collage-bg img { object-position: 50% 50%; }
+  /* On mobile, kill the left fade so the full collage is visible (text moves below) */
+  .hero-collage-bg::after { display: none; }
+  .hero-collage-text {
+    padding: 28px 20px 44px;
+    align-items: flex-start;
+  }
+  .hero-collage-text > * { max-width: 100%; }
+}
+@media (max-width: 600px) {
+  .hero--collage { padding: 0; }
+  .hero-collage-text { padding: 22px 18px 36px; }
+  .hero--collage h1 { font-size: clamp(2rem, 8.6vw, 2.6rem); margin-bottom: 16px; }
+  .hero--collage .hero-eyebrow { font-size: 1.25rem; margin-bottom: 6px; }
+  .hero--collage .hero-lead { font-size: .98rem; margin-bottom: 18px; }
+  .hero--collage .hero-actions { gap: 10px; margin-bottom: 18px; }
+  .hero--collage .hero-actions .btn { flex: 1 1 100%; min-width: 0; padding: 14px 20px; font-size: .82rem; }
+  .hero--collage .trust-pills { gap: 6px; }
+  .hero--collage .trust-pill { font-size: .7rem; padding: 6px 10px; }
+}
+
 /* Boutique handwritten eyebrow */
 .hero-eyebrow {
   display: inline-block;
