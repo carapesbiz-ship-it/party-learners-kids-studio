@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=39" />
+  <link rel="stylesheet" href="css/style.css?v=40" />
   <link rel="canonical" href="https://www.partylearners.ca/contact.html" />
   <link rel="icon" href="images/logo.jpeg" />
 </head>
@@ -52,13 +52,16 @@
     <div class="contact-grid">
 
       <!-- ============================================================
-           TODO: Replace REPLACE_WITH_ID with Jenn's real Formspree endpoint before launch.
+           ⚠️ TODO BEFORE LAUNCH: Replace Formspree action with the real Formspree form ID
+           As of this commit the form action is a placeholder — submissions
+           will NOT be delivered to Jenn until the action is updated.
            Steps:
-           1) Go to https://formspree.io and sign up free with the email
+           1) Go to https://formspree.io and sign up with the email
               where party inquiries should be sent.
            2) Create a new form, copy its ID (looks like "xpzqwlrk").
-           3) Replace REPLACE_WITH_ID below with that ID.
-           4) Verify _next URL points to your final live domain.
+           3) Replace REPLACE_WITH_ID in the action attribute below.
+           4) Submit a test inquiry from production to confirm delivery
+              and that the redirect to /thank-you.html works.
            ============================================================ -->
       <form class="contact-form" id="booking-form" method="POST" action="https://formspree.io/f/REPLACE_WITH_ID" novalidate>
         <input type="hidden" name="_subject" value="New Party Inquiry — Party Learners" />
@@ -99,8 +102,29 @@
             <input id="party-date" name="party-date" type="date" />
           </div>
           <div class="form-group">
+            <label for="start-time">Preferred start time</label>
+            <select id="start-time" name="start-time">
+              <option>Morning</option>
+              <option>Afternoon</option>
+              <option>Evening</option>
+              <option>Flexible</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
             <label for="location">Location / city</label>
             <input id="location" name="location" type="text" placeholder="e.g. Abbotsford, BC" />
+          </div>
+          <div class="form-group">
+            <label for="location-type">Location type</label>
+            <select id="location-type" name="location-type">
+              <option>Indoor at home</option>
+              <option>Indoor venue</option>
+              <option>Outdoor park / playground</option>
+              <option>Not sure yet</option>
+            </select>
           </div>
         </div>
 
@@ -157,10 +181,17 @@
           </div>
         </div>
 
+        <div class="form-helper" style="background:linear-gradient(135deg,rgba(232,62,140,.06),rgba(43,191,180,.06));border:1px solid rgba(75,42,120,.14);border-radius:14px;padding:18px 20px;margin:8px 0 20px">
+          <h4 style="margin:0 0 6px;font-family:var(--font-display);font-size:1.05rem;color:var(--purple-deep)">What happens next?</h4>
+          <p style="margin:0;font-size:.92rem;line-height:1.5;color:var(--ink-soft)">We'll review your details and reply within 24 hours with availability, package details, and next steps. No commitment — just a friendly conversation.</p>
+        </div>
+
         <div class="form-actions">
           <button type="submit" class="btn btn-primary">Send Request →</button>
           <p class="form-note form-feedback" aria-live="polite">We typically reply within 24 hours.</p>
         </div>
+
+        <p class="muted" style="margin-top:14px;font-size:.78rem;font-weight:600;text-align:center">🔒 Your details stay with Party Learners Kids Studio. We'll never share your information or send unsolicited messages.</p>
       </form>
 
       <aside class="contact-aside">
@@ -284,7 +315,7 @@
   </span>
 </a>
 
-<script src="js/main.js?v=37"></script>
+<script src="js/main.js?v=40"></script>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

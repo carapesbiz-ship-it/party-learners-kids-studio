@@ -67,7 +67,8 @@
   });
 })();
 
-// Contact form is wired to Netlify Forms — handled natively, no JS hook needed
+// Contact form is handled by Formspree via the form's action attribute — no JS hook needed.
+// See contact.html for the Formspree endpoint and _next redirect URL.
 
 // =========================
 // Premium polish — scroll reveals + gallery lightbox
