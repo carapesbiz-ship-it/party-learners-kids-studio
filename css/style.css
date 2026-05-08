@@ -203,9 +203,9 @@ img, video, svg { max-width: 100%; }
   transition: opacity .3s ease, transform .3s ease;
 }
 .brand-logo {
-  height: 252px;
+  height: 280px;
   width: auto;
-  max-width: 730px;
+  max-width: 800px;
   object-fit: contain;
   display: block;
   flex-shrink: 0;
@@ -231,8 +231,8 @@ img, video, svg { max-width: 100%; }
   gap: 6px 24px;
 }
 .site-header.compact .brand-logo {
-  height: 72px;
-  max-width: 280px;
+  height: 80px;
+  max-width: 300px;
 }
 
 /* Tablet & mobile — BIG centered logo, hamburger floats absolute right.
@@ -246,7 +246,7 @@ img, video, svg { max-width: 100%; }
     padding: 14px 0;
     gap: 0;
     position: relative;
-    min-height: 132px;
+    min-height: 144px;
   }
   .brand {
     display: flex;
@@ -260,8 +260,8 @@ img, video, svg { max-width: 100%; }
     max-width: calc(100% - 80px); /* leave room for hamburger on right */
   }
   .brand-logo {
-    height: 116px;
-    max-height: 116px;
+    height: 128px;
+    max-height: 128px;
     max-width: 100%;
     width: auto;
     object-fit: contain;
@@ -290,25 +290,25 @@ img, video, svg { max-width: 100%; }
   /* Hide the standalone "Book a Party" button from mobile header — lives inside the menu */
   .nav-wrap .nav-cta .btn-primary { display: none; }
   /* Stable logo on scroll — no shrinking thumbnail behavior on mobile */
-  .site-header.compact .nav-wrap { padding: 14px 0; min-height: 132px; gap: 0; }
-  .site-header.compact .brand-logo { height: 116px; max-height: 116px; max-width: 100%; }
+  .site-header.compact .nav-wrap { padding: 14px 0; min-height: 144px; gap: 0; }
+  .site-header.compact .brand-logo { height: 128px; max-height: 128px; max-width: 100%; }
 }
 @media (max-width: 600px) {
-  .nav-wrap { min-height: 116px; padding: 12px 0; }
-  .brand-logo { height: 100px; max-height: 100px; }
-  .site-header.compact .nav-wrap { min-height: 116px; padding: 12px 0; }
-  .site-header.compact .brand-logo { height: 100px; max-height: 100px; }
+  .nav-wrap { min-height: 124px; padding: 12px 0; }
+  .brand-logo { height: 110px; max-height: 110px; }
+  .site-header.compact .nav-wrap { min-height: 124px; padding: 12px 0; }
+  .site-header.compact .brand-logo { height: 110px; max-height: 110px; }
 }
 @media (max-width: 430px) {
-  .nav-wrap { min-height: 104px; padding: 10px 0; }
-  .brand-logo { height: 88px; max-height: 88px; }
-  .site-header.compact .nav-wrap { min-height: 104px; padding: 10px 0; }
-  .site-header.compact .brand-logo { height: 88px; max-height: 88px; }
+  .nav-wrap { min-height: 110px; padding: 10px 0; }
+  .brand-logo { height: 96px; max-height: 96px; }
+  .site-header.compact .nav-wrap { min-height: 110px; padding: 10px 0; }
+  .site-header.compact .brand-logo { height: 96px; max-height: 96px; }
 }
 @media (max-width: 360px) {
-  .nav-wrap { min-height: 92px; padding: 10px 0; }
-  .brand-logo { height: 76px; max-height: 76px; }
-  .site-header.compact .brand-logo { height: 76px; max-height: 76px; }
+  .nav-wrap { min-height: 96px; padding: 10px 0; }
+  .brand-logo { height: 82px; max-height: 82px; }
+  .site-header.compact .brand-logo { height: 82px; max-height: 82px; }
 }
 .brand-mark, .brand-name { display: none; }
 
@@ -3351,8 +3351,8 @@ h2.divas-glam-title {
 
 @media (max-width: 640px) {
   .whatsapp-float {
-    right: 16px;
-    bottom: 16px;
+    right: 14px;
+    bottom: max(20px, env(safe-area-inset-bottom));
     padding: 0;
     gap: 0;
     border-radius: 50%;
@@ -3362,8 +3362,21 @@ h2.divas-glam-title {
   }
   .whatsapp-float__text { display: none; }
   .whatsapp-float__icon {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
+  }
+  /* Prevent the floating button from overlapping CTAs / submit / footer
+     by giving the bottom of every page a little extra breathing room */
+  .site-footer { padding-bottom: 88px; }
+}
+@media (max-width: 420px) {
+  .whatsapp-float {
+    right: 12px;
+    bottom: max(18px, env(safe-area-inset-bottom));
+  }
+  .whatsapp-float__icon {
+    width: 52px;
+    height: 52px;
   }
 }
 
