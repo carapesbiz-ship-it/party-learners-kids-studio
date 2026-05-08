@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /thank-you.html
 
-# TODO: Update Sitemap URL with final domain when launched
-Sitemap: https://carapesbiz-ship-it.github.io/party-learners-kids-studio/sitemap.xml
+Sitemap: https://www.partylearners.ca/sitemap.xml

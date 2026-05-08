@@ -1,34 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: Update <loc> base URL with final domain when launched -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://carapesbiz-ship-it.github.io/party-learners-kids-studio/</loc>
+    <loc>https://www.partylearners.ca/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://carapesbiz-ship-it.github.io/party-learners-kids-studio/party-themes.html</loc>
+    <loc>https://www.partylearners.ca/party-themes.html</loc>
     <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.partylearners.ca/divas-glam-spa-party.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.partylearners.ca/paint-boho-party.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.partylearners.ca/chef-party.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.partylearners.ca/gallery.html</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://carapesbiz-ship-it.github.io/party-learners-kids-studio/divas-glam-spa-party.html</loc>
+    <loc>https://www.partylearners.ca/contact.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://carapesbiz-ship-it.github.io/party-learners-kids-studio/paint-boho-party.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://carapesbiz-ship-it.github.io/party-learners-kids-studio/gallery.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://carapesbiz-ship-it.github.io/party-learners-kids-studio/contact.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
 </urlset>
