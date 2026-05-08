@@ -487,14 +487,21 @@ img, video, svg { max-width: 100%; }
 }
 
 /* ============== HERO — collage variant (Home page) ============== */
+/* The text always overlays the collage's light/blank safe area (left-center on desktop, center on mobile).
+   Object-position keeps the safe area where the text sits, regardless of viewport. */
 .hero--collage {
+  position: relative;
   padding: 0;
   background: #FFF8F0;
+  min-height: 620px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 .hero--collage::before,
 .hero--collage::after { display: none; }
 
-/* Collage background image — full-bleed; positioned to favor the text-safe (white-confetti) area on desktop */
+/* Collage background — full-bleed, fills the hero */
 .hero-collage-bg {
   position: absolute;
   inset: 0;
@@ -505,13 +512,14 @@ img, video, svg { max-width: 100%; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Bias toward right side on desktop so the chef/paint/divas tiles stay visible while the white text-safe area sits on the left */
-  object-position: 70% 50%;
+  /* Desktop default: bias slightly right so the 3 experience tiles (chef, paint, divas) stay visible
+     while the white safe area sits on the left where the text overlays. */
+  object-position: 65% 50%;
   display: block;
 }
 
-/* Soft white→transparent gradient over the LEFT half on desktop, to ensure text contrast over the collage's white text-safe area
-   (very subtle; collage is already light there). */
+/* Subtle white→transparent gradient over the LEFT half ensures text contrast over the safe area.
+   Very light — does NOT darken the photos. */
 .hero-collage-bg::after {
   content: "";
   position: absolute;
@@ -519,70 +527,117 @@ img, video, svg { max-width: 100%; }
   background: linear-gradient(
     100deg,
     rgba(255, 248, 240, .92) 0%,
-    rgba(255, 248, 240, .70) 30%,
-    rgba(255, 248, 240, .25) 50%,
-    rgba(255, 248, 240, 0) 65%
+    rgba(255, 248, 240, .72) 28%,
+    rgba(255, 248, 240, .30) 48%,
+    rgba(255, 248, 240, 0) 64%
   );
   pointer-events: none;
 }
 
-/* Text container — overlays the collage on the left in desktop */
+/* Text container — overlays the collage on the left safe area */
 .hero-collage-text {
   position: relative;
   z-index: 2;
+  width: 100%;
   max-width: 1180px;
-  padding: 110px 24px 130px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0;
+  margin: 0 auto;
+  padding: 80px 24px 90px;
+  padding-left: max(24px, 6vw);
 }
-.hero-collage-text > * { max-width: 560px; }
+.hero-collage-text > * { max-width: 580px; }
 
 .hero--collage .hero-eyebrow { margin-bottom: 12px; }
-.hero--collage h1 { margin-bottom: 24px; }
-.hero--collage .hero-lead {
-  font-size: 1.12rem;
-  margin-bottom: 26px;
-  color: #3a2a4d;
+.hero--collage h1 {
+  margin-bottom: 22px;
+  font-size: clamp(2.4rem, 5.4vw, 4.4rem);
+  line-height: 1.04;
+  text-shadow: 0 2px 14px rgba(255, 248, 240, .55);
 }
-.hero--collage .hero-lead strong { color: var(--purple-deep); font-weight: 700; }
+.hero--collage .hero-lead {
+  font-size: 1.08rem;
+  margin-bottom: 26px;
+  color: #2d1c4a;
+  font-weight: 500;
+  text-shadow: 0 1px 10px rgba(255, 248, 240, .7);
+}
 .hero--collage .hero-actions { margin-bottom: 22px; }
 
-/* Mobile / tablet — stack: collage on top, text below */
+/* ====== Tablet (max 980px) — text still overlays, hero shorter ====== */
 @media (max-width: 980px) {
   .hero--collage {
-    display: flex;
-    flex-direction: column;
+    min-height: 560px;
     padding: 0;
+    align-items: center;
   }
-  .hero-collage-bg {
-    position: relative;
-    inset: auto;
-    width: 100%;
-    aspect-ratio: 1672 / 941;
-    height: auto;
-    background: #FFF8F0;
+  /* On tablet, keep the safe area centered horizontally */
+  .hero-collage-bg img { object-position: 55% 45%; }
+  /* Stronger left/center fade for legibility on smaller widths */
+  .hero-collage-bg::after {
+    background: linear-gradient(
+      105deg,
+      rgba(255, 248, 240, .96) 0%,
+      rgba(255, 248, 240, .82) 35%,
+      rgba(255, 248, 240, .45) 60%,
+      rgba(255, 248, 240, .12) 80%
+    );
   }
-  .hero-collage-bg img { object-position: 50% 50%; }
-  /* On mobile, kill the left fade so the full collage is visible (text moves below) */
-  .hero-collage-bg::after { display: none; }
   .hero-collage-text {
-    padding: 28px 20px 44px;
-    align-items: flex-start;
+    padding: 60px 28px 70px;
+    padding-left: max(28px, 5vw);
   }
   .hero-collage-text > * { max-width: 100%; }
 }
-@media (max-width: 600px) {
-  .hero--collage { padding: 0; }
-  .hero-collage-text { padding: 22px 18px 36px; }
-  .hero--collage h1 { font-size: clamp(2rem, 8.6vw, 2.6rem); margin-bottom: 16px; }
+
+/* ====== Mobile (max 720px) — text overlays the collage's safe zone ====== */
+@media (max-width: 720px) {
+  .hero--collage {
+    min-height: 600px;
+    align-items: stretch;
+  }
+  /* Mobile uses the mobile-optimized collage. Object-position centers the safe area
+     while keeping all 3 experience tiles partially visible at the edges/top. */
+  .hero-collage-bg img { object-position: 50% 35%; }
+  /* Mobile fade: nearly opaque cream from top to ~55% so headline + CTAs read cleanly,
+     fading to transparent so the bottom of the collage (divas spa party) stays visible. */
+  .hero-collage-bg::after {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 248, 240, .55) 0%,
+      rgba(255, 248, 240, .85) 25%,
+      rgba(255, 248, 240, .92) 45%,
+      rgba(255, 248, 240, .65) 70%,
+      rgba(255, 248, 240, .15) 100%
+    );
+  }
+  .hero-collage-text {
+    padding: 32px 20px 38px;
+    padding-left: 20px;
+    align-self: center;
+    width: 100%;
+  }
+  .hero--collage h1 {
+    font-size: clamp(2rem, 8.4vw, 2.6rem);
+    margin-bottom: 16px;
+    text-shadow: 0 2px 10px rgba(255, 248, 240, .8);
+  }
   .hero--collage .hero-eyebrow { font-size: 1.25rem; margin-bottom: 6px; }
-  .hero--collage .hero-lead { font-size: .98rem; margin-bottom: 18px; }
-  .hero--collage .hero-actions { gap: 10px; margin-bottom: 18px; }
-  .hero--collage .hero-actions .btn { flex: 1 1 100%; min-width: 0; padding: 14px 20px; font-size: .82rem; }
+  .hero--collage .hero-lead {
+    font-size: .98rem;
+    margin-bottom: 18px;
+    text-shadow: 0 1px 8px rgba(255, 248, 240, .85);
+  }
+  .hero--collage .hero-actions { gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+  .hero--collage .hero-actions .btn { flex: 1 1 calc(50% - 5px); min-width: 0; padding: 12px 16px; font-size: .82rem; }
   .hero--collage .trust-pills { gap: 6px; }
   .hero--collage .trust-pill { font-size: .7rem; padding: 6px 10px; }
+}
+
+/* ====== Small phones (max 420px) — full-width buttons, slightly tighter ====== */
+@media (max-width: 420px) {
+  .hero--collage { min-height: 580px; }
+  .hero-collage-text { padding: 28px 18px 32px; }
+  .hero--collage .hero-actions .btn { flex: 1 1 100%; }
+  .hero--collage .trust-pills { display: none; } /* keep only headline + CTAs above the fold */
 }
 
 /* Boutique handwritten eyebrow */
