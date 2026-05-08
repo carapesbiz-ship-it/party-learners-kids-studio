@@ -8,19 +8,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=41" />
+  <link rel="stylesheet" href="css/style.css?v=42" />
   <link rel="canonical" href="https://www.partylearners.ca/party-themes.html" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Kids Party Experiences | Party Learners Kids Studio" />
   <meta property="og:description" content="Explore Divas Glam Spa Party, Paint Boho Party + Craft, Chef Party Decorating Experience, and custom themed parties for kids." />
-  <meta property="og:image" content="https://www.partylearners.ca/images/og-party-learners-real.jpg" />
+  <meta property="og:image" content="https://www.partylearners.ca/images/og-party-learners-real-v2.jpg" />
   <meta property="og:url" content="https://www.partylearners.ca/party-themes.html" />
   <meta property="og:site_name" content="Party Learners Kids Studio" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Kids Party Experiences | Party Learners Kids Studio" />
   <meta name="twitter:description" content="Explore Divas Glam Spa Party, Paint Boho Party + Craft, Chef Party Decorating Experience, and custom themed parties for kids." />
-  <meta name="twitter:image" content="https://www.partylearners.ca/images/og-party-learners-real.jpg" />
+  <meta name="twitter:image" content="https://www.partylearners.ca/images/og-party-learners-real-v2.jpg" />
   <link rel="icon" href="images/logo.jpeg" />
 </head>
 <body>
@@ -31,10 +31,17 @@
     <nav>
       <ul class="nav-links" id="primary-menu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="party-themes.html">Experiences</a></li>
-        <li><a href="divas-glam-spa-party.html">Divas Glam Spa</a></li>
-        <li><a href="paint-boho-party.html">Paint Boho</a></li>
-        <li><a href="chef-party.html">Chef Party</a></li>
+        <li class="has-submenu">
+          <button type="button" class="submenu-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-experiences">Experiences <span class="submenu-caret" aria-hidden="true">▾</span></button>
+          <ul class="submenu" id="submenu-experiences" role="menu">
+            <li role="none"><a role="menuitem" href="party-themes.html">All Experiences (Compare)</a></li>
+            <li role="none"><a role="menuitem" href="divas-glam-spa-party.html">Divas Glam Spa Party</a></li>
+            <li role="none"><a role="menuitem" href="paint-boho-party.html">Paint Boho Party + Craft</a></li>
+            <li role="none"><a role="menuitem" href="chef-party.html">Chef Party – Decorating Experience</a></li>
+            <li role="none"><a role="menuitem" href="party-themes.html#coming-soon">Science Party — Coming Soon</a></li>
+            <li role="none"><a role="menuitem" href="party-themes.html#coming-soon">Craft &amp; Jewelry — Upon Request</a></li>
+          </ul>
+        </li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="contact.html" class="menu-cta">Reserve Your Party →</a></li>
@@ -49,68 +56,130 @@
 
 <section class="service-hero">
   <div class="container">
-    <span class="service-hero-eyebrow">two simple choices ✿</span>
+    <span class="service-hero-eyebrow">find your party ✿</span>
     <h1>
-      <span class="c-purple-deep">Party Experiences</span><br />
-      <span class="c-pink">&amp;</span> <span class="c-teal">Theme</span> <span class="c-yellow">Styles</span>
+      <span class="c-purple-deep">Find the Right</span><br />
+      <span class="c-pink">Party</span> <span class="c-teal">Experience</span>
     </h1>
-    <p class="hero-lead service-hero-lead">Choose the experience first, then personalize it with a theme your child loves.</p>
+    <p class="hero-lead service-hero-lead">Compare our three signature experiences side by side, then personalize your favorite with a theme your child loves.</p>
     <div class="hero-actions">
-      <a href="contact.html" class="btn btn-primary">Request Package Details</a>
-      <a href="#styles" class="btn btn-secondary">Browse Theme Styles</a>
+      <a href="#compare" class="btn btn-primary">Compare Experiences</a>
+      <a href="contact.html" class="btn btn-secondary">Reserve Your Party</a>
     </div>
   </div>
 </section>
 
-<!-- SECTION 1: CHOOSE YOUR PARTY EXPERIENCE -->
-<section class="section" id="experiences">
+<!-- SECTION 1: COMPARE EXPERIENCES -->
+<section class="section" id="compare">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">step one ✿</span>
-      <h2>Choose Your Party Experience</h2>
-      <p class="lead">Each experience is designed end-to-end — décor, materials, host and activities — so parents can simply enjoy the celebration.</p>
+      <span class="eyebrow">at a glance ✿</span>
+      <h2>Compare Our 3 Active Experiences</h2>
+      <p class="lead">Each experience is designed end-to-end — décor, materials, host, music and activities — so parents can simply enjoy the celebration.</p>
     </div>
 
-    <div class="card-grid">
-      <article class="feature-card">
-        <div class="feature-card-image"><img src="images/experience-divas-glam.jpg?v=2" alt="Divas Glam Spa Party — group of girls in colorful spa robes with cucumber spa masks" /></div>
+    <div class="compare-grid">
+      <!-- DIVAS GLAM -->
+      <article class="compare-card compare-card--featured">
+        <div class="compare-card__image"><img src="images/experience-divas-glam.jpg?v=2" alt="Divas Glam Spa Party — group of kids in colorful spa robes" /></div>
         <span class="card-tag is-popular">Signature</span>
         <h3>Divas Glam Spa Party</h3>
-        <p>A sparkling spa celebration with colorful robes, playful facial masks, cucumber relaxation, mini makeovers, hairstyling with colorful extensions, music, games and a runway moment.</p>
-        <a href="divas-glam-spa-party.html" class="card-link">Learn More</a>
+        <ul class="compare-list">
+          <li><strong>Best for:</strong> Birthdays who want a sparkling, pampering celebration.</li>
+          <li><strong>Main activities:</strong> Colorful robes, playful facial masks, cucumber relaxation, mini makeovers, hairstyling with colorful extensions, runway, dance &amp; games.</li>
+          <li><strong>Great for:</strong> Boys &amp; girls, ages 5–12, 6–14 guests.</li>
+          <li><strong>Duration:</strong> Approx. 2 hours, fully hosted.</li>
+        </ul>
+        <a href="divas-glam-spa-party.html" class="btn btn-primary btn-sm">Learn More</a>
       </article>
 
-      <article class="feature-card">
-        <div class="feature-card-image"><img src="images/experience-paint-boho.jpg" alt="Paint Boho Party" /></div>
+      <!-- PAINT BOHO -->
+      <article class="compare-card">
+        <div class="compare-card__image"><img src="images/experience-paint-boho.jpg" alt="Paint Boho Party + Craft setup with easels" /></div>
         <span class="card-tag">Featured</span>
-        <h3>Paint Boho Party</h3>
-        <p>A creative painting party with boho setup, guided art, craft activities and a mini art exhibition.</p>
-        <a href="paint-boho-party.html" class="card-link">Learn More</a>
+        <h3>Paint Boho Party + Craft</h3>
+        <ul class="compare-list">
+          <li><strong>Best for:</strong> Creative kids who love art and want to take something handmade home.</li>
+          <li><strong>Main activities:</strong> Guided canvas painting, craft decorating (crown or mirror), free-paint, art-themed games, glitter tattoos, mini art exhibition.</li>
+          <li><strong>Great for:</strong> Boys &amp; girls, ages 5–12, 6–14 guests.</li>
+          <li><strong>Duration:</strong> Approx. 1.5 hours, fully hosted.</li>
+        </ul>
+        <a href="paint-boho-party.html" class="btn btn-primary btn-sm">Learn More</a>
       </article>
 
-      <article class="feature-card">
-        <div class="feature-card-image"><img src="images/chef-party-hero.jpg" alt="Chef Party — kids in chef hats and red aprons decorating mini pizzas, cupcakes and fruit creations" /></div>
+      <!-- CHEF PARTY -->
+      <article class="compare-card">
+        <div class="compare-card__image"><img src="images/chef-party-hero.jpg" alt="Chef Party – Decorating Experience setup with chef hats and red aprons" /></div>
         <span class="card-tag">Now Available</span>
-        <h3>Chef Party</h3>
-        <p>A hands-on decorating experience where little chefs create mini pizzas, cupcakes, fruit creations or veggie art in a fully hosted themed setup.</p>
-        <a href="chef-party.html" class="card-link">Learn More</a>
+        <h3>Chef Party – Decorating Experience</h3>
+        <ul class="compare-list">
+          <li><strong>Best for:</strong> Kids who love hands-on, food-themed creativity (decorating only — we don't cook or bake).</li>
+          <li><strong>Main activities:</strong> Choose 2 — Mini Pizza Decorating, Cupcake Decorating, Fruit Character Creations, Vegetable Fun Art. Plus glitter tattoos, music, games, mini creation showcase.</li>
+          <li><strong>Great for:</strong> Boys &amp; girls, ages 5–12, 6–14 guests.</li>
+          <li><strong>Duration:</strong> Approx. 2 hours, fully hosted.</li>
+        </ul>
+        <a href="chef-party.html" class="btn btn-primary btn-sm">Learn More</a>
       </article>
+    </div>
+  </div>
+</section>
 
+<!-- SECTION 1B: HELP ME DECIDE -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">help me decide ♥</span>
+      <h2>Not Sure Which One?</h2>
+      <p class="lead">Pick the vibe — we'll do the rest.</p>
+    </div>
+    <div class="card-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));max-width:1100px;margin:0 auto">
       <article class="feature-card">
-        <div class="feature-card-image"><img src="images/experience-science.jpg" alt="Science Party" /></div>
+        <span class="card-eyebrow">if you want…</span>
+        <h3>A Glam &amp; Pampering Vibe</h3>
+        <p>Robes, masks, hairstyling and a runway moment — perfect for a birthday that feels like a sparkly spa day.</p>
+        <a href="divas-glam-spa-party.html" class="card-link">Choose Divas Glam Spa</a>
+      </article>
+      <article class="feature-card">
+        <span class="card-eyebrow">if you want…</span>
+        <h3>An Art &amp; Craft Vibe</h3>
+        <p>Easels, canvases and a craft to take home — perfect for kids who love color, calm focus and creating something theirs.</p>
+        <a href="paint-boho-party.html" class="card-link">Choose Paint Boho Party + Craft</a>
+      </article>
+      <article class="feature-card">
+        <span class="card-eyebrow">if you want…</span>
+        <h3>A Hands-On Foodie Vibe</h3>
+        <p>Mini pizzas, cupcakes, fruit characters and veggie art — perfect for hands-on kids who love food-themed creativity.</p>
+        <a href="chef-party.html" class="card-link">Choose Chef Party</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1C: COMING SOON -->
+<section class="section" id="coming-soon" style="padding-top:32px;background:linear-gradient(135deg, rgba(232,62,140,.03), rgba(255,200,61,.05)),#fff">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">in the works ✿</span>
+      <h2>Coming Soon &amp; Upon Request</h2>
+      <p class="lead">More experiences in development — and a custom option you can ask us about today.</p>
+    </div>
+    <div class="card-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));max-width:900px;margin:0 auto">
+      <article class="feature-card" style="opacity:.95">
+        <div class="feature-card-image"><img src="images/experience-science.jpg" alt="Science Party — coming soon" loading="lazy" /></div>
         <span class="card-tag is-coming">Coming Soon</span>
         <h3>Science Party</h3>
-        <p>A curious and interactive experience with hands-on experiments and discovery.</p>
-        <a href="contact.html" class="card-link">Request Details</a>
+        <p>A curious and interactive experience with hands-on experiments and discovery — coming soon.</p>
+        <a href="contact.html" class="card-link">Get Notified</a>
       </article>
-
       <article class="feature-card">
-        <div class="feature-card-image"><img src="images/experience-craft-jewelry.jpg" alt="Craft & Jewelry Party" /></div>
+        <div class="feature-card-image"><img src="images/experience-craft-jewelry.jpg" alt="Craft & Jewelry Party — available upon request" loading="lazy" /></div>
+        <span class="card-tag">Upon Request</span>
         <h3>Craft &amp; Jewelry Party</h3>
-        <p>Creative activities where kids design, decorate and take home something special.</p>
+        <p>Creative activities where kids design, decorate and take home something special — available upon request.</p>
         <a href="contact.html" class="card-link">Request Details</a>
       </article>
     </div>
+    <p class="text-center muted mt-3" style="font-size:.88rem;max-width:620px;margin-left:auto;margin-right:auto;font-weight:600">All three active experiences (Divas Glam Spa, Paint Boho Party + Craft, Chef Party – Decorating Experience) can be styled around your child's favorite theme. Theme styles work across experiences.</p>
   </div>
 </section>
 
@@ -186,10 +255,10 @@
     <div class="cta-band">
       <span class="eyebrow">have a theme in mind? ♥</span>
       <h2>Let's Bring Their <span class="yw">Dream Party</span> to Life</h2>
-      <p>Tell us your party experience, theme style and date, and we'll send you full package details.</p>
+      <p>Tell us your preferred experience, theme style and date, and we'll send you full package details.</p>
       <div class="hero-actions">
-        <a href="contact.html" class="btn btn-primary">Request Package Details</a>
-        <a href="gallery.html" class="btn btn-secondary">See Past Themes</a>
+        <a href="contact.html" class="btn btn-primary">Reserve Your Party</a>
+        <a href="gallery.html" class="btn btn-secondary">See Past Parties</a>
       </div>
     </div>
   </div>
@@ -265,7 +334,7 @@
   </span>
 </a>
 
-<script src="js/main.js?v=41"></script>
+<script src="js/main.js?v=42"></script>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

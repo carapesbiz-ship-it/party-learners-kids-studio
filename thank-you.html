@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=41" />
+  <link rel="stylesheet" href="css/style.css?v=42" />
   <link rel="canonical" href="https://www.partylearners.ca/thank-you.html" />
   <link rel="icon" href="images/logo.jpeg" />
 </head>
@@ -21,10 +21,17 @@
     <nav>
       <ul class="nav-links" id="primary-menu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="party-themes.html">Experiences</a></li>
-        <li><a href="divas-glam-spa-party.html">Divas Glam Spa</a></li>
-        <li><a href="paint-boho-party.html">Paint Boho</a></li>
-        <li><a href="chef-party.html">Chef Party</a></li>
+        <li class="has-submenu">
+          <button type="button" class="submenu-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-experiences">Experiences <span class="submenu-caret" aria-hidden="true">▾</span></button>
+          <ul class="submenu" id="submenu-experiences" role="menu">
+            <li role="none"><a role="menuitem" href="party-themes.html">All Experiences (Compare)</a></li>
+            <li role="none"><a role="menuitem" href="divas-glam-spa-party.html">Divas Glam Spa Party</a></li>
+            <li role="none"><a role="menuitem" href="paint-boho-party.html">Paint Boho Party + Craft</a></li>
+            <li role="none"><a role="menuitem" href="chef-party.html">Chef Party – Decorating Experience</a></li>
+            <li role="none"><a role="menuitem" href="party-themes.html#coming-soon">Science Party — Coming Soon</a></li>
+            <li role="none"><a role="menuitem" href="party-themes.html#coming-soon">Craft &amp; Jewelry — Upon Request</a></li>
+          </ul>
+        </li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="contact.html" class="menu-cta">Reserve Your Party →</a></li>
@@ -136,7 +143,7 @@
   </span>
 </a>
 
-<script src="js/main.js?v=41"></script>
+<script src="js/main.js?v=42"></script>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

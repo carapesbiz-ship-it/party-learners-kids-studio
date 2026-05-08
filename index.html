@@ -11,14 +11,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Party Learners Kids Studio | Kids Party Experiences in the Lower Mainland" />
   <meta property="og:description" content="Magical kids party experiences in Abbotsford and the Lower Mainland, including spa parties, paint parties, chef decorating parties, and custom themes." />
-  <meta property="og:image" content="https://www.partylearners.ca/images/og-party-learners-real.jpg" />
+  <meta property="og:image" content="https://www.partylearners.ca/images/og-party-learners-real-v2.jpg" />
   <meta property="og:url" content="https://www.partylearners.ca/" />
   <meta property="og:site_name" content="Party Learners Kids Studio" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Party Learners Kids Studio | Magical Themed Kids Parties" />
   <meta name="twitter:description" content="Magical themed birthday parties for kids in the Lower Mainland, BC." />
-  <meta name="twitter:image" content="https://www.partylearners.ca/images/og-party-learners-real.jpg" />
+  <meta name="twitter:image" content="https://www.partylearners.ca/images/og-party-learners-real-v2.jpg" />
 
   <link rel="canonical" href="https://www.partylearners.ca/" />
 
@@ -31,7 +31,7 @@
     "description": "Beautifully hosted themed kids party experiences brought to homes and venues across Abbotsford and the Lower Mainland, BC.",
     "url": "https://www.partylearners.ca/",
     "logo": "https://www.partylearners.ca/images/logo-banner.png",
-    "image": "https://www.partylearners.ca/images/og-party-learners-real.jpg",
+    "image": "https://www.partylearners.ca/images/og-party-learners-real-v2.jpg",
     "telephone": "+1-604-828-4526",
     "areaServed": [
       { "@type": "City", "name": "Abbotsford" },
@@ -58,7 +58,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=41" />
+  <link rel="stylesheet" href="css/style.css?v=42" />
   <link rel="icon" href="images/logo.jpeg" />
 </head>
 <body>
@@ -73,10 +73,17 @@
     <nav>
       <ul class="nav-links" id="primary-menu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="party-themes.html">Experiences</a></li>
-        <li><a href="divas-glam-spa-party.html">Divas Glam Spa</a></li>
-        <li><a href="paint-boho-party.html">Paint Boho</a></li>
-        <li><a href="chef-party.html">Chef Party</a></li>
+        <li class="has-submenu">
+          <button type="button" class="submenu-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-experiences">Experiences <span class="submenu-caret" aria-hidden="true">▾</span></button>
+          <ul class="submenu" id="submenu-experiences" role="menu">
+            <li role="none"><a role="menuitem" href="party-themes.html">All Experiences (Compare)</a></li>
+            <li role="none"><a role="menuitem" href="divas-glam-spa-party.html">Divas Glam Spa Party</a></li>
+            <li role="none"><a role="menuitem" href="paint-boho-party.html">Paint Boho Party + Craft</a></li>
+            <li role="none"><a role="menuitem" href="chef-party.html">Chef Party – Decorating Experience</a></li>
+            <li role="none"><a role="menuitem" href="party-themes.html#coming-soon">Science Party — Coming Soon</a></li>
+            <li role="none"><a role="menuitem" href="party-themes.html#coming-soon">Craft &amp; Jewelry — Upon Request</a></li>
+          </ul>
+        </li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="contact.html" class="menu-cta">Reserve Your Party →</a></li>
@@ -708,7 +715,7 @@
   </span>
 </a>
 
-<script src="js/main.js?v=41"></script>
+<script src="js/main.js?v=42"></script>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

@@ -35,12 +35,99 @@
   });
 })();
 
-// Active nav highlighting based on current page
+// Active nav highlighting based on current page (incl. dropdown items)
 (function () {
   const path = window.location.pathname.split('/').pop() || 'index.html';
+  const servicePages = ['divas-glam-spa-party.html','paint-boho-party.html','chef-party.html','party-themes.html'];
   document.querySelectorAll('.nav-links a').forEach(a => {
-    const href = a.getAttribute('href');
-    if (href === path) a.classList.add('active');
+    const href = a.getAttribute('href') || '';
+    const hrefBase = href.split('#')[0];
+    if (hrefBase === path) a.classList.add('active');
+  });
+  // also highlight the Experiences dropdown toggle when on a service page
+  if (servicePages.includes(path)) {
+    const toggle = document.querySelector('.submenu-toggle');
+    if (toggle) toggle.classList.add('active');
+  }
+})();
+
+// Experiences dropdown — desktop hover (CSS) + click + keyboard accessibility
+(function () {
+  const toggles = document.querySelectorAll('.submenu-toggle');
+  if (!toggles.length) return;
+
+  toggles.forEach(toggle => {
+    const submenu = toggle.nextElementSibling; // the .submenu UL
+    if (!submenu) return;
+
+    const close = () => {
+      toggle.setAttribute('aria-expanded', 'false');
+    };
+    const open = () => {
+      // close any other open submenus first
+      document.querySelectorAll('.submenu-toggle[aria-expanded="true"]').forEach(t => {
+        if (t !== toggle) t.setAttribute('aria-expanded', 'false');
+      });
+      toggle.setAttribute('aria-expanded', 'true');
+    };
+
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      if (isOpen) close(); else open();
+    });
+
+    // keyboard: Enter / Space toggles, ArrowDown opens & focuses first item, Esc closes
+    toggle.addEventListener('keydown', (e) => {
+      const items = submenu.querySelectorAll('a');
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        open();
+        if (items[0]) items[0].focus();
+      } else if (e.key === 'Escape') {
+        close();
+        toggle.focus();
+      }
+    });
+
+    submenu.addEventListener('keydown', (e) => {
+      const items = Array.from(submenu.querySelectorAll('a'));
+      const idx = items.indexOf(document.activeElement);
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        const next = items[(idx + 1) % items.length];
+        if (next) next.focus();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        const prev = items[(idx - 1 + items.length) % items.length];
+        if (prev) prev.focus();
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        close();
+        toggle.focus();
+      } else if (e.key === 'Tab') {
+        // let tab move out, then close on next tick
+        setTimeout(() => {
+          if (!submenu.contains(document.activeElement) && document.activeElement !== toggle) close();
+        }, 0);
+      }
+    });
+  });
+
+  // close all open submenus on outside click
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.has-submenu')) return;
+    document.querySelectorAll('.submenu-toggle[aria-expanded="true"]').forEach(t => {
+      t.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // close on Escape (global)
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    document.querySelectorAll('.submenu-toggle[aria-expanded="true"]').forEach(t => {
+      t.setAttribute('aria-expanded', 'false');
+    });
   });
 })();
 
