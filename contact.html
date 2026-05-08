@@ -69,19 +69,8 @@
   <div class="container">
     <div class="contact-grid">
 
-      <!-- ============================================================
-           ⚠️ TODO BEFORE LAUNCH: Replace Formspree action with the real Formspree form ID
-           As of this commit the form action is a placeholder — submissions
-           will NOT be delivered to Jenn until the action is updated.
-           Steps:
-           1) Go to https://formspree.io and sign up with the email
-              where party inquiries should be sent.
-           2) Create a new form, copy its ID (looks like "xpzqwlrk").
-           3) Replace REPLACE_WITH_ID in the action attribute below.
-           4) Submit a test inquiry from production to confirm delivery
-              and that the redirect to /thank-you.html works.
-           ============================================================ -->
-      <form class="contact-form" id="booking-form" method="POST" action="https://formspree.io/f/REPLACE_WITH_ID" novalidate>
+      <!-- Formspree form: submissions deliver to Jenn's Formspree inbox; on success, redirects to /thank-you.html via the _next hidden input. -->
+      <form class="contact-form" id="booking-form" method="POST" action="https://formspree.io/f/mykodlnz" novalidate>
         <input type="hidden" name="_subject" value="New Party Inquiry — Party Learners" />
         <input type="hidden" name="_next" value="https://www.partylearners.ca/thank-you.html" />
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" />
