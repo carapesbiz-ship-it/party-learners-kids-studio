@@ -2676,8 +2676,16 @@ h2.divas-glam-title {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-soft);
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
+.package-summary {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #3a2a4d;
+  margin: 0 0 16px;
+}
+.package-summary strong { color: #23123c; font-weight: 700; }
 .package ul { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; flex-grow: 1; }
 .package li {
   font-family: var(--font-body);
