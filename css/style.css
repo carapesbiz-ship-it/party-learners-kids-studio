@@ -3844,6 +3844,38 @@ body.lightbox-open { overflow: hidden; }
   .gallery-item img { transition: none; }
 }
 
+/* ============== INSTAGRAM REELS GRID (gallery.html) ============== */
+.reels-section {
+  background: linear-gradient(180deg, transparent 0%, rgba(232, 62, 140, .03) 50%, transparent 100%);
+}
+.reels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+  align-items: start;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.reel-card {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  /* Reserve a min-height matching IG's typical reel embed to reduce CLS while loading */
+  min-height: 720px;
+}
+.reel-card .instagram-media {
+  width: 100% !important;
+  margin: 0 auto !important;
+  transition: transform .25s ease;
+}
+.reel-card:hover .instagram-media {
+  transform: translateY(-3px);
+}
+@media (max-width: 760px) {
+  .reels-grid { gap: 22px; grid-template-columns: 1fr; max-width: 540px; }
+  .reel-card { min-height: 680px; }
+}
+
 /* ============== FINAL CTA — photo background + editorial headline ============== */
 .cta-photo-hero {
   position: relative;
