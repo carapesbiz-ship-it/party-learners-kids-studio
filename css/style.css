@@ -1639,12 +1639,12 @@ h2.divas-glam-wordmark {
      compete with the overlay sticker */
   .dg-photo-label { display: none; }
 
-  /* DG STICKER — circular brand badge overlaid on the bottom-right
+  /* DG STICKER — circular brand badge overlaid on the TOP-LEFT
      corner of the main photo. Mobile-only. */
   .dg-photo-sticker {
     position: absolute;
-    right: -8px;
-    bottom: -18px;
+    left: -8px;
+    top: -18px;
     width: clamp(110px, 28vw, 150px);
     height: clamp(110px, 28vw, 150px);
     z-index: 6;
@@ -1750,8 +1750,8 @@ h2.divas-glam-wordmark {
 
 @media (max-width: 480px) {
   .dg-photo-sticker {
-    right: -6px;
-    bottom: -16px;
+    left: -6px;
+    top: -16px;
   }
   .divas-glam-visual img { max-height: 480px; }
   .divas-glam-feature ul.divas-glam-highlights li { font-size: 0.82rem; padding: 10px 10px 10px 26px; }
