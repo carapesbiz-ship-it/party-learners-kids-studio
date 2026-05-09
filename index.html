@@ -58,7 +58,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=48" />
+  <link rel="stylesheet" href="css/style.css?v=49" />
   <link rel="icon" href="images/logo.jpeg" />
 </head>
 <body>
@@ -601,18 +601,25 @@
   </div>
 </section>
 
-<!-- ============== FINAL CTA ============== -->
+<!-- ============== FINAL CTA — photo background + editorial headline ============== -->
 <section class="section" style="padding-top:0">
   <div class="container">
-    <div class="cta-band">
-      <span class="eyebrow">let's make magic ✿</span>
-      <h2>Ready to Plan a Party<br />They'll <span class="yw">Never Forget?</span></h2>
-      <p>Tell us your party date, location, theme and number of guests, and we'll help you choose the right experience.</p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn-primary">Reserve Your Party →</a>
-        <a href="contact.html" class="btn btn-secondary">Request Package Details</a>
+    <div class="cta-photo-hero">
+      <div class="cta-photo-hero__bg" aria-hidden="true">
+        <picture>
+          <source type="image/webp" srcset="images/divas-glam-girls-kpop-tables.jpg" />
+          <img src="images/divas-glam-girls-kpop-tables.jpg" alt="" loading="lazy" decoding="async" />
+        </picture>
       </div>
-      <p style="margin-top:22px;font-family:var(--font-script);font-weight:700;font-size:1.4rem;color:var(--yellow);transform:rotate(-1.5deg);display:inline-block">Weekend dates fill quickly — let’s chat early ✿</p>
+      <div class="cta-photo-hero__content">
+        <span class="cta-photo-hero__eyebrow">Let's Make Magic</span>
+        <h2 class="cta-photo-hero__headline">Ready to plan a party they'll <em>never forget?</em></h2>
+        <p class="cta-photo-hero__lead">Tell us your party date, location, theme and number of guests — we'll help you choose the right experience.</p>
+        <div class="cta-photo-hero__actions">
+          <a href="contact.html" class="btn-cta-white">Reserve Your Party →</a>
+          <p class="cta-photo-hero__note">Weekend dates fill quickly — let's chat early</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -690,7 +697,7 @@
   </span>
 </a>
 
-<script src="js/main.js?v=48"></script>
+<script src="js/main.js?v=49"></script>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
