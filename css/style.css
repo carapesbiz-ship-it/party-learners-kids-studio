@@ -3844,6 +3844,60 @@ body.lightbox-open { overflow: hidden; }
   .gallery-item img { transition: none; }
 }
 
+/* ============== Form required indicator + success message ============== */
+.required { color: var(--pink); font-weight: 700; margin-left: 2px; }
+.form-success {
+  display: none;
+  background: linear-gradient(135deg, rgba(43, 191, 180, .14), rgba(232, 62, 140, .10));
+  border: 2px solid rgba(43, 191, 180, .45);
+  border-radius: 14px;
+  padding: 18px 22px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--purple-deep);
+  margin: 18px 0 6px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.form-success.is-visible { display: block; }
+.form-success a { color: var(--pink); font-weight: 800; text-decoration: underline; }
+
+/* ============== FOOTER CONNECT (clean labeled list, replaces social icons) ============== */
+.footer-connect {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-connect li { margin: 0; }
+.footer-connect a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, .92);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: .92rem;
+  text-decoration: none;
+  padding: 4px 0;
+  transition: color .2s ease, transform .2s ease;
+}
+.footer-connect a:hover {
+  color: var(--yellow);
+  transform: translateX(2px);
+}
+.footer-connect .fc-ico {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  line-height: 1;
+  width: 22px;
+  flex-shrink: 0;
+}
+
 /* ============== INSTAGRAM REELS GRID (gallery.html) ============== */
 .reels-section {
   background: linear-gradient(180deg, transparent 0%, rgba(232, 62, 140, .03) 50%, transparent 100%);

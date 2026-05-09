@@ -154,8 +154,28 @@
   });
 })();
 
-// Contact form delivers via Formspree (action="https://formspree.io/f/mykodlnz" on contact.html).
-// On success, Formspree redirects to /thank-you.html via the _next hidden input. No JS hook needed.
+// Contact form: Formspree handles delivery + redirect to /thank-you.html via _next.
+// Lightweight client-side hook adds: (a) honeypot check on the "website" field, blocks silently if filled;
+// (b) optional inline success message if the redirect is intercepted (e.g. AJAX in the future).
+(function () {
+  const form = document.getElementById('booking-form');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    // Honeypot: if "website" was filled, it's likely a bot. Cancel silently.
+    const trap = form.querySelector('input[name="website"]');
+    if (trap && trap.value && trap.value.trim() !== '') {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+    // Show success state immediately for better UX while Formspree processes.
+    const success = document.getElementById('form-success');
+    if (success) {
+      // Delay slightly so the form actually posts before we visually confirm.
+      setTimeout(() => success.classList.add('is-visible'), 50);
+    }
+  });
+})();
 
 // =========================
 // Premium polish — scroll reveals + gallery lightbox
