@@ -3710,15 +3710,19 @@ h2.divas-glam-title {
   opacity: 1;
 }
 .lightbox__img {
-  max-width: min(1200px, 96vw);
-  max-height: 88vh;
-  width: auto; height: auto;
+  /* Force a viewport-sized frame so small images scale UP to fill it; aspect ratio preserved by object-fit. */
+  width: 92vw;
+  height: 86vh;
+  max-width: 1200px;
+  max-height: 1200px;
   border-radius: var(--r-md);
   box-shadow: 0 30px 80px rgba(0, 0, 0, .6);
   object-fit: contain;
   background: #1a0e2e;
   transform: scale(.96);
   transition: transform .25s cubic-bezier(.2,.7,.3,1);
+  /* Smoother upscaling for low-res photos */
+  image-rendering: auto;
 }
 .lightbox.is-open .lightbox__img { transform: scale(1); }
 .lightbox__caption {
