@@ -3897,6 +3897,20 @@ body.lightbox-open { overflow: hidden; }
   width: 22px;
   flex-shrink: 0;
 }
+.footer-connect .fc-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  /* Subtle white card behind the logo so the brand colors stay vibrant on the dark footer */
+  background: #fff;
+  border-radius: 5px;
+  padding: 2px;
+  box-sizing: content-box;
+  margin-right: 2px;
+}
 
 /* ============== INSTAGRAM REELS GRID (gallery.html) ============== */
 .reels-section {
