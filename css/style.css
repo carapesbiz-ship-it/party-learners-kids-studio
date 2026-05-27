@@ -3844,6 +3844,49 @@ body.lightbox-open { overflow: hidden; }
   .gallery-item img { transition: none; }
 }
 
+/* ============== CITIES WE SERVE — local SEO grid ============== */
+.cities-section {
+  background: linear-gradient(180deg, transparent 0%, rgba(43, 191, 180, .04) 50%, transparent 100%);
+}
+.cities-grid {
+  list-style: none;
+  padding: 0;
+  margin: 28px auto 0;
+  max-width: 980px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 12px;
+}
+.cities-grid li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1.5px solid rgba(232, 62, 140, .15);
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: .94rem;
+  color: var(--purple-deep);
+  box-shadow: 0 6px 14px -8px rgba(232, 62, 140, .15);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.cities-grid li:hover {
+  transform: translateY(-2px);
+  border-color: rgba(232, 62, 140, .35);
+  box-shadow: 0 10px 22px -10px rgba(232, 62, 140, .25);
+}
+.city-pin {
+  font-size: 1rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  .cities-grid { gap: 8px; grid-template-columns: repeat(2, 1fr); }
+  .cities-grid li { font-size: .86rem; padding: 10px 12px; }
+}
+
 /* ============== Form required indicator + success message ============== */
 .required { color: var(--pink); font-weight: 700; margin-left: 2px; }
 .form-success {
