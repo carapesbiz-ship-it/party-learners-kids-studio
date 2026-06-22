@@ -79,14 +79,16 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&family=Marcellus&family=Cormorant+Garamond:wght@500;600;700&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="images/logo-banner.png" />
-  <link rel="stylesheet" href="css/style.css?v=60" />
+  <link rel="preload" as="image" href="images/divas-glam-group-kpop.jpg" />
+  <link rel="stylesheet" href="css/style.css?v=61" />
+  <link rel="stylesheet" href="css/home-v2.css?v=61" />
   <link rel="icon" href="images/logo.jpeg" />
 </head>
-<body>
+<body class="home-v2">
 
-<!-- ============== HEADER ============== -->
+<!-- ============== HEADER (Sprint 1 — stable, no flicker) ============== -->
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="index.html" class="brand" aria-label="Party Learners Kids Studio home">
@@ -108,6 +110,7 @@
             <li role="none"><a role="menuitem" href="experiences.html#coming-soon">Craft &amp; Jewelry Party — Available by Request</a></li>
           </ul>
         </li>
+        <li><a href="#add-ons">Add-Ons</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="contact.html" class="menu-cta">Request Details →</a></li>
@@ -123,483 +126,350 @@
   </div>
 </header>
 
-<!-- ============== HERO — collage with 3 active experiences ============== -->
-<section class="hero hero--collage" aria-labelledby="hero-headline">
-  <picture class="hero-collage-bg">
-    <source media="(max-width: 720px)" type="image/webp" srcset="images/home-hero-collage-mobile.webp" />
-    <source media="(max-width: 720px)" type="image/jpeg" srcset="images/home-hero-collage-mobile.jpg" />
-    <source type="image/webp" srcset="images/home-hero-collage.webp" />
-    <img src="images/home-hero-collage.jpg" alt="Collage of Party Learners Kids Studio spa, paint and chef decorating party experiences." loading="eager" decoding="async" fetchpriority="high" width="1672" height="941" />
-  </picture>
-
-  <div class="hero-collage-text">
-    <span class="hero-eyebrow">Magical kids parties across the Lower Mainland</span>
-    <h1 id="hero-headline">
-      <span class="hero-line c-purple-deep">Spa, Paint, Chef</span>
-      <span class="hero-line"><span class="c-pink">&amp; Creative Parties</span></span>
-      <span class="hero-line shine">for Kids</span>
-    </h1>
-    <p class="hero-lead">
-      Beautifully hosted party experiences in Abbotsford and the Lower Mainland — from glam spa parties and paint &amp; craft fun to chef decorating and custom themes.
-    </p>
-    <div class="hero-actions">
-      <a href="experiences.html" class="btn btn-primary">Explore Experiences</a>
-      <a href="contact.html" class="btn btn-secondary">Request Details</a>
+<!-- ============== 2. FULL-BLEED HERO CAROUSEL ============== -->
+<section class="hx-hero" aria-label="Party Learners kids party experiences" data-autoplay="6500">
+  <div class="hx-hero__track" aria-hidden="true">
+    <div class="hx-slide is-active" data-title="Divas Glam Spa">
+      <img src="images/divas-glam-group-kpop.jpg" alt="" loading="eager" fetchpriority="high" decoding="async" width="1400" height="1342" />
+      <span class="hx-slide__label">Divas Glam Spa</span>
     </div>
-
-    <div class="trust-pills" aria-label="Trust signals">
-      <span class="trust-pill stars">5-Star Google Reviews</span>
-      <span class="trust-pill">Fully Hosted</span>
-      <span class="trust-pill teal">Materials Included</span>
-      <span class="trust-pill purple">Fully Licensed &amp; Insured</span>
+    <div class="hx-slide" data-title="Paint Boho + Craft">
+      <picture>
+        <source type="image/webp" srcset="images/paint-boho-kids-painting-pink.webp" />
+        <img src="images/paint-boho-kids-painting-pink.jpg" alt="" loading="lazy" decoding="async" width="1400" height="787" />
+      </picture>
+      <span class="hx-slide__label">Paint Boho + Craft</span>
     </div>
+    <div class="hx-slide" data-title="Chef Decorating">
+      <picture>
+        <source type="image/webp" srcset="images/chef-party-group-colorful-aprons.webp" />
+        <img src="images/chef-party-group-colorful-aprons.jpg" alt="" loading="lazy" decoding="async" width="1600" height="909" />
+      </picture>
+      <span class="hx-slide__label">Chef Decorating</span>
+    </div>
+    <div class="hx-slide" data-title="Luxury Slumber">
+      <picture>
+        <source type="image/webp" srcset="images/luxury-slumber-wide-pink-window.webp" />
+        <img src="images/luxury-slumber-wide-pink-window.jpg" alt="" loading="lazy" decoding="async" width="1600" height="803" />
+      </picture>
+      <span class="hx-slide__label">Luxury Slumber</span>
+    </div>
+  </div>
+
+  <div class="hx-hero__inner">
+    <span class="hx-hero__overline">Magical kids parties across the Lower Mainland</span>
+    <h1 class="hx-hero__title">Parties they'll never forget</h1>
+    <p class="hx-hero__sub">Beautifully hosted kids party experiences styled in your home — from glam spa days and paint parties to chef decorating and luxury slumber setups.</p>
+    <div class="hx-hero__actions">
+      <a href="contact.html" class="pv-btn">Request Details</a>
+      <a href="#experiences" class="pv-btn pv-btn--ghost">Explore Experiences</a>
+    </div>
+  </div>
+
+  <div class="hx-hero__dots" role="tablist" aria-label="Choose a featured experience">
+    <button class="hx-dot is-active" type="button" role="tab" aria-label="Divas Glam Spa" aria-selected="true"></button>
+    <button class="hx-dot" type="button" role="tab" aria-label="Paint Boho + Craft" aria-selected="false"></button>
+    <button class="hx-dot" type="button" role="tab" aria-label="Chef Decorating" aria-selected="false"></button>
+    <button class="hx-dot" type="button" role="tab" aria-label="Luxury Slumber" aria-selected="false"></button>
   </div>
 </section>
 
-<!-- ============== MARQUEE — short essentials ticker ============== -->
-<div class="marquee" aria-hidden="true" style="overflow-x:hidden">
-  <div class="marquee-track">
-    <span><span class="dot"></span>Divas Glam Spa Party</span>
-    <span><span class="dot"></span>Paint Boho Party + Craft</span>
-    <span><span class="dot"></span>Chef Party</span>
-    <span><span class="dot"></span>Custom Themes</span>
-    <span><span class="dot"></span>Real Party Setups</span>
-    <span><span class="dot"></span>Lower Mainland</span>
-    <span><span class="dot"></span>Fully Hosted</span>
-    <span><span class="dot"></span>Fully Licensed &amp; Insured</span>
-    <!-- Duplicate set for seamless loop -->
-    <span><span class="dot"></span>Divas Glam Spa Party</span>
-    <span><span class="dot"></span>Paint Boho Party + Craft</span>
-    <span><span class="dot"></span>Chef Party</span>
-    <span><span class="dot"></span>Custom Themes</span>
-    <span><span class="dot"></span>Real Party Setups</span>
-    <span><span class="dot"></span>Lower Mainland</span>
-    <span><span class="dot"></span>Fully Hosted</span>
-    <span><span class="dot"></span>Fully Licensed &amp; Insured</span>
+<!-- ============== 3. TRUST STRIP ============== -->
+<div class="hx-trust" aria-label="Why parents choose Party Learners">
+  <div class="container hx-trust__inner">
+    <span class="hx-trust__item is-stars"><span class="hx-trust__star" aria-hidden="true">★</span>5.0 Google Reviews</span>
+    <span class="hx-trust__sep" aria-hidden="true"></span>
+    <span class="hx-trust__item">Fully Licensed &amp; Insured</span>
+    <span class="hx-trust__sep" aria-hidden="true"></span>
+    <span class="hx-trust__item">We come to you</span>
+    <span class="hx-trust__sep hx-hide-sm" aria-hidden="true"></span>
+    <span class="hx-trust__item hx-hide-sm">Spanish-speaking parties available</span>
+    <span class="hx-trust__sep hx-hide-sm" aria-hidden="true"></span>
+    <span class="hx-trust__item hx-hide-sm">Fully Hosted</span>
   </div>
 </div>
 
-<!-- ============== TRUST STRIP — verified claims only (no fake stats) ============== -->
-<div class="trust-strip" aria-label="What we offer">
+<!-- ============== 4. CORE EXPERIENCES GRID ============== -->
+<section class="hx-section" id="experiences">
   <div class="container">
-    <div class="trust-strip-inner">
-      <span class="trust-strip-item"><span class="dot stars" aria-hidden="true">★</span>5.0 Google Reviews</span>
-      <span class="trust-strip-item"><span class="dot pink" aria-hidden="true"></span>Fully Hosted Parties</span>
-      <span class="trust-strip-item"><span class="dot teal" aria-hidden="true"></span>Serving the Lower Mainland</span>
-      <span class="trust-strip-item"><span class="dot purple" aria-hidden="true"></span>Fully Licensed &amp; Insured</span>
-      <span class="trust-strip-item"><span class="dot pink" aria-hidden="true"></span>🇪🇸 Spanish-speaking parties available · En español</span>
-      <span class="trust-strip-item"><span class="dot yellow" aria-hidden="true"></span>Request Package Details</span>
-    </div>
-  </div>
-</div>
+    <header class="hx-head">
+      <span class="hx-eyebrow">our experiences</span>
+      <h2 class="hx-h2">Four ways to celebrate</h2>
+      <p class="hx-lead">Each experience is fully styled and hosted — pick the one your child will love, then personalize the theme.</p>
+    </header>
 
-<!-- ============== CHOOSE YOUR PARTY EXPERIENCE ============== -->
-<section class="section" id="experiences" style="padding-top:0">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">step one ✿</span>
-      <h2>Choose Your Party Experience</h2>
-      <p class="lead">Start with the experience your child will love most, then personalize it with a theme, color palette or celebration style.</p>
-    </div>
-
-    <!-- MAIN / CORE EXPERIENCES — Divas Glam + Paint Boho + Chef + Luxury Slumber -->
-    <div class="card-grid card-grid--featured card-grid--featured-4">
-      <article class="feature-card feature-card--hero">
-        <div class="feature-card-image"><img src="images/experience-divas-glam.jpg?v=2" alt="Divas Glam Spa Party — group of girls in colorful spa robes with cucumber spa masks during a real party" loading="lazy" decoding="async" /></div>
-        <span class="card-tag is-popular">★ Most Loved</span>
-        <h3>Divas Glam Spa Party</h3>
-        <p>A sparkling spa celebration with colorful robes, playful facial masks, cucumber relaxation, mini makeovers, hairstyling with colorful extensions, music, games and a runway moment.</p>
-        <a href="divas-glam-spa-party.html" class="card-link">Explore Divas Glam Spa</a>
-      </article>
-
-      <article class="feature-card feature-card--hero">
-        <div class="feature-card-image"><img src="images/paint-party-setup.jpg" alt="Paint Boho Party — boho-styled setup with easels, canvases and natural décor" loading="lazy" decoding="async" /></div>
-        <span class="card-tag">Now Available</span>
-        <h3>Paint Boho Party <span style="color:var(--yellow-deep);font-weight:700">+ Craft</span></h3>
-        <p>A creative painting party with boho setup, guided art and a craft to decorate (crown or mirror). Includes glitter tattoos, runway after paint and a mini art exhibition — every child takes their canvas home.</p>
-        <a href="paint-boho-party.html" class="card-link">Explore Paint Boho Party</a>
-      </article>
-
-      <article class="feature-card feature-card--hero">
-        <div class="feature-card-image"><img src="images/chef-party-hero.jpg" alt="Chef Party — Decorating Experience — kids in chef hats and red aprons decorating mini pizzas, cupcakes and fruit creations at a Party Learners Kids Studio setup" loading="lazy" decoding="async" /></div>
-        <span class="card-tag">Now Available</span>
-        <h3>Chef Party — Decorating Experience</h3>
-        <p>A hands-on, decorating-only experience where little chefs decorate parent-provided mini pizzas, cupcakes, fruit and veggie creations in a fully hosted themed setup.</p>
-        <a href="chef-party.html" class="card-link">Explore Chef Party</a>
-      </article>
-
-      <article class="feature-card feature-card--hero">
-        <div class="feature-card-image">
+    <div class="hx-exp-grid">
+      <article class="pv-card hx-exp">
+        <div class="hx-exp__media">
+          <span class="pv-badge">Most Loved</span>
           <picture>
-            <source type="image/webp" srcset="images/luxury-slumber-wide-pink-window.webp" />
-            <img src="images/luxury-slumber-wide-pink-window.jpg" alt="Luxury Slumber Party Experience — wide view of pink teepee setup with cozy bedding, ambient pink lighting and themed décor by Party Learners Kids Studio" loading="lazy" decoding="async" />
+            <source type="image/webp" srcset="images/divas-glam-group-good-vibes.webp" />
+            <img src="images/divas-glam-group-good-vibes.jpg" alt="Group of girls in colorful spa robes celebrating a Divas Glam Spa Party" loading="lazy" decoding="async" width="1122" height="1402" />
           </picture>
         </div>
-        <span class="card-tag is-popular">★ New</span>
-        <h3>Luxury Slumber Party Experience</h3>
-        <p>Individual teepees, cozy bedding and ambient lighting — turn an ordinary night into an unforgettable sleepover with magical photo moments.</p>
-        <a href="experiences.html#luxury-slumber" class="card-link">Learn More</a>
+        <div class="hx-exp__body">
+          <h3 class="hx-exp__title">Divas Glam Spa Party</h3>
+          <p class="hx-exp__copy">Spa robes, mini facials, glam moments &amp; runway fun.</p>
+          <a href="divas-glam-spa-party.html" class="pv-link">Explore →</a>
+        </div>
+      </article>
+
+      <article class="pv-card hx-exp">
+        <div class="hx-exp__media">
+          <span class="pv-badge">Creative</span>
+          <picture>
+            <source type="image/webp" srcset="images/paint-boho-barbie-table.webp" />
+            <img src="images/paint-boho-barbie-table.jpg" alt="Paint Boho Party + Craft styled table with easels, canvases and paint kits" loading="lazy" decoding="async" width="1024" height="1536" />
+          </picture>
+        </div>
+        <div class="hx-exp__body">
+          <h3 class="hx-exp__title">Paint Boho + Craft</h3>
+          <p class="hx-exp__copy">Easels, canvas painting, crafts &amp; take-home art.</p>
+          <a href="paint-boho-party.html" class="pv-link">Explore →</a>
+        </div>
+      </article>
+
+      <article class="pv-card hx-exp">
+        <div class="hx-exp__media">
+          <span class="pv-badge">Decorating Only</span>
+          <picture>
+            <source type="image/webp" srcset="images/chef-party-kids-decorating-wide.webp" />
+            <img src="images/chef-party-kids-decorating-wide.jpg" alt="Kids in chef hats and aprons decorating their mini pizzas at a Chef Party — Decorating Experience" loading="lazy" decoding="async" width="1080" height="1474" />
+          </picture>
+        </div>
+        <div class="hx-exp__body">
+          <h3 class="hx-exp__title">Chef Party — Decorating Experience</h3>
+          <p class="hx-exp__copy">Aprons, chef hats &amp; decorating fun with parent-provided treats.</p>
+          <a href="chef-party.html" class="pv-link">Explore →</a>
+        </div>
+      </article>
+
+      <article class="pv-card hx-exp">
+        <div class="hx-exp__media">
+          <span class="pv-badge">New</span>
+          <picture>
+            <source type="image/webp" srcset="images/luxury-slumber-divas-neon-teepee.webp" />
+            <img src="images/luxury-slumber-divas-neon-teepee.jpg" alt="Luxury Slumber Party teepee with cozy bedding, flower garlands and ambient lighting" loading="lazy" decoding="async" width="970" height="2048" />
+          </picture>
+        </div>
+        <div class="hx-exp__body">
+          <h3 class="hx-exp__title">Luxury Slumber Party</h3>
+          <p class="hx-exp__copy">Teepees, cozy bedding, ambient lights &amp; dreamy styling.</p>
+          <a href="experiences.html#luxury-slumber" class="pv-link">Explore →</a>
+        </div>
       </article>
     </div>
 
-    <!-- AVAILABLE BY REQUEST EXPERIENCES -->
-    <p class="coming-soon-eyebrow" style="margin-top:48px">More experiences in development — ask us about availability</p>
-    <div class="card-grid card-grid--coming">
-      <article class="feature-card feature-card--coming">
-        <div class="feature-card-image"><img src="images/experience-science.jpg" alt="Science Party concept — hands-on experiments for kids (available by request)" loading="lazy" decoding="async" /></div>
-        <span class="card-tag is-coming">Available by Request</span>
-        <h3>Science Party</h3>
-        <p>A curious and interactive experience with hands-on experiments and discovery.</p>
-        <a href="contact.html" class="card-link">Ask About Availability</a>
+    <p class="hx-byrequest">Also available by request: <a href="contact.html">Science Party</a> &amp; <a href="contact.html">Craft &amp; Jewelry Party</a>.</p>
+  </div>
+</section>
+
+<!-- ============== 5. HOW IT WORKS ============== -->
+<section class="hx-section hx-section--soft">
+  <div class="container">
+    <header class="hx-head">
+      <span class="hx-eyebrow">simple &amp; stress-free</span>
+      <h2 class="hx-h2">How It Works</h2>
+    </header>
+
+    <div class="hx-steps">
+      <div class="hx-step">
+        <span class="hx-step__num">1</span>
+        <h3 class="hx-step__title">Tell us your date</h3>
+        <p>Send your preferred date, location, guest count, and party style.</p>
+      </div>
+      <div class="hx-step">
+        <span class="hx-step__num">2</span>
+        <h3 class="hx-step__title">We style it</h3>
+        <p>We bring the setup, décor, materials, and party magic to your space.</p>
+      </div>
+      <div class="hx-step">
+        <span class="hx-step__num">3</span>
+        <h3 class="hx-step__title">They celebrate</h3>
+        <p>You enjoy the day while we guide the experience and handle the fun.</p>
+      </div>
+    </div>
+
+    <div class="hx-center">
+      <a href="contact.html" class="pv-btn">Check Your Date</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 6. MAKE IT THEMED ============== -->
+<section class="hx-section">
+  <div class="container">
+    <header class="hx-head">
+      <span class="hx-eyebrow">personalize it</span>
+      <h2 class="hx-h2">Make It Themed</h2>
+      <p class="hx-lead">Choose a favorite style, color palette, or character-inspired theme — or bring us your own idea.</p>
+    </header>
+
+    <div class="hx-chips" role="list">
+      <span class="hx-chip" role="listitem">Boho</span>
+      <span class="hx-chip" role="listitem">Pastel Glam</span>
+      <span class="hx-chip" role="listitem">Unicorn</span>
+      <span class="hx-chip" role="listitem">Spa Day</span>
+      <span class="hx-chip" role="listitem">Tropical</span>
+      <span class="hx-chip" role="listitem">Princess-inspired</span>
+      <span class="hx-chip" role="listitem">Wizard-inspired</span>
+      <span class="hx-chip" role="listitem">K-pop-inspired</span>
+    </div>
+
+    <p class="hx-disclaimer">Themes are inspired by popular styles and characters. Party Learners is not affiliated with any trademarked brands or franchises.</p>
+
+    <div class="hx-center">
+      <a href="contact.html" class="pv-btn pv-btn--plum">Ask About a Theme</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 7. PREMIUM ADD-ONS (subordinate to core experiences) ============== -->
+<section class="hx-section hx-section--cream" id="add-ons">
+  <div class="container">
+    <header class="hx-head">
+      <span class="hx-eyebrow">enhancements</span>
+      <h2 class="hx-h2">Add Extra Sparkle</h2>
+      <p class="hx-lead">Optional add-ons and specialty experiences to layer onto select celebrations.</p>
+    </header>
+
+    <div class="hx-addon-grid">
+      <article class="pv-addon">
+        <span class="pv-addon__label">Add-On</span>
+        <h3 class="pv-addon__title">Glitter Bar</h3>
+        <p>A sparkle station with glitter tattoos, face glitter, glitter makeup, hair tinsels, face gems, and shimmery highlights.</p>
+        <a href="contact.html" class="pv-link">Ask About the Glitter Bar →</a>
       </article>
 
-      <article class="feature-card feature-card--coming">
-        <div class="feature-card-image"><img src="images/experience-craft-jewelry.jpg" alt="Craft & Jewelry Party concept — design and decoration activities (available by request)" loading="lazy" decoding="async" /></div>
-        <span class="card-tag is-coming">Available by Request</span>
-        <h3>Craft &amp; Jewelry Party</h3>
-        <p>Creative hands-on activities where kids design, decorate and take home something special.</p>
-        <a href="contact.html" class="card-link">Ask About Availability</a>
+      <article class="pv-addon">
+        <span class="pv-addon__label">Specialty</span>
+        <h3 class="pv-addon__title">Mommy &amp; Me Spa Day</h3>
+        <p>A sweet bonding experience for moms and their little ones, paired with the Divas Glam world.</p>
+        <a href="divas-glam-spa-party.html#mommy-and-me" class="pv-link">Ask About Mommy &amp; Me →</a>
+      </article>
+
+      <article class="pv-addon">
+        <span class="pv-addon__label">Add-On</span>
+        <h3 class="pv-addon__title">Premium Décor</h3>
+        <p>Balloon garlands, VIP chair styling, jewelry station, and premium photo-ready details.</p>
+        <a href="contact.html" class="pv-link">Ask About Add-Ons →</a>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ============== ADD EXTRA SPARKLE — add-ons & enhancements (NOT main packages) ============== -->
-<section class="section section--addons" id="add-ons" style="padding-top:8px">
+<!-- ============== 8. OUR WHY ============== -->
+<section class="hx-section">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">make it extra magical ✿</span>
-      <h2>Add Extra Sparkle</h2>
-      <p class="lead">Optional add-ons and enhancements to layer onto select party experiences.</p>
-    </div>
-    <div class="card-grid card-grid--addons">
-      <article class="addon-card">
-        <span class="card-tag">★ Most Requested Add-On</span>
-        <h3>Glitter Bar</h3>
-        <p>Add extra sparkle to the celebration with a fun, photo-ready glitter station.</p>
-        <p class="muted" style="font-size:.85rem;font-weight:700;margin:6px 0 6px">Available options may include:</p>
-        <ul>
-          <li>Glitter tattoos</li>
-          <li>Face glitter</li>
-          <li>Glitter makeup</li>
-          <li>Hair tinsels</li>
-          <li>Face gems</li>
-          <li>Shimmery highlights</li>
-        </ul>
-        <p class="muted" style="font-size:.82rem;margin:2px 0 10px">Best paired with Divas Glam, Mommy &amp; Me Spa Day, Super Luxury VIP SPA, Luxury Slumber Party or select custom celebrations.</p>
-        <a href="contact.html" class="card-link">Ask About the Glitter Bar</a>
-      </article>
-      <article class="addon-card">
-        <span class="card-tag">More Add-Ons</span>
-        <h3>Premium Enhancements</h3>
-        <p>Layer in extras like balloon garlands, jewelry stations, VIP chairs &amp; premium photo setups, theme upgrades and more.</p>
-        <p class="muted" style="font-size:.82rem;margin:8px 0 10px">Availability varies by experience and theme — ask about what fits your celebration.</p>
-        <a href="experiences.html#add-ons" class="card-link">View All Add-Ons</a>
-      </article>
+    <div class="hx-why">
+      <div class="hx-why__media">
+        <img src="images/jenn-with-child.jpg?v=2" alt="Jenn sharing a warm moment with a young guest at a Party Learners celebration" loading="lazy" decoding="async" width="900" height="900" />
+      </div>
+      <div class="hx-why__body">
+        <span class="hx-eyebrow">our why</span>
+        <h2 class="hx-h2">Why families love Party Learners</h2>
+        <p class="hx-lead">We create magical, stress-free celebrations where every child feels special, creative, confident and truly celebrated — while parents get to relax and enjoy the day.</p>
+        <p>From the first message to the final photo, we handle the setup, the décor, the activities and the flow. You just bring the birthday star.</p>
+        <div class="hx-why__actions">
+          <a href="contact.html" class="pv-btn">Request Details</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============== MAKE IT THEMED YOUR WAY — real-photo inspiration showcase ============== -->
-
-<section class="section themed-section">
-  <span class="theme-sparkle t1" aria-hidden="true"></span>
-  <span class="theme-sparkle t2" aria-hidden="true"></span>
-  <span class="theme-sparkle t3" aria-hidden="true"></span>
-
+<!-- ============== 9. REAL MOMENTS + REVIEWS ============== -->
+<section class="hx-section hx-section--soft" id="reviews">
   <div class="container">
-    <div class="themed-grid">
-
-      <!-- HEADING -->
-      <header class="themed-heading">
-        <span class="eyebrow">step two ✿</span>
-        <h2>Make It Themed Your Way</h2>
-        <p class="themed-intro">Customize any party around your child's favorite character, color story or trend. These are real theme examples — not separate packages.</p>
-      </header>
-
-      <!-- TOP MOODBOARD — 1 feature + 1 supporting (mobile shows these BEFORE long text) -->
-      <div class="theme-moodboard theme-moodboard--top" aria-label="Featured theme examples">
-        <div class="theme-card theme-card--feature is-demon">
-          <img src="images/theme-demon-hunters.jpg" alt="Demon Hunters themed Divas Glam Spa Party setup with K-Pop backdrop, robes rack and spa trays" loading="lazy" decoding="async" />
-          <span class="deco" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6.4 6.9.6-5.3 4.6 1.7 6.7L12 16.9 6.1 20.3l1.7-6.7-5.3-4.6 6.9-.6L12 2z"/></svg>
-          </span>
-          <span class="name">Demon<br/>Hunters</span>
-        </div>
-        <div class="theme-card is-anglestitch">
-          <img src="images/theme-angel-stitch.jpg" alt="Angel and Stitch themed party setup outdoors with pink teepee and spa trays" loading="lazy" decoding="async" />
-          <span class="deco" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4-7-11a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 7-7 11-7 11z"/></svg>
-          </span>
-          <span class="name">Angel &amp;<br/>Stitch</span>
-        </div>
+    <header class="hx-head">
+      <span class="hx-eyebrow">loved by local families</span>
+      <h2 class="hx-h2">Real moments from real parties</h2>
+      <div class="hx-rating">
+        <span class="hx-rating__stars" aria-hidden="true">★★★★★</span>
+        <span class="hx-rating__text">5.0 · Based on Google Reviews</span>
       </div>
+    </header>
 
-      <!-- TEXT + CHIPS -->
-      <div class="themed-text">
-        <p class="lead">From Demon Hunters-inspired and Angel &amp; Stitch-inspired to Frozen-inspired, Labubu, Capibara and beyond — we'll style your party so it feels just right for the birthday star.</p>
-
-        <div class="chip-grid">
-          <span class="chip tint-barbie"><span class="dot pink"></span> Barbie-inspired</span>
-          <span class="chip tint-frozen"><span class="dot teal"></span> Frozen-inspired</span>
-          <span class="chip tint-princess"><span class="dot yellow"></span> Disney Princess</span>
-          <span class="chip tint-hello"><span class="dot teal"></span> Hello Kitty-inspired</span>
-          <span class="chip tint-pinkbow"><span class="dot pink"></span> Pink Bow</span>
-          <span class="chip tint-coquette"><span class="dot purple"></span> Coquette-inspired</span>
-          <span class="chip tint-anglestitch"><span class="dot teal"></span> Angel &amp; Stitch</span>
-          <span class="chip tint-capybara"><span class="dot yellow"></span> Capybara Fun</span>
-          <span class="chip tint-axolotl"><span class="dot pink"></span> Axolotl</span>
-          <span class="chip tint-harry"><span class="dot purple"></span> Harry Potter-inspired</span>
-          <span class="chip tint-demon"><span class="dot purple"></span> Demon Hunters-inspired</span>
-          <span class="chip tint-custom"><span class="dot teal"></span> Custom idea? Ask us.</span>
-        </div>
-
-        <span class="ask-line">Don't see your idea here? Ask us — we love custom themes ♥</span>
-
-        <p class="muted themed-disclaimer">Themes labeled "inspired" reflect a creative aesthetic and are not affiliated with or endorsed by any character or brand owners.</p>
-      </div>
-
-      <!-- BOTTOM MOODBOARD — remaining 3 themes -->
-      <div class="theme-moodboard theme-moodboard--bottom" aria-label="More theme examples">
-        <div class="theme-card theme-card--wide is-frozen">
-          <img src="images/theme-frozen.jpg" alt="Frozen themed party setup with Happy Birthday backdrop, white teepee and paint easels" loading="lazy" decoding="async" />
-          <span class="deco" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg>
-          </span>
-          <span class="name">Frozen</span>
-        </div>
-        <div class="theme-card is-labubu">
-          <img src="images/theme-labubu.jpg" alt="Labubu themed party setup with pink bunny backdrop and treat-filled table" loading="lazy" decoding="async" />
-          <span class="deco" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C9 2 7 4 7 7v3c-2 1-3 3-3 5 0 4 4 7 8 7s8-3 8-7c0-2-1-4-3-5V7c0-3-2-5-5-5z"/></svg>
-          </span>
-          <span class="name">Labubu</span>
-        </div>
-        <div class="theme-card is-capibara">
-          <img src="images/theme-capibara.jpg" alt="Capibara themed party setup with bubble tea backdrop, pink teepee and spa trays" loading="lazy" decoding="async" />
-          <span class="deco" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1.2" fill="#fff"/><circle cx="15" cy="10" r="1.2" fill="#fff"/></svg>
-          </span>
-          <span class="name">Capibara</span>
-        </div>
-      </div>
-
-      <!-- CTA -->
-      <div class="themed-cta">
-        <a href="contact.html" class="btn btn-primary">Ask About a Theme →</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============== MEANINGFUL EXPERIENCE — editorial 2-col with real Jenn photo ============== -->
-<section class="section meaningful-section">
-  <div class="container">
-    <div class="meaningful-grid">
-
-      <!-- LEFT — real photo of Jenn with a child -->
-      <div class="meaningful-photo">
-        <img src="images/jenn-with-child.jpg?v=2" alt="Jenn with a young guest discovering glitter and beauty supplies during a Divas Glam Spa Party" loading="lazy" decoding="async" />
-        <div class="meaningful-photo-label" aria-hidden="true">
-          <span class="heart">♥</span>
-          <span>Real moments. Real confidence.</span>
-        </div>
-      </div>
-
-      <!-- RIGHT — content + 4 benefit cards -->
-      <div class="meaningful-content">
-        <span class="eyebrow">our why ♥</span>
-        <h2>More Than a Party — A Meaningful Experience</h2>
-        <p class="lead">At Party Learners Kids Studio, every celebration is designed with intention. We create joyful party experiences that help children build confidence, express creativity, connect with others and feel truly celebrated.</p>
-        <p class="lead">From spa and self-care moments to painting, crafts, chef activities, science discovery and group games, every detail is thoughtfully planned so kids can learn, shine and make beautiful memories.</p>
-
-        <div class="benefits-grid">
-          <div class="benefit pink">
-            <div class="benefit-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M12 2l2.6 6.4 6.9.6-5.3 4.6 1.7 6.7L12 16.9 6.1 20.3l1.7-6.7-5.3-4.6 6.9-.6L12 2z" fill="currentColor"/></svg>
-            </div>
-            <h4>Confidence</h4>
-            <p>Every child feels special, included and celebrated.</p>
-          </div>
-          <div class="benefit teal">
-            <div class="benefit-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M3 18c4-1 7-4 9-9 2 5 5 8 9 9"/><path d="M9 12c1 1 5 1 6 0"/></svg>
-            </div>
-            <h4>Creativity</h4>
-            <p>Hands-on activities invite kids to imagine and express.</p>
-          </div>
-          <div class="benefit yellow">
-            <div class="benefit-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M14 20a5 5 0 0 1 7-4"/></svg>
-            </div>
-            <h4>Connection</h4>
-            <p>Group moments encourage teamwork and shared joy.</p>
-          </div>
-          <div class="benefit purple">
-            <div class="benefit-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M9 11l2 2 4-4"/><path d="M5 12a7 7 0 1 0 14 0 7 7 0 0 0-14 0z"/></svg>
-            </div>
-            <h4>Stress-Free for Parents</h4>
-            <p>We handle setup, activities and flow so you can relax.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============== REVIEWS ============== -->
-<!-- Reviews #2 and #3 are real Google review text but the reviewer names were not captured.
-     Update "Verified Parent" to the actual reviewer names from Google when available. -->
-<section class="section" id="reviews" style="background:linear-gradient(135deg, rgba(232,62,140,.04), rgba(43,191,180,.04), rgba(255,200,61,.06)),#fff">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">loved by parents ♥</span>
-      <h2>Rated 5 Stars by Local Families</h2>
-      <p class="lead">Real reviews from parents whose kids celebrated with us.</p>
+    <div class="hx-mosaic gallery-editorial">
+      <div class="gallery-item feature"><img src="images/divas-glam-group-kpop.jpg" alt="Group of girls in colorful spa robes around spa trays at a Divas Glam Spa Party" loading="lazy" decoding="async" /></div>
+      <div class="gallery-item"><img src="images/chef-party-group-colorful-aprons.jpg" alt="Kids in colorful chef hats and aprons at a Chef Party — Decorating Experience" loading="lazy" decoding="async" /></div>
+      <div class="gallery-item"><img src="images/luxury-slumber-happy-birthday-dara.jpg" alt="Luxury Slumber Party setup with multiple teepees, balloon arch and themed backdrop" loading="lazy" decoding="async" /></div>
+      <div class="gallery-item"><img src="images/paint-boho-kids-painting-pink.jpg" alt="Kids painting at easels at a Paint Boho Party + Craft" loading="lazy" decoding="async" /></div>
+      <div class="gallery-item"><img src="images/divas-glam-relax.jpg" alt="Group of girls relaxing with face masks at a Divas Glam Spa Party" loading="lazy" decoding="async" /></div>
     </div>
 
-    <div class="reviews-summary">
-      <div class="reviews-rating">5.0</div>
-      <div>
-        <div class="reviews-stars">★★★★★</div>
-        <div class="reviews-meta">Based on Google Reviews</div>
-      </div>
-    </div>
-
-    <div class="review-grid">
-      <article class="review">
-        <div class="review-stars">★★★★★</div>
-        <p>"My daughter celebrated her birthday with Divas Glam Spa Party, and it was truly a complete experience. Not only was it fun for the girls, but they also learned about body care and respect for others. Highly recommended! 😍"</p>
-        <a href="https://share.google/UC2ASsx1LRt7J7YGp" target="_blank" rel="noopener noreferrer" class="review-readmore">Read more on Google</a>
-        <div class="review-author">
-          <div class="review-avatar">T</div>
-          <div>
-            <div class="review-name">Teresa M.</div>
-            <div class="review-source">Google Review · 4 months ago</div>
-          </div>
-        </div>
+    <div class="hx-reviews">
+      <article class="pv-review">
+        <div class="pv-review__stars" aria-hidden="true">★★★★★</div>
+        <p>"My daughter celebrated her birthday with Divas Glam Spa Party, and it was truly a complete experience. Not only was it fun for the girls, but they also learned about body care and respect for others. Highly recommended!"</p>
+        <div class="pv-review__by">Teresa M. · Google Review</div>
       </article>
-
-      <article class="review">
-        <div class="review-stars">★★★★★</div>
-        <p>"Thank you for the fantastic spa party for my daughter's birthday — Jenny was wonderful and she made her birthday unforgettable! She said it was her best birthday ever ❤️"</p>
-        <a href="https://share.google/UC2ASsx1LRt7J7YGp" target="_blank" rel="noopener noreferrer" class="review-readmore">Read more on Google</a>
-        <div class="review-author">
-          <div class="review-avatar">★</div>
-          <div>
-            <div class="review-name">Google Review</div>
-            <div class="review-source">Verified</div>
-          </div>
-        </div>
+      <article class="pv-review">
+        <div class="pv-review__stars" aria-hidden="true">★★★★★</div>
+        <p>"Thank you for the fantastic spa party for my daughter's birthday — Jenny was wonderful and she made her birthday unforgettable! She said it was her best birthday ever."</p>
+        <div class="pv-review__by">Google Review · Verified</div>
       </article>
-
-      <article class="review">
-        <div class="review-stars">★★★★★</div>
-        <p>"The setup was beautiful, age-appropriate, and so well organized. The girls loved the mini facials, glam braids, sparkly makeup, nail painting and the runway moment with certificates. A truly memorable experience — highly recommend!"</p>
-        <a href="https://share.google/UC2ASsx1LRt7J7YGp" target="_blank" rel="noopener noreferrer" class="review-readmore">Read more on Google</a>
-        <div class="review-author">
-          <div class="review-avatar">★</div>
-          <div>
-            <div class="review-name">Google Review</div>
-            <div class="review-source">Verified</div>
-          </div>
-        </div>
+      <article class="pv-review">
+        <div class="pv-review__stars" aria-hidden="true">★★★★★</div>
+        <p>"The setup was beautiful, age-appropriate, and so well organized. The girls loved the mini facials, glam braids, sparkly makeup, nail painting and the runway moment with certificates. Highly recommend!"</p>
+        <div class="pv-review__by">Google Review · Verified</div>
       </article>
     </div>
 
-    <div class="text-center">
-      <a href="https://share.google/UC2ASsx1LRt7J7YGp" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View All Google Reviews →</a>
+    <div class="hx-center hx-center--row">
+      <a href="gallery.html" class="pv-btn pv-btn--ghost-plum">View Gallery</a>
+      <a href="https://share.google/UC2ASsx1LRt7J7YGp" target="_blank" rel="noopener noreferrer" class="pv-btn">Read Reviews on Google</a>
     </div>
   </div>
 </section>
 
-<!-- ============== GALLERY PREVIEW ============== -->
-<section class="section">
+<!-- ============== 10. SERVICE AREA ============== -->
+<section class="hx-section" id="service-area">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">a glimpse of the magic ✿</span>
-      <h2>Real Moments from Real Parties</h2>
-      <p class="lead">More photos in the full gallery.</p>
-    </div>
+    <header class="hx-head">
+      <span class="hx-eyebrow">service area</span>
+      <h2 class="hx-h2">We bring the party to you</h2>
+      <p class="hx-lead">Based in Abbotsford and serving families across the Lower Mainland and surrounding areas.</p>
+    </header>
 
-    <div class="gallery-grid gallery-editorial">
-      <div class="gallery-item feature"><img src="images/divas-glam-group-kpop.jpg" alt="Group of girls in colorful spa robes around white spa trays at a Divas Glam Spa Party with K-Pop themed backdrop" loading="lazy" decoding="async" /></div>
-      <div class="gallery-item"><img src="images/divas_glam_spa_party_fun.jpg" alt="Group of girls in colorful spa robes at a Divas Glam Spa Party with teepee and Stitch backdrop" loading="lazy" decoding="async" /></div>
-      <div class="gallery-item"><img src="images/divas-glam-group-topdown.jpg" alt="Top-down view of girls around Divas Glam Spa trays with balloon arch" loading="lazy" decoding="async" /></div>
-      <div class="gallery-item"><img src="images/divas-glam-setup.jpg" alt="Divas Glam Spa setup with pink teepee and SPA PARTY backdrop" loading="lazy" decoding="async" /></div>
-      <div class="gallery-item"><img src="images/experience-divas-glam.jpg" alt="Group of girls relaxing with cucumber spa masks at a Divas Glam Spa Party" loading="lazy" decoding="async" /></div>
-      <div class="gallery-item"><img src="images/divas-glam-group-balloons.jpg" alt="Wide group of girls celebrating a K-Pop themed Divas Glam Spa Party with balloons" loading="lazy" decoding="async" /></div>
-      <div class="gallery-item"><img src="images/divas-glam-relax.jpg" alt="Group of girls in colorful spa robes relaxing with face masks at a Divas Glam Spa Party" loading="lazy" decoding="async" /></div>
-      <div class="gallery-item"><img src="images/paint-party-setup.jpg" alt="Paint Boho Party setup with Party Learners banner" loading="lazy" decoding="async" /></div>
-    </div>
-
-    <div class="text-center" style="margin-top:72px;clear:both;position:relative;z-index:5">
-      <a href="gallery.html" class="btn btn-secondary">View Full Gallery</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============== OUR PROMISE ============== -->
-<section class="promise-section">
-  <div class="container">
-    <div class="promise-card">
-      <span class="promise-mark" aria-hidden="true">♥</span>
-      <span class="promise-eyebrow">our promise</span>
-      <h3>Designed to Help Kids Grow — Stress-Free for Parents</h3>
-      <p>We don't just entertain — we create moments that help children grow while making the experience easy and stress-free for parents. From setup to activities and flow, we take care of the details so every child stays engaged, supported and celebrated.</p>
-      <a href="contact.html" class="btn btn-primary">Plan a Meaningful Celebration →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============== CITIES WE SERVE — local SEO + clarity for parents ============== -->
-<section class="section cities-section" id="service-area" style="padding-top:48px;padding-bottom:48px">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">service area ♥</span>
-      <h2>Bringing the Magic Across the Lower Mainland</h2>
-      <p class="lead">Based in <strong>Abbotsford, BC</strong>, we travel to homes and venues across the Lower Mainland — including <strong>Vancouver</strong>, Burnaby, Surrey, Coquitlam, Richmond and surrounding areas.</p>
-    </div>
-    <ul class="cities-grid" aria-label="Cities served">
-      <li><span class="city-pin" aria-hidden="true">📍</span>Abbotsford</li>
-      <li><a href="kids-spa-party-vancouver.html" style="text-decoration:none;color:inherit;display:inline-flex;align-items:center;gap:8px"><span class="city-pin" aria-hidden="true">📍</span>Vancouver</a></li>
-      <li><span class="city-pin" aria-hidden="true">📍</span>Burnaby</li>
-      <li><span class="city-pin" aria-hidden="true">📍</span>Surrey</li>
-      <li><span class="city-pin" aria-hidden="true">📍</span>Coquitlam</li>
-      <li><span class="city-pin" aria-hidden="true">📍</span>Richmond</li>
-      <li><span class="city-pin" aria-hidden="true">📍</span>Langley</li>
-      <li><span class="city-pin" aria-hidden="true">📍</span>Mission</li>
-      <li><span class="city-pin" aria-hidden="true">📍</span>Chilliwack</li>
-      <li><span class="city-pin" aria-hidden="true">📍</span>North Vancouver</li>
-      <li><span class="city-pin" aria-hidden="true">📍</span>Maple Ridge</li>
-      <li><span class="city-pin" aria-hidden="true">📍</span>Delta</li>
+    <ul class="hx-cities" aria-label="Cities served">
+      <li>Abbotsford</li>
+      <li>Mission</li>
+      <li>Chilliwack</li>
+      <li>Langley</li>
+      <li>Surrey</li>
+      <li>Coquitlam</li>
+      <li>Burnaby</li>
+      <li><a href="kids-spa-party-vancouver.html">Vancouver</a></li>
+      <li>Richmond</li>
+      <li>&amp; nearby areas</li>
     </ul>
-    <p class="text-center muted mt-3" style="font-size:.88rem;max-width:620px;margin-left:auto;margin-right:auto;font-weight:600">Don't see your city? <a href="contact.html" style="color:var(--pink);font-weight:800">Ask us</a> — we travel across the Lower Mainland. Transportation may vary depending on distance.</p>
+
+    <div class="hx-center">
+      <a href="contact.html" class="pv-btn pv-btn--plum">Ask about your area</a>
+    </div>
   </div>
 </section>
 
-<!-- ============== FINAL CTA — photo background + editorial headline ============== -->
-<section class="section" style="padding-top:0">
-  <div class="container">
-    <div class="cta-photo-hero">
-      <div class="cta-photo-hero__bg" aria-hidden="true">
-        <picture>
-          <source type="image/webp" srcset="images/divas-glam-girls-kpop-tables.jpg" />
-          <img src="images/divas-glam-girls-kpop-tables.jpg" alt="" loading="lazy" decoding="async" />
-        </picture>
+<!-- ============== 11. FINAL CTA ============== -->
+<section class="hx-final">
+  <div class="container hx-final__inner">
+    <div class="hx-final__copy">
+      <span class="hx-eyebrow hx-eyebrow--light">let's make magic</span>
+      <h2 class="hx-final__title">Let's plan something magical</h2>
+      <p class="hx-final__lead">Tell us your date, preferred experience, and guest count. We'll reply with the next steps through your preferred contact method.</p>
+      <div class="hx-final__actions">
+        <a href="contact.html" class="pv-btn">Request Details</a>
+        <a href="https://wa.me/16048284526?text=Hi!%20I%27d%20like%20to%20ask%20about%20booking%20a%20kids%20party%20with%20Party%20Learners%20Kids%20Studio." target="_blank" rel="noopener noreferrer" class="pv-btn pv-btn--ghost">Message us on WhatsApp</a>
       </div>
-      <div class="cta-photo-hero__content">
-        <span class="cta-photo-hero__eyebrow">Let's Make Magic</span>
-        <h2 class="cta-photo-hero__headline">Ready to plan a party they'll <em>never forget?</em></h2>
-        <p class="cta-photo-hero__lead">Tell us your party date, location, theme and number of guests — we'll help you choose the right experience.</p>
-        <div class="cta-photo-hero__actions">
-          <a href="contact.html" class="btn-cta-white">Request Details →</a>
-          <p class="cta-photo-hero__note">Weekend dates fill quickly — let's chat early</p>
-        </div>
-      </div>
+    </div>
+    <div class="hx-next">
+      <h3 class="hx-next__title">What happens next</h3>
+      <ol class="hx-next__list">
+        <li><span>1</span>You send the details.</li>
+        <li><span>2</span>We reply within 24 hours.</li>
+        <li><span>3</span>We confirm the date and package details.</li>
+      </ol>
     </div>
   </div>
 </section>
@@ -610,11 +480,8 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="brand footer-wordmark" aria-label="Party Learners Kids Studio">
-
           <span class="wm-line1">Party Learners</span>
-
           <span class="wm-line2">Kids Studio</span>
-
         </a>
         <p>Party Learners Kids Studio brings beautifully hosted themed party experiences to homes and venues across Abbotsford and the Lower Mainland.</p>
       </div>
@@ -623,6 +490,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="#add-ons">Add-Ons</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -645,7 +513,7 @@
           <li><a href="https://share.google/UC2ASsx1LRt7J7YGp" target="_blank" rel="noopener noreferrer" aria-label="Google Reviews"><img class="fc-logo" src="images/brand-google.png" alt="" width="22" height="22" loading="lazy" /> Google Reviews</a></li>
         </ul>
         <ul class="mt-2">
-          <li style="color:rgba(255,255,255,.7);font-size:.85rem">Based in Abbotsford · Serving the Lower Mainland, BC · Fully Licensed & Insured</li>
+          <li style="color:rgba(255,255,255,.7);font-size:.85rem">Based in Abbotsford · Serving the Lower Mainland, BC · Fully Licensed &amp; Insured</li>
         </ul>
       </div>
     </div>
@@ -655,7 +523,7 @@
   </div>
 </footer>
 
-<!-- ============== FLOATING WHATSAPP WIDGET ============== -->
+<!-- ============== FLOATING WHATSAPP WIDGET (Sprint 1) ============== -->
 <a class="whatsapp-float"
    href="https://wa.me/16048284526?text=Hi!%20I%27d%20like%20to%20ask%20about%20booking%20a%20kids%20party%20with%20Party%20Learners%20Kids%20Studio."
    target="_blank"
@@ -670,7 +538,7 @@
   </span>
 </a>
 
-<script src="js/main.js?v=60"></script>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="js/main.js?v=61"></script>
+<script src="js/home-v2.js?v=61"></script>
 </body>
 </html>
