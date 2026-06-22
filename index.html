@@ -82,8 +82,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&family=Marcellus&family=Cormorant+Garamond:wght@500;600;700&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="images/logo-banner.png" />
   <link rel="preload" as="image" href="images/divas-glam-group-kpop.jpg" />
-  <link rel="stylesheet" href="css/style.css?v=61" />
-  <link rel="stylesheet" href="css/home-v2.css?v=61" />
+  <link rel="stylesheet" href="css/style.css?v=62" />
+  <link rel="stylesheet" href="css/home-v2.css?v=62" />
   <link rel="icon" href="images/logo.jpeg" />
 </head>
 <body class="home-v2">
@@ -126,51 +126,93 @@
   </div>
 </header>
 
-<!-- ============== 2. FULL-BLEED HERO CAROUSEL ============== -->
-<section class="hx-hero" aria-label="Party Learners kids party experiences" data-autoplay="6500">
-  <div class="hx-hero__track" aria-hidden="true">
-    <div class="hx-slide is-active" data-title="Divas Glam Spa">
-      <img src="images/divas-glam-group-kpop.jpg" alt="" loading="eager" fetchpriority="high" decoding="async" width="1400" height="1342" />
-      <span class="hx-slide__label">Divas Glam Spa</span>
-    </div>
-    <div class="hx-slide" data-title="Paint Boho + Craft">
-      <picture>
-        <source type="image/webp" srcset="images/paint-boho-kids-painting-pink.webp" />
-        <img src="images/paint-boho-kids-painting-pink.jpg" alt="" loading="lazy" decoding="async" width="1400" height="787" />
-      </picture>
-      <span class="hx-slide__label">Paint Boho + Craft</span>
-    </div>
-    <div class="hx-slide" data-title="Chef Decorating">
-      <picture>
-        <source type="image/webp" srcset="images/chef-party-group-colorful-aprons.webp" />
-        <img src="images/chef-party-group-colorful-aprons.jpg" alt="" loading="lazy" decoding="async" width="1600" height="909" />
-      </picture>
-      <span class="hx-slide__label">Chef Decorating</span>
-    </div>
-    <div class="hx-slide" data-title="Luxury Slumber">
-      <picture>
-        <source type="image/webp" srcset="images/luxury-slumber-wide-pink-window.webp" />
-        <img src="images/luxury-slumber-wide-pink-window.jpg" alt="" loading="lazy" decoding="async" width="1600" height="803" />
-      </picture>
-      <span class="hx-slide__label">Luxury Slumber</span>
-    </div>
+<!-- ============== 2. FULL-BLEED HERO CAROUSEL (image + info panel) ============== -->
+<section class="hx-hero" aria-label="Featured party experiences" data-autoplay="6500">
+  <h1 class="hx-hero__brand">Magical kids parties across the Lower Mainland</h1>
+
+  <div class="hx-hero__viewport">
+    <!-- Slide 1 — Divas Glam Spa Party -->
+    <article class="hx-slide is-active">
+      <div class="hx-slide__media">
+        <img src="images/divas-glam-group-kpop.jpg" alt="Group of girls in colorful spa robes enjoying a Divas Glam Spa Party" loading="eager" fetchpriority="high" decoding="async" width="1400" height="1342" />
+      </div>
+      <div class="hx-slide__panel">
+        <span class="hx-slide__label">Party Experience</span>
+        <h2 class="hx-slide__title">Divas Glam Spa Party</h2>
+        <p class="hx-slide__desc">Spa robes, glam moments, mini makeovers, sparkle, music, and runway fun.</p>
+        <div class="hx-slide__actions">
+          <a href="divas-glam-spa-party.html" class="pv-btn">Explore This Party</a>
+          <a href="contact.html" class="hx-slide__secondary">Request Details</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Slide 2 — Paint Boho + Craft -->
+    <article class="hx-slide">
+      <div class="hx-slide__media">
+        <picture>
+          <source type="image/webp" srcset="images/paint-boho-kids-painting-pink.webp" />
+          <img src="images/paint-boho-kids-painting-pink.jpg" alt="Kids painting at easels at a Paint Boho Party + Craft" loading="lazy" decoding="async" width="1400" height="787" />
+        </picture>
+      </div>
+      <div class="hx-slide__panel">
+        <span class="hx-slide__label">Party Experience</span>
+        <h2 class="hx-slide__title">Paint Boho + Craft</h2>
+        <p class="hx-slide__desc">Easels, canvas painting, creative crafts, and take-home art.</p>
+        <div class="hx-slide__actions">
+          <a href="paint-boho-party.html" class="pv-btn">Explore This Party</a>
+          <a href="contact.html" class="hx-slide__secondary">Request Details</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Slide 3 — Chef Party (decorating-only) -->
+    <article class="hx-slide">
+      <div class="hx-slide__media">
+        <picture>
+          <source type="image/webp" srcset="images/chef-party-group-colorful-aprons.webp" />
+          <img src="images/chef-party-group-colorful-aprons.jpg" alt="Kids in chef hats and aprons decorating treats at a Chef Party — Decorating Experience" loading="lazy" decoding="async" width="1600" height="909" />
+        </picture>
+      </div>
+      <div class="hx-slide__panel">
+        <span class="hx-slide__label">Party Experience</span>
+        <h2 class="hx-slide__title">Chef Party — Decorating Experience</h2>
+        <p class="hx-slide__desc">Chef hats, aprons, and decorating fun with parent-provided treats.</p>
+        <div class="hx-slide__actions">
+          <a href="chef-party.html" class="pv-btn">Explore This Party</a>
+          <a href="contact.html" class="hx-slide__secondary">Request Details</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Slide 4 — Luxury Slumber Party -->
+    <article class="hx-slide">
+      <div class="hx-slide__media">
+        <picture>
+          <source type="image/webp" srcset="images/luxury-slumber-wide-pink-window.webp" />
+          <img src="images/luxury-slumber-wide-pink-window.jpg" alt="Luxury Slumber Party setup with teepees, cozy bedding and soft lighting" loading="lazy" decoding="async" width="1600" height="803" />
+        </picture>
+      </div>
+      <div class="hx-slide__panel">
+        <span class="hx-slide__label">Party Experience</span>
+        <h2 class="hx-slide__title">Luxury Slumber Party</h2>
+        <p class="hx-slide__desc">Teepees, cozy bedding, soft lighting, and dreamy sleepover styling.</p>
+        <div class="hx-slide__actions">
+          <a href="experiences.html#luxury-slumber" class="pv-btn">Explore This Party</a>
+          <a href="contact.html" class="hx-slide__secondary">Request Details</a>
+        </div>
+      </div>
+    </article>
   </div>
 
-  <div class="hx-hero__inner">
-    <span class="hx-hero__overline">Magical kids parties across the Lower Mainland</span>
-    <h1 class="hx-hero__title">Parties they'll never forget</h1>
-    <p class="hx-hero__sub">Beautifully hosted kids party experiences styled in your home — from glam spa days and paint parties to chef decorating and luxury slumber setups.</p>
-    <div class="hx-hero__actions">
-      <a href="contact.html" class="pv-btn">Request Details</a>
-      <a href="#experiences" class="pv-btn pv-btn--ghost">Explore Experiences</a>
+  <div class="hx-hero__controls">
+    <div class="hx-hero__dots" role="tablist" aria-label="Choose a featured experience">
+      <button class="hx-dot is-active" type="button" role="tab" aria-label="Divas Glam Spa Party" aria-selected="true"></button>
+      <button class="hx-dot" type="button" role="tab" aria-label="Paint Boho + Craft" aria-selected="false"></button>
+      <button class="hx-dot" type="button" role="tab" aria-label="Chef Party — Decorating Experience" aria-selected="false"></button>
+      <button class="hx-dot" type="button" role="tab" aria-label="Luxury Slumber Party" aria-selected="false"></button>
     </div>
-  </div>
-
-  <div class="hx-hero__dots" role="tablist" aria-label="Choose a featured experience">
-    <button class="hx-dot is-active" type="button" role="tab" aria-label="Divas Glam Spa" aria-selected="true"></button>
-    <button class="hx-dot" type="button" role="tab" aria-label="Paint Boho + Craft" aria-selected="false"></button>
-    <button class="hx-dot" type="button" role="tab" aria-label="Chef Decorating" aria-selected="false"></button>
-    <button class="hx-dot" type="button" role="tab" aria-label="Luxury Slumber" aria-selected="false"></button>
+    <span class="hx-hero__count" aria-hidden="true"><b>1</b> / 4</span>
   </div>
 </section>
 
@@ -538,7 +580,7 @@
   </span>
 </a>
 
-<script src="js/main.js?v=61"></script>
-<script src="js/home-v2.js?v=61"></script>
+<script src="js/main.js?v=62"></script>
+<script src="js/home-v2.js?v=62"></script>
 </body>
 </html>

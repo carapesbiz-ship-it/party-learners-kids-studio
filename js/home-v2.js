@@ -8,6 +8,7 @@
 
   const slides = Array.from(hero.querySelectorAll('.hx-slide'));
   const dots = Array.from(hero.querySelectorAll('.hx-dot'));
+  const counter = hero.querySelector('.hx-hero__count b');
   if (slides.length < 2) return;
 
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -27,6 +28,7 @@
       dots[current].classList.add('is-active');
       dots[current].setAttribute('aria-selected', 'true');
     }
+    if (counter) counter.textContent = String(current + 1);
     // Promote the now-visible slide's image to eager so it never pops in late.
     const img = slides[current].querySelector('img');
     if (img && img.getAttribute('loading') === 'lazy') img.setAttribute('loading', 'eager');
