@@ -1,16 +1,25 @@
 // Party Learners Kids Studio — site script
 
-// Header shrink-on-scroll — keeps the big centered logo prominent on initial load,
-// then collapses to a compact sticky nav once the user scrolls past it.
+// Header scrolled-state toggle — adds a compositor-safe shadow once scrolled.
+// The header height is constant in both states (CSS), so this never resizes the
+// logo or the bar. rAF-throttled + hysteresis (add >120, remove <50) so the class
+// can't rapid-toggle near a single threshold and cause flicker.
 (function () {
   const header = document.querySelector('.site-header');
   if (!header) return;
+  let ticking = false;
+  let compact = false;
+  const update = () => {
+    ticking = false;
+    const y = window.scrollY;
+    if (!compact && y > 120) { compact = true; header.classList.add('compact'); }
+    else if (compact && y < 50) { compact = false; header.classList.remove('compact'); }
+  };
   const onScroll = () => {
-    if (window.scrollY > 80) header.classList.add('compact');
-    else header.classList.remove('compact');
+    if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
   };
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  update();
 })();
 
 // Mobile nav toggle

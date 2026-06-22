@@ -188,9 +188,8 @@ img, video, svg { max-width: 100%; }
   grid-template-columns: 1fr auto 1fr;
   grid-template-rows: auto auto;
   align-items: center;
-  padding: 16px 0 24px;
-  gap: 16px 24px;
-  transition: padding .3s ease, gap .3s ease;
+  padding: 12px 0 14px;
+  gap: 8px 24px;
 }
 .brand {
   display: inline-flex;
@@ -200,17 +199,19 @@ img, video, svg { max-width: 100%; }
   grid-column: 1 / -1;
   grid-row: 2;
   justify-self: center;
-  transition: opacity .3s ease, transform .3s ease;
+  transition: opacity .3s ease;
 }
+/* Single logo image, constant size on scroll — no src swap, no height/width animation.
+   Explicit width/height on the <img> reserves the aspect ratio so the logo never reflows
+   while decoding, and the header height never changes on scroll → no flicker, no CLS. */
 .brand-logo {
-  height: 280px;
+  height: 116px;
   width: auto;
-  max-width: 800px;
+  max-width: 360px;
   object-fit: contain;
   display: block;
   flex-shrink: 0;
   filter: drop-shadow(0 8px 22px rgba(75, 42, 120, .16));
-  transition: height .3s ease, max-width .3s ease;
 }
 .nav-wrap > nav {
   grid-column: 1 / -1;
@@ -225,28 +226,24 @@ img, video, svg { max-width: 100%; }
   z-index: 2;
 }
 
-/* Compact (scrolled) — shrinks the logo banner, tightens spacing */
-.site-header.compact .nav-wrap {
-  padding: 12px 0 12px;
-  gap: 6px 24px;
-}
-.site-header.compact .brand-logo {
-  height: 80px;
-  max-width: 300px;
+/* Scrolled state — compositor-safe only (subtle shadow). Header height NEVER changes
+   between states, so there is no layout shift and no logo flicker on scroll. */
+.site-header.compact {
+  box-shadow: 0 8px 24px -16px rgba(75, 42, 120, .35);
 }
 
-/* Tablet & mobile — BIG centered logo, hamburger floats absolute right.
-   Stable size on scroll, no shrinking thumbnail. */
+/* Tablet & mobile — centered logo, hamburger floats absolute right.
+   Constant size on scroll, compact header that doesn't eat vertical space. */
 @media (max-width: 980px) {
   .nav-wrap {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 14px 0;
+    padding: 12px 0;
     gap: 0;
     position: relative;
-    min-height: 144px;
+    min-height: 104px;
   }
   .brand {
     display: flex;
@@ -260,8 +257,7 @@ img, video, svg { max-width: 100%; }
     max-width: calc(100% - 80px); /* leave room for hamburger on right */
   }
   .brand-logo {
-    height: 128px;
-    max-height: 128px;
+    height: 88px;
     max-width: 100%;
     width: auto;
     object-fit: contain;
@@ -287,28 +283,20 @@ img, video, svg { max-width: 100%; }
     top: 50%;
     transform: translateY(-50%);
   }
-  /* Hide the standalone "Book a Party" button from mobile header — lives inside the menu */
+  /* Hide the standalone "Request Details" button from mobile header — lives inside the menu */
   .nav-wrap .nav-cta .btn-primary { display: none; }
-  /* Stable logo on scroll — no shrinking thumbnail behavior on mobile */
-  .site-header.compact .nav-wrap { padding: 14px 0; min-height: 144px; gap: 0; }
-  .site-header.compact .brand-logo { height: 128px; max-height: 128px; max-width: 100%; }
 }
 @media (max-width: 600px) {
-  .nav-wrap { min-height: 124px; padding: 12px 0; }
-  .brand-logo { height: 110px; max-height: 110px; }
-  .site-header.compact .nav-wrap { min-height: 124px; padding: 12px 0; }
-  .site-header.compact .brand-logo { height: 110px; max-height: 110px; }
+  .nav-wrap { min-height: 92px; padding: 10px 0; }
+  .brand-logo { height: 78px; }
 }
 @media (max-width: 430px) {
-  .nav-wrap { min-height: 110px; padding: 10px 0; }
-  .brand-logo { height: 96px; max-height: 96px; }
-  .site-header.compact .nav-wrap { min-height: 110px; padding: 10px 0; }
-  .site-header.compact .brand-logo { height: 96px; max-height: 96px; }
+  .nav-wrap { min-height: 84px; padding: 10px 0; }
+  .brand-logo { height: 70px; }
 }
 @media (max-width: 360px) {
-  .nav-wrap { min-height: 96px; padding: 10px 0; }
-  .brand-logo { height: 82px; max-height: 82px; }
-  .site-header.compact .brand-logo { height: 82px; max-height: 82px; }
+  .nav-wrap { min-height: 78px; padding: 8px 0; }
+  .brand-logo { height: 64px; }
 }
 .brand-mark, .brand-name { display: none; }
 
@@ -3402,7 +3390,9 @@ h2.divas-glam-title {
     radial-gradient(60% 60% at 100% 0%, rgba(255, 200, 61, .12) 0%, transparent 60%),
     linear-gradient(135deg, var(--purple-deep), var(--purple));
   color: #fff;
-  padding: 64px 0 28px;
+  /* Extra bottom padding reserves a clear zone so the fixed WhatsApp button
+     (bottom-right) never overlaps footer links or the copyright row on desktop. */
+  padding: 64px 0 72px;
   margin-top: 0;
 }
 .footer-grid {
