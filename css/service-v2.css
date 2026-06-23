@@ -262,3 +262,66 @@
   .svc-v2 .sv-banner { padding: 18px 18px; }
 }
 @media (max-width: 480px) { .svc-v2 .sv-perfect { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   Sprint 5 — Gallery + Contact page shells & polish
+   ============================================================ */
+/* Centered page hero (gallery + contact) */
+.svc-v2 .sv-pagehero { background: linear-gradient(135deg, var(--party-cream-2), var(--party-cream)); text-align: center; padding: 56px 0 46px; }
+.svc-v2 .sv-pagehero__eyebrow { display: inline-block; font-weight: 800; font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; color: var(--party-fuchsia); margin-bottom: 12px; }
+.svc-v2 .sv-pagehero h1 { font-family: var(--sv-serif); font-weight: 400; color: var(--party-purple-deep); font-size: clamp(2.1rem, 5vw, 3.2rem); line-height: 1.06; margin: 0 0 14px; }
+.svc-v2 .sv-pagehero p { font-size: clamp(1rem, 2vw, 1.15rem); line-height: 1.6; color: var(--party-ink-soft); max-width: 640px; margin: 0 auto 24px; }
+.svc-v2 .sv-pagehero__actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* Gallery filter chips — works with existing main.js .gallery-filter logic */
+.svc-v2 .gallery-filters { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 0 auto 30px; max-width: 920px; }
+.svc-v2 .gallery-filter { font-family: var(--sv-sans); font-weight: 800; font-size: .86rem; padding: 9px 18px; border-radius: 999px; border: 1.5px solid var(--party-cream-2); background: #fff; color: var(--party-purple-deep); cursor: pointer; box-shadow: var(--sv-shadow-soft); transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+.svc-v2 .gallery-filter:hover { transform: translateY(-2px); border-color: var(--party-pink); }
+.svc-v2 .gallery-filter.active { background: linear-gradient(135deg, var(--party-pink), var(--party-fuchsia)); color: #fff; border-color: transparent; }
+
+/* Gallery grid items — rounded + soft shadow (keeps the existing masonry layout) */
+.svc-v2 .gallery-item { border-radius: 14px; box-shadow: var(--sv-shadow-soft); }
+
+/* honest gallery note + mommy note */
+.svc-v2 .sv-gallery-note { max-width: 760px; margin: 0 auto 26px; text-align: center; font-size: .9rem; line-height: 1.55; color: var(--party-ink-soft); background: rgba(232,62,140,.05); border: 1px dashed var(--party-pink); border-radius: 12px; padding: 12px 16px; }
+.svc-v2 .sv-gallery-note a { color: var(--party-fuchsia); font-weight: 800; text-decoration: none; }
+
+/* Contact layout */
+.svc-v2 .contact-grid { display: grid; grid-template-columns: 1.25fr .85fr; gap: 30px; align-items: start; max-width: 1100px; margin: 0 auto; }
+.svc-v2 .contact-form { background: #fff; border: 1px solid var(--sv-line); border-radius: var(--sv-radius-lg); padding: 28px 26px; box-shadow: var(--sv-shadow); }
+.svc-v2 .contact-form h2 { font-family: var(--sv-serif); font-weight: 400; color: var(--party-purple-deep); font-size: 1.5rem; margin: 0 0 6px; }
+.svc-v2 .contact-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; margin-bottom: 14px; }
+.svc-v2 .contact-form .form-row.single { grid-template-columns: 1fr; }
+.svc-v2 .contact-form .form-group { display: flex; flex-direction: column; }
+.svc-v2 .contact-form label { font-weight: 700; font-size: .82rem; color: var(--party-purple-deep); margin-bottom: 6px; }
+.svc-v2 .contact-form input, .svc-v2 .contact-form select, .svc-v2 .contact-form textarea { width: 100%; padding: 12px 13px; border: 1.5px solid var(--party-cream-2); border-radius: 12px; font-family: var(--sv-sans); font-size: .95rem; color: var(--party-ink); background: var(--party-cream); }
+.svc-v2 .contact-form input:focus, .svc-v2 .contact-form select:focus, .svc-v2 .contact-form textarea:focus { outline: none; border-color: var(--party-pink); box-shadow: 0 0 0 3px rgba(232,62,140,.12); background: #fff; }
+.svc-v2 .contact-form textarea { min-height: 110px; resize: vertical; }
+.svc-v2 .contact-form .required { color: var(--party-fuchsia); }
+.svc-v2 .contact-form .form-actions { display: flex; flex-direction: column; gap: 8px; align-items: stretch; }
+.svc-v2 .contact-form .form-actions .btn, .svc-v2 .contact-form button[type="submit"] { background: linear-gradient(135deg, var(--party-pink), var(--party-fuchsia)); color: #fff; border: none; border-radius: 999px; padding: 15px 32px; font-weight: 800; font-size: 1rem; cursor: pointer; box-shadow: 0 10px 22px -12px rgba(232,62,140,.85); transition: transform .2s ease, box-shadow .2s ease; }
+.svc-v2 .contact-form button[type="submit"]:hover { transform: translateY(-2px); }
+.svc-v2 .contact-form .form-note { text-align: center; font-size: .82rem; color: var(--party-ink-soft); font-weight: 600; }
+.svc-v2 .contact-form .form-success { display: none; margin-top: 14px; padding: 14px 16px; background: rgba(43,191,180,.1); border: 1px solid var(--party-aqua); border-radius: 12px; color: var(--party-ink); font-weight: 700; }
+.svc-v2 .contact-form .form-success.is-visible { display: block; }
+.svc-v2 .contact-form .form-success a { color: var(--party-fuchsia); font-weight: 800; text-decoration: none; }
+
+/* Contact aside cards */
+.svc-v2 .contact-aside { display: flex; flex-direction: column; gap: 18px; }
+.svc-v2 .info-card { background: #fff; border: 1px solid var(--sv-line); border-radius: var(--sv-radius); padding: 22px; box-shadow: var(--sv-shadow-soft); }
+.svc-v2 .info-card h3 { font-family: var(--sv-serif); font-weight: 400; color: var(--party-purple-deep); font-size: 1.2rem; margin: 0 0 12px; }
+.svc-v2 .info-card ol, .svc-v2 .info-card ul.list { margin: 0; padding-left: 18px; }
+.svc-v2 .info-card li { font-size: .9rem; line-height: 1.55; color: var(--party-ink-soft); margin-bottom: 6px; }
+.svc-v2 .social-links { display: flex; flex-direction: column; gap: 10px; }
+.svc-v2 .social-link { display: flex; align-items: center; gap: 12px; text-decoration: none; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--sv-line); transition: border-color .2s ease, transform .2s ease; }
+.svc-v2 .social-link:hover { border-color: var(--party-pink); transform: translateY(-2px); }
+.svc-v2 .social-link-icon { width: 38px; height: 38px; flex-shrink: 0; border-radius: 10px; display: grid; place-items: center; color: #fff; background: linear-gradient(135deg, var(--party-pink), var(--party-purple)); }
+.svc-v2 .social-link-icon svg { width: 20px; height: 20px; }
+.svc-v2 .social-link strong { display: block; color: var(--party-purple-deep); font-size: .95rem; }
+.svc-v2 .social-link small { display: block; color: var(--party-ink-soft); font-size: .8rem; }
+.svc-v2 .form-helper { background: linear-gradient(135deg, rgba(232,62,140,.06), rgba(43,191,180,.06)); border: 1px solid var(--sv-line); border-radius: 14px; padding: 18px 20px; margin: 8px 0 20px; }
+.svc-v2 .form-helper h4 { font-family: var(--sv-serif); font-weight: 400; color: var(--party-purple-deep); font-size: 1.05rem; margin: 0 0 6px; }
+.svc-v2 .form-helper p { font-size: .92rem; line-height: 1.55; color: var(--party-ink-soft); margin: 0; }
+
+@media (max-width: 900px) { .svc-v2 .contact-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .svc-v2 .contact-form .form-row { grid-template-columns: 1fr; } }

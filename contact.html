@@ -7,9 +7,10 @@
   <meta name="description" content="Request details for a kids party experience in Abbotsford or the Lower Mainland. Share your date, location, theme, and party details." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&family=Marcellus&family=Cormorant+Garamond:wght@500;600;700&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="images/logo-banner.png" />
-  <link rel="stylesheet" href="css/style.css?v=61" />
+  <link rel="stylesheet" href="css/style.css?v=67" />
+  <link rel="stylesheet" href="css/service-v2.css?v=67" />
   <link rel="canonical" href="https://www.partylearners.ca/contact.html" />
 
   <meta property="og:type" content="website" />
@@ -24,7 +25,7 @@
   <meta name="twitter:image" content="https://www.partylearners.ca/images/og-party-learners-collage-v3.jpg" />
   <link rel="icon" href="images/logo.jpeg" />
 </head>
-<body>
+<body class="svc-v2">
 
 <header class="site-header">
   <div class="container nav-wrap">
@@ -64,18 +65,35 @@
   </div>
 </header>
 
-<section class="service-hero">
+<!-- ============== CONTACT HERO ============== -->
+<section class="sv-pagehero">
   <div class="container">
-    <span class="service-hero-eyebrow">let's plan something magical ✿</span>
-    <h1>
-      <span class="c-pink">Let's Plan</span> <span class="c-purple">a</span><br />
-      <span class="c-teal">Magical</span> <span class="c-yellow">Party</span>
-    </h1>
-    <p class="hero-lead service-hero-lead">Tell us your preferred date, location, party experience and theme style. We'll help you choose the best fit for your celebration.</p>
+    <span class="sv-pagehero__eyebrow">let's plan something magical ✿</span>
+    <h1>Let's Plan Your Party</h1>
+    <p>Tell us your date, location, guest count, and the experience you're interested in. We'll reply with the next steps.</p>
+    <div class="sv-pagehero__actions">
+      <a href="#booking-form" class="pv-btn">Start Your Request</a>
+      <a href="https://wa.me/16048284526?text=Hi!%20I%27d%20like%20to%20ask%20about%20booking%20a%20kids%20party%20with%20Party%20Learners%20Kids%20Studio." target="_blank" rel="noopener noreferrer" class="pv-btn pv-btn--ghost-plum">Message us on WhatsApp</a>
+    </div>
   </div>
 </section>
 
-<section class="section" style="padding-top:24px">
+<!-- ============== WHAT HAPPENS NEXT ============== -->
+<section class="sv-section sv-section--soft" style="padding-bottom:32px">
+  <div class="container">
+    <div class="sv-head">
+      <span class="sv-eyebrow">simple &amp; stress-free ✿</span>
+      <h2 class="sv-h2">What Happens Next</h2>
+    </div>
+    <div class="sv-spec-grid">
+      <div class="sv-spec"><h3>1 · Send your request</h3><p>Share your date, location, guest count, and preferred experience.</p></div>
+      <div class="sv-spec"><h3>2 · We confirm availability</h3><p>We'll review your details and reply with next steps within 24 hours.</p></div>
+      <div class="sv-spec"><h3>3 · We help plan the setup</h3><p>Once confirmed, we'll guide you through the details, theme, and add-ons.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sv-section" style="padding-top:8px">
   <div class="container">
     <div class="contact-grid">
 
@@ -312,6 +330,37 @@
   </div>
 </section>
 
+<!-- ============== GOOD TO KNOW ============== -->
+<section class="sv-section sv-section--soft" style="padding-top:40px">
+  <div class="container">
+    <div class="sv-head">
+      <span class="sv-eyebrow">good to know ✿</span>
+      <h2 class="sv-h2">A Few Helpful Notes</h2>
+    </div>
+    <div class="sv-spec-grid">
+      <div class="sv-spec"><h3>We come to you</h3><p>We bring the full setup, host and activities to your home or venue across Abbotsford &amp; the Lower Mainland, BC.</p></div>
+      <div class="sv-spec"><h3>Licensed &amp; insured</h3><p>Party Learners Kids Studio is fully licensed and insured for hosted party experiences.</p></div>
+      <div class="sv-spec"><h3>Spanish available</h3><p>Spanish-speaking parties are available · Fiestas disponibles en español.</p></div>
+      <div class="sv-spec"><h3>Why no prices online</h3><p>Details vary by setup, location, guest count, and add-ons, so we share pricing on request.</p></div>
+      <div class="sv-spec"><h3>Chef Party food</h3><p>For Chef Party, families provide all food items and ingredients — it's a decorating-only experience.</p></div>
+      <div class="sv-spec"><h3>Add-ons &amp; specialty</h3><p>Glitter Bar is an add-on; Mommy &amp; Me Spa Day is a standalone specialty experience; Slumber is a separate sleepover setup.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FINAL TRUST STRIP ============== -->
+<div class="sv-trust" aria-label="Why parents choose Party Learners">
+  <div class="container sv-trust__inner">
+    <span class="sv-trust__item"><span class="star" aria-hidden="true">★</span> 5.0 Google Reviews</span>
+    <span class="sv-trust__sep" aria-hidden="true"></span>
+    <span class="sv-trust__item">Fully Licensed &amp; Insured</span>
+    <span class="sv-trust__sep" aria-hidden="true"></span>
+    <span class="sv-trust__item">We Come to You</span>
+    <span class="sv-trust__sep" aria-hidden="true"></span>
+    <span class="sv-trust__item">Spanish-speaking parties available</span>
+  </div>
+</div>
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -380,7 +429,6 @@
   </span>
 </a>
 
-<script src="js/main.js?v=61"></script>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="js/main.js?v=67"></script>
 </body>
 </html>
