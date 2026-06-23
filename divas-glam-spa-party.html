@@ -7,9 +7,11 @@
   <meta name="description" content="A glamorous kids spa party with robes, masks, runway moments, games, and a fully hosted setup for birthdays and special celebrations." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&family=Caveat:wght@700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&family=Marcellus&family=Cormorant+Garamond:wght@500;600;700&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="images/logo-banner.png" />
-  <link rel="stylesheet" href="css/style.css?v=61" />
+  <link rel="preload" as="image" href="images/divas-glam-group-kpop.jpg" />
+  <link rel="stylesheet" href="css/style.css?v=65" />
+  <link rel="stylesheet" href="css/service-v2.css?v=65" />
   <link rel="canonical" href="https://www.partylearners.ca/divas-glam-spa-party.html" />
 
   <meta property="og:type" content="website" />
@@ -96,7 +98,7 @@
   }
   </script>
 </head>
-<body>
+<body class="svc-v2">
 
 <header class="site-header">
   <div class="container nav-wrap">
@@ -136,78 +138,57 @@
   </div>
 </header>
 
-<section class="service-hero service-hero--glam">
+<!-- ============== 1. SERVICE HERO ============== -->
+<section class="sv-hero">
   <div class="container">
-    <div class="service-hero-grid">
-      <div class="service-hero-medallion divas-glam-medallion-wrap">
-        <span class="glam-crown" aria-hidden="true">
-          <svg viewBox="0 0 64 36" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="crownGoldS" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0%" stop-color="#FFEFC4"/>
-                <stop offset="55%" stop-color="#F1C25C"/>
-                <stop offset="100%" stop-color="#B8862A"/>
-              </linearGradient>
-            </defs>
-            <path d="M5 30 L5 12 L19 22 L32 4 L45 22 L59 12 L59 30 Z"
-                  fill="url(#crownGoldS)" stroke="#7E5A14" stroke-width="1.1" stroke-linejoin="round"/>
-            <circle cx="5"  cy="12" r="2.2" fill="#FFEFC4" stroke="#7E5A14" stroke-width="0.7"/>
-            <circle cx="32" cy="4"  r="2.6" fill="#FFEFC4" stroke="#7E5A14" stroke-width="0.7"/>
-            <circle cx="59" cy="12" r="2.2" fill="#FFEFC4" stroke="#7E5A14" stroke-width="0.7"/>
-          </svg>
-        </span>
-
-        <div class="glam-medallion">
-          <span class="glam-medallion__halo" aria-hidden="true"></span>
-          <span class="glam-medallion__rotor" aria-hidden="true"></span>
-          <span class="glam-medallion__inner">
-            <img src="images/divas-glam-logo.jpg?v=1"
-                 alt="Divas Glam — sparkle, glam and self-care for kids"
-                 class="glam-medallion__img"
-                 width="340" height="340" />
-            <span class="glam-medallion__shine" aria-hidden="true"></span>
-          </span>
+    <div class="sv-hero__grid">
+      <div class="sv-hero__panel">
+        <span class="sv-hero__eyebrow">core experience · most loved ♥</span>
+        <h1 class="sv-hero__title">Divas Glam Spa Party</h1>
+        <p class="sv-hero__sub">A glam, spa-inspired celebration with robes, sparkle, music, pampering moments, and runway fun.</p>
+        <div class="sv-hero__actions">
+          <a href="contact.html" class="pv-btn">Request Package Details</a>
+          <a href="#real-moments" class="pv-btn pv-btn--ghost-plum">View Real Moments</a>
         </div>
-
-        <span class="sparkle gold s1" aria-hidden="true"></span>
-        <span class="sparkle white s2" aria-hidden="true"></span>
-        <span class="sparkle gold s3" aria-hidden="true"></span>
-        <span class="sparkle white s4" aria-hidden="true"></span>
-      </div>
-
-      <div class="service-hero-text">
-        <span class="service-hero-eyebrow">most loved ♥</span>
-        <h1>
-          <span class="c-pink">Divas</span> <span class="c-purple">Glam</span><br />
-          <span class="c-teal">Spa</span> <span class="c-yellow">Party</span>
-        </h1>
-        <p class="hero-lead service-hero-lead">A glamorous hosted spa-inspired party with colorful robes, spa-style masks the kids apply themselves, a cucumber relaxation moment, mini makeovers, hairstyling with colorful extensions, music, games and a runway moment kids will remember.</p>
-        <div class="hero-actions">
-          <a href="contact.html" class="btn btn-primary">Request Details</a>
-          <a href="gallery.html" class="btn btn-secondary">View Gallery</a>
+        <div class="sv-hero__badges">
+          <span class="sv-badge">Fully Hosted</span>
+          <span class="sv-badge">We Come to You</span>
+          <span class="sv-badge">Fully Licensed &amp; Insured</span>
+          <span class="sv-badge">Spanish-speaking parties available</span>
         </div>
       </div>
-    </div>
-
-    <div class="service-hero-image">
-      <img src="images/divas-glam-setup.jpg" alt="Divas Glam Spa Party setup with teepee and SPA PARTY backdrop" />
+      <div class="sv-hero__media">
+        <img src="images/divas-glam-group-kpop.jpg" alt="Group of girls in colorful spa robes celebrating a Divas Glam Spa Party" width="1400" height="1342" fetchpriority="high" decoding="async" />
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<!-- ============== 2. MINI TRUST STRIP ============== -->
+<div class="sv-trust" aria-label="Why parents choose Party Learners">
+  <div class="container sv-trust__inner">
+    <span class="sv-trust__item"><span class="star" aria-hidden="true">★</span> 5.0 Google Reviews</span>
+    <span class="sv-trust__sep" aria-hidden="true"></span>
+    <span class="sv-trust__item">Fully Licensed &amp; Insured</span>
+    <span class="sv-trust__sep" aria-hidden="true"></span>
+    <span class="sv-trust__item">We Come to You</span>
+    <span class="sv-trust__sep" aria-hidden="true"></span>
+    <span class="sv-trust__item">Spanish-speaking parties available</span>
+  </div>
+</div>
+
+<!-- ============== 3. WHAT'S INCLUDED ============== -->
+<section class="sv-section">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">what's included ✿</span>
-      <h2>A Beautifully Styled Spa Day</h2>
-      <p class="lead">Every Divas Glam Spa Party is designed end-to-end — from the décor to the final runway moment — so kids feel celebrated and parents feel relaxed.</p>
+    <div class="sv-head">
+      <span class="sv-eyebrow">what's included ✿</span>
+      <h2 class="sv-h2">A Beautifully Styled Spa Day</h2>
+      <p class="sv-lead">Every Divas Glam Spa Party is designed end-to-end — from the décor to the final runway moment — so kids feel celebrated and parents feel relaxed.</p>
     </div>
 
-    <div class="detail-grid">
-      <div class="detail">
-        <div class="detail-icon pink">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M12 2l2.6 6.4 6.9.6-5.3 4.6 1.7 6.7L12 16.9 6.1 20.3l1.7-6.7-5.3-4.6 6.9-.6L12 2z"/></svg>
-        </div>
+    <div class="sv-inc-grid">
+      <div class="sv-inc">
+        <span class="sv-inc__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.6 6.4 6.9.6-5.3 4.6 1.7 6.7L12 16.9 6.1 20.3l1.7-6.7-5.3-4.6 6.9-.6L12 2z"/></svg></span>
         <h3>Glam Setup</h3>
         <ul>
           <li>Super glam &amp; elegant setup</li>
@@ -218,10 +199,8 @@
         </ul>
       </div>
 
-      <div class="detail teal">
-        <div class="detail-icon teal">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9-9-4-9-9z"/><path d="M8 12c1-2 3-3 4-3s3 1 4 3"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="9" r="1"/></svg>
-        </div>
+      <div class="sv-inc">
+        <span class="sv-inc__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9-9-4-9-9z"/><path d="M8 12c1-2 3-3 4-3s3 1 4 3"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="9" r="1"/></svg></span>
         <h3>Spa Experience</h3>
         <ul>
           <li>Colorful robes &amp; headbands during the party</li>
@@ -233,10 +212,8 @@
         </ul>
       </div>
 
-      <div class="detail yellow">
-        <div class="detail-icon yellow">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M12 2l9 16-9-4-9 4 9-16z"/></svg>
-        </div>
+      <div class="sv-inc">
+        <span class="sv-inc__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 16-9-4-9 4 9-16z"/></svg></span>
         <h3>Beauty &amp; Creative</h3>
         <ul>
           <li>Glitter tattoos</li>
@@ -247,10 +224,8 @@
         </ul>
       </div>
 
-      <div class="detail purple">
-        <div class="detail-icon purple">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M5 20V9a3 3 0 0 1 6 0v11"/><circle cx="17" cy="8" r="3"/><path d="M17 11v9"/></svg>
-        </div>
+      <div class="sv-inc">
+        <span class="sv-inc__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V9a3 3 0 0 1 6 0v11"/><circle cx="17" cy="8" r="3"/><path d="M17 11v9"/></svg></span>
         <h3>Games &amp; Runway</h3>
         <ul>
           <li>Group games and prizes</li>
@@ -260,26 +235,21 @@
         </ul>
       </div>
 
-      <div class="detail">
-        <div class="detail-icon pink">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M12 21s-7-4-7-11a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 7-7 11-7 11z"/></svg>
-        </div>
+      <div class="sv-inc">
+        <span class="sv-inc__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4-7-11a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 7-7 11-7 11z"/></svg></span>
         <h3>Optional Upgrades</h3>
         <ul>
-          <li><strong>Glitter Bar</strong> — see the <a href="#glitter-bar-addon" style="color:var(--pink);font-weight:700">dedicated add-on section below</a></li>
+          <li><strong>Glitter Bar</strong> — see the <a class="sv-link-inline" href="#glitter-bar-addon">dedicated add-on section below</a></li>
           <li>Spa gift bags</li>
           <li>Photo / video experience</li>
           <li>Balloon garland &amp; arches</li>
           <li>Theme styling: Barbie-inspired, Frozen-inspired, Disney Princess, Pink Bow, Angel &amp; Stitch &amp; more</li>
           <li>Custom add-ons by request</li>
         </ul>
-        <p class="muted" style="margin-top:14px;font-size:.85rem;font-weight:600">Theme styling can be customized based on your child's favorite colors, characters or celebration style. Available options may vary by package.</p>
       </div>
 
-      <div class="detail teal">
-        <div class="detail-icon teal">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M9 11l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-        </div>
+      <div class="sv-inc">
+        <span class="sv-inc__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></span>
         <h3>Stress-Free for Parents</h3>
         <ul>
           <li>We handle setup, activities &amp; flow</li>
@@ -289,22 +259,24 @@
         </ul>
       </div>
     </div>
+    <p class="sv-note">Theme styling can be customized based on your child's favorite colors, characters or celebration style. Available details may vary by selected package.</p>
   </div>
 </section>
 
-<section class="section" style="background:linear-gradient(135deg, rgba(232,62,140,.04), rgba(43,191,180,.04), rgba(255,200,61,.06)),#fff">
+<!-- ============== 4. CHOOSE YOUR EXPERIENCE LEVEL ============== -->
+<section class="sv-section sv-section--soft" id="packages">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">three ways to celebrate</span>
-      <h2>Choose Your Experience Level</h2>
-      <p class="lead">Each level is fully styled and hosted — pricing is shared on request.</p>
+    <div class="sv-head">
+      <span class="sv-eyebrow">three ways to celebrate</span>
+      <h2 class="sv-h2">Choose Your Experience Level</h2>
+      <p class="sv-lead">Each level is fully styled and hosted. Pricing is shared on request — just ask.</p>
     </div>
 
-    <div class="packages">
-      <article class="package">
-        <h3 class="package-name">Glam Diva SPA Time</h3>
-        <p class="package-meta">Core spa &amp; glam experience · group-size dependent</p>
-        <p class="package-summary">The base spa experience — sparkle, self-care and glam time for every guest.</p>
+    <div class="sv-pkgs">
+      <article class="sv-pkg">
+        <h3 class="sv-pkg__name">Glam Diva SPA Time</h3>
+        <p class="sv-pkg__meta">Core spa &amp; glam experience · group-size dependent</p>
+        <p class="sv-pkg__summary">The base spa experience — sparkle, self-care and glam time for every guest.</p>
         <ul>
           <li>Colorful robes during the party</li>
           <li>Colorful spa-style masks (applied by the children with host guidance)</li>
@@ -315,59 +287,133 @@
           <li>Hairstyling with colorful extensions</li>
           <li>Music, games &amp; runway moment</li>
         </ul>
-        <a href="contact.html" class="btn btn-secondary">Request Package Details</a>
+        <a href="contact.html" class="pv-btn pv-btn--ghost-plum">Request Package Details</a>
       </article>
 
-      <article class="package is-popular">
-        <span class="package-popular-tag">Most Popular</span>
-        <h3 class="package-name">Full Glam Diva Experience</h3>
-        <p class="package-meta">Glam Diva SPA Time + favorite-theme styling · group-size dependent</p>
-        <p class="package-summary">Includes everything in <strong>Glam Diva SPA Time</strong>, plus favorite-theme styling inspired by your child's chosen theme.</p>
+      <article class="sv-pkg sv-pkg--featured">
+        <span class="sv-pkg__tag">Most Popular</span>
+        <h3 class="sv-pkg__name">Full Glam Diva Experience</h3>
+        <p class="sv-pkg__meta">Glam Diva SPA Time + favorite-theme styling</p>
+        <p class="sv-pkg__summary">Includes everything in Glam Diva SPA Time, plus favorite-theme styling inspired by your child's chosen theme.</p>
         <ul>
           <li>Everything from Glam Diva SPA Time</li>
-          <li>Favorite-theme styling inspired by your child's chosen theme — such as K-pop / Demon Hunters-inspired, wizard-inspired, princess-inspired, or other custom ideas</li>
+          <li>Favorite-theme styling inspired by your child's chosen theme — K-pop / Demon Hunters-inspired, wizard-inspired, princess-inspired, or other custom ideas</li>
           <li>Themed décor accents &amp; styling touches</li>
           <li>Sparkle gems &amp; upgraded glam</li>
           <li>Runway moments &amp; styled photos</li>
           <li>Spa gift bags</li>
         </ul>
-        <a href="contact.html" class="btn btn-primary">Request Package Details</a>
+        <a href="contact.html" class="pv-btn">Request Package Details</a>
       </article>
 
-      <article class="package">
-        <h3 class="package-name">Super Luxury VIP SPA</h3>
-        <p class="package-meta">The ultimate photo-ready experience · group-size dependent</p>
-        <p class="package-summary">The ultimate photo-ready spa celebration with upgraded theme décor, individual teepees, personalized robe details, jewelry fun, balloon styling, and premium VIP touches.</p>
+      <article class="sv-pkg sv-pkg--premium">
+        <span class="sv-pkg__tag">Top Tier</span>
+        <h3 class="sv-pkg__name">Super Luxury VIP SPA</h3>
+        <p class="sv-pkg__meta">The ultimate photo-ready experience</p>
+        <p class="sv-pkg__summary">Our highest Divas Glam tier — full themed décor, individual teepees, personalized robe details, jewelry fun, balloon styling, a VIP chair and premium photo moments.</p>
         <ul>
+          <li>Everything from Full Glam Diva Experience</li>
+          <li>Full themed décor &amp; premium styling</li>
+          <li>Individual teepee for each girl (lights when space allows)</li>
+          <li>VIP luxury chair, jewelry station &amp; printed group photo</li>
+        </ul>
+        <a href="#vip-spa" class="pv-link">See full VIP details ↓</a>
+        <a href="contact.html" class="pv-btn pv-btn--ghost-plum" style="margin-top:14px">Request Package Details</a>
+      </article>
+    </div>
+    <p class="sv-note">Themed styling examples are inspired only and are not affiliated with or endorsed by any character or brand owners.</p>
+  </div>
+</section>
+
+<!-- ============== 5. SUPER LUXURY VIP SPA — FEATURE BLOCK ============== -->
+<section class="sv-section" id="vip-spa">
+  <div class="container">
+    <div class="sv-feature">
+      <div class="sv-feature__grid">
+        <div>
+          <span class="sv-feature__eyebrow">highest divas glam tier ✦</span>
+          <h2 class="sv-feature__title">Super Luxury VIP SPA</h2>
+          <p class="sv-feature__lead">The ultimate photo-ready spa &amp; glam celebration — every premium detail, beautifully styled and fully hosted.</p>
+          <p class="sv-feature__note">This is a spa/glam party package. Looking for an overnight sleepover setup instead? Ask about our <a href="experiences.html#luxury-slumber">Slumber Party Teepee Setup</a>. Slumber is a separate overnight setup and does not automatically include spa activities, robes, garlands, or VIP spa extras unless requested as add-ons.</p>
+          <a href="contact.html" class="pv-btn">Request Package Details</a>
+        </div>
+        <ul class="sv-feature__list">
           <li>Everything from Full Glam Diva Experience</li>
           <li>Full themed décor and premium styling</li>
           <li>Individual teepee for each girl, decorated with lights when space allows</li>
           <li>Personalized robe details for the birthday girl and "Team Birthday" style robes when included</li>
-          <li><strong>Extra décor and balloon garland included</strong></li>
+          <li>Extra décor and balloon garland included when part of the selected VIP package</li>
           <li>Decorated VIP luxury chair for the birthday girl</li>
           <li>Jewelry station with bracelet-making activity</li>
-          <li>Printed group photo for each girl</li>
+          <li>Printed group photo for each girl when included</li>
           <li>Premium runway and photo moments</li>
           <li>Deluxe spa gift bags when included</li>
         </ul>
-        <a href="contact.html" class="btn btn-secondary">Request Package Details</a>
-        <p class="muted" style="margin-top:14px;font-size:.82rem;line-height:1.5;padding:10px 12px;background:rgba(232,62,140,.06);border-radius:10px">Looking for an overnight sleepover setup instead? Ask about our <a href="experiences.html#luxury-slumber" style="color:var(--pink);font-weight:800">Slumber Party Teepee Setup</a>. Slumber is a separate sleepover setup and does not automatically include spa activities, robes, garlands, or VIP spa extras unless requested as add-ons.</p>
-      </article>
+      </div>
     </div>
-    <p class="text-center muted mt-3" style="font-size:.82rem;max-width:640px;margin-left:auto;margin-right:auto;font-weight:600">Themed styling examples are inspired only and are not affiliated with or endorsed by any character or brand owners.</p>
   </div>
 </section>
 
-<!-- ============== REAL MOMENTS — Divas Glam gallery preview ============== -->
-<section class="section" style="padding-top:0">
+<!-- ============== 6. MOMMY & ME SPA DAY — specialty under Divas Glam ============== -->
+<section class="sv-section sv-section--soft" id="mommy-and-me">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">real moments ✿</span>
-      <h2>What a Divas Glam Spa Party Looks Like</h2>
-      <p class="lead">Real photos from past celebrations — group setups, themed backdrops, spa moments, glam activities and runway moments.</p>
+    <div class="sv-specialty">
+      <div class="sv-head" style="margin-bottom:26px">
+        <span class="sv-eyebrow">specialty experience ♥</span>
+        <p class="sv-specialty__sub">by Divas Glam</p>
+        <h2 class="sv-h2">Mommy &amp; Me Spa Day</h2>
+        <p class="sv-lead">A sweet bonding experience for moms and their little ones — a softer spa-inspired experience designed for quality time, connection, and beautiful memories.</p>
+      </div>
+      <div class="sv-spec-grid">
+        <div class="sv-spec"><h3>Luxury Spa Setup</h3><p>A beautiful, photo-ready spa setup brought to your home — styled end-to-end for a calm, special experience.</p></div>
+        <div class="sv-spec"><h3>Spa Robes for Mommy &amp; Me</h3><p>Matching spa robes for mom and child to wear during the experience — perfect for photos and bonding moments.</p></div>
+        <div class="sv-spec"><h3>Gentle Spa-Inspired Activities</h3><p>Soft, calming spa-style activities designed to be shared together at a relaxed pace.</p></div>
+        <div class="sv-spec"><h3>Natural Skin Care Workshop</h3><p>Learn simple, kid-friendly skin care together using gentle spa-style products in a guided, hands-on workshop.</p></div>
+        <div class="sv-spec"><h3>Quality Time &amp; Memories</h3><p>Relax, unwind and bond in a calm, screen-free environment — with beautiful moments captured to treasure.</p></div>
+        <div class="sv-spec"><h3>Beautiful Styling &amp; Photos</h3><p>Photo-ready details and elegant styling so every Mommy &amp; Me moment feels special.</p></div>
+      </div>
+      <div class="sv-center">
+        <a href="contact.html" class="pv-btn">Request Mommy &amp; Me Details</a>
+        <p class="sv-note" style="margin-top:14px">A specialty Divas Glam experience — not a separate main package. A perfect gift for Mother's Day, birthdays or just because. Spanish-speaking experience available · Fiestas disponibles en español.</p>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="gallery-grid gallery-editorial">
+<!-- ============== 7. OPTIONAL ADD-ON: GLITTER BAR ============== -->
+<section class="sv-section" id="glitter-bar-addon">
+  <div class="container">
+    <div class="sv-head">
+      <span class="sv-eyebrow">optional add-on ✦</span>
+      <h2 class="sv-h2">Add the Glitter Bar</h2>
+      <p class="sv-lead">Bring even more sparkle to your Divas Glam celebration with our Glitter Bar — a photo-ready add-on, not a separate package tier.</p>
+    </div>
+    <div class="sv-addon">
+      <span class="sv-addon__label">Add-On</span>
+      <h3>Glitter Bar</h3>
+      <p>Add extra sparkle to the celebration with a photo-ready glitter station. Available options may include glitter tattoos, face glitter, glitter makeup, hair tinsels, face gems, and shimmery highlights.</p>
+      <ul>
+        <li>Glitter tattoos</li>
+        <li>Face glitter</li>
+        <li>Glitter makeup</li>
+        <li>Hair tinsels</li>
+        <li>Face gems</li>
+        <li>Shimmery highlights</li>
+      </ul>
+      <a href="contact.html" class="pv-link">Ask About the Glitter Bar →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 8. REAL MOMENTS GALLERY ============== -->
+<section class="sv-section sv-section--soft" id="real-moments">
+  <div class="container">
+    <div class="sv-head">
+      <span class="sv-eyebrow">real moments ✿</span>
+      <h2 class="sv-h2">What a Divas Glam Spa Party Looks Like</h2>
+      <p class="sv-lead">Real photos from past celebrations — group setups, themed backdrops, spa moments, glam activities and runway moments.</p>
+    </div>
+    <div class="sv-gallery gallery-editorial">
       <div class="gallery-item feature"><img src="images/divas-glam-group-kpop.jpg" alt="Group of girls in colorful spa robes around white spa trays at a Divas Glam Spa Party with K-Pop themed backdrop" loading="lazy" decoding="async" /></div>
       <div class="gallery-item"><img src="images/divas_glam_spa_party_fun.jpg" alt="Group of girls in colorful spa robes at a real Divas Glam Spa Party with teepee and Stitch backdrop" loading="lazy" decoding="async" /></div>
       <div class="gallery-item"><img src="images/divas-glam-group-topdown.jpg" alt="Top-down view of girls around Divas Glam Spa trays with balloon arch" loading="lazy" decoding="async" /></div>
@@ -377,111 +423,22 @@
       <div class="gallery-item"><img src="images/divas-glam-portrait-glam.jpg" alt="Birthday girl with face gems and themed hair extensions at a Divas Glam Spa Party" loading="lazy" decoding="async" /></div>
       <div class="gallery-item"><img src="images/divas-glam-handprint.jpg" alt="Birthday girl with the group handprint art keepsake from her Divas Glam Spa Party" loading="lazy" decoding="async" /></div>
     </div>
-
-    <div class="text-center" style="margin-top:48px">
-      <a href="gallery.html" class="btn btn-secondary">View Full Gallery</a>
+    <div class="sv-center">
+      <a href="gallery.html" class="pv-btn pv-btn--ghost-plum">View Full Gallery</a>
     </div>
   </div>
 </section>
 
-<!-- ============== MOMMY & ME SPA DAY — special edition under Divas Glam ============== -->
-<section class="section mommy-me-section" id="mommy-and-me" style="padding-top:32px;background:linear-gradient(135deg, rgba(232,62,140,.05), rgba(255,239,196,.08)),#fff;border-radius:28px;margin:0 16px">
+<!-- ============== 9. GOOD TO KNOW ============== -->
+<section class="sv-section">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">special edition ♥</span>
-      <h2>Mommy &amp; Me Spa Day</h2>
-      <p class="muted" style="font-size:.95rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--pink);margin-top:-4px">by Divas Glam</p>
-      <p class="lead" style="margin-top:18px">A magical bonding spa day for mom and child. Beautifully styled, gentle and focused on quality time, photos and memories that last forever.</p>
+    <div class="sv-head">
+      <span class="sv-eyebrow">good to know ✿</span>
+      <h2 class="sv-h2">Important Details</h2>
     </div>
-
-    <div class="detail-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;max-width:1080px;margin:0 auto">
-      <div class="detail">
-        <div class="detail-icon pink">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M12 2l2.6 6.4 6.9.6-5.3 4.6 1.7 6.7L12 16.9 6.1 20.3l1.7-6.7-5.3-4.6 6.9-.6L12 2z"/></svg>
-        </div>
-        <h3>Luxury Spa Setup</h3>
-        <p>A beautiful, Instagram-worthy spa setup brought to your home — designed end-to-end for a calm, photo-ready experience.</p>
-      </div>
-      <div class="detail teal">
-        <div class="detail-icon teal">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M9 3v8m6-8v8M5 11h14l-1 9H6l-1-9z"/></svg>
-        </div>
-        <h3>Spa Robes for Mommy &amp; Me</h3>
-        <p>Matching spa robes for mom and child to wear during the experience — perfect for photos and bonding moments.</p>
-      </div>
-      <div class="detail yellow">
-        <div class="detail-icon yellow">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M12 2l2.6 6.4 6.9.6-5.3 4.6 1.7 6.7L12 16.9 6.1 20.3l1.7-6.7-5.3-4.6 6.9-.6L12 2z"/></svg>
-        </div>
-        <h3>Natural Skin Care Workshop</h3>
-        <p>Learn simple, kid-friendly skin care together using gentle spa-style products in a guided, hands-on workshop.</p>
-      </div>
-      <div class="detail purple">
-        <div class="detail-icon purple">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M12 21s-7-4-7-11a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 7-7 11-7 11z"/></svg>
-        </div>
-        <h3>Quality Time Together</h3>
-        <p>Relax, unwind and bond with your little one in a calm, screen-free environment designed for connection.</p>
-      </div>
-      <div class="detail">
-        <div class="detail-icon pink">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="4"/></svg>
-        </div>
-        <h3>Photos &amp; Memories</h3>
-        <p>Beautiful Mommy &amp; Me moments captured to treasure forever, in a setup styled to feel special and elegant.</p>
-      </div>
-      <div class="detail teal">
-        <div class="detail-icon teal">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg>
-        </div>
-        <h3>Hosted End-to-End</h3>
-        <p>We bring the full setup, materials, décor and host. You and your child just enjoy the experience.</p>
-      </div>
-    </div>
-
-    <div class="text-center" style="margin-top:36px">
-      <a href="contact.html" class="btn btn-primary">Request Mommy &amp; Me Spa Day Details</a>
-      <p class="muted" style="margin-top:14px;font-size:.85rem;font-weight:600">A perfect gift for Mother's Day, birthdays or just because. Spanish-speaking experience available · Fiestas disponibles en español.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============== OPTIONAL ADD-ON: GLITTER BAR — enhancement, not a tier ============== -->
-<section class="section section--addons" id="glitter-bar-addon" style="padding-top:24px">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">optional add-on ✦</span>
-      <h2>Add the Glitter Bar</h2>
-      <p class="lead">Bring even more sparkle to your Divas Glam celebration with our Glitter Bar — a photo-ready add-on, not a separate package tier.</p>
-    </div>
-    <div class="card-grid card-grid--addons" style="max-width:560px">
-      <article class="addon-card">
-        <span class="card-tag">★ Most Requested Add-On</span>
-        <h3>Glitter Bar</h3>
-        <p>A fun, photo-ready sparkle station that pairs beautifully with any Divas Glam tier or Mommy &amp; Me Spa Day.</p>
-        <p class="muted" style="font-size:.85rem;font-weight:700;margin:6px 0 6px">Available options may include:</p>
-        <ul>
-          <li>Glitter tattoos</li>
-          <li>Face glitter</li>
-          <li>Glitter makeup</li>
-          <li>Hair tinsels</li>
-          <li>Face gems</li>
-          <li>Shimmery highlights</li>
-        </ul>
-        <a href="contact.html" class="card-link">Ask About the Glitter Bar</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">good to know ✿</span>
-      <h2>Important Details</h2>
-    </div>
-    <div class="detail-grid">
-      <div class="detail">
+    <div class="sv-inc-grid">
+      <div class="sv-inc">
+        <span class="sv-inc__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M14 20a5 5 0 0 1 7-4"/></svg></span>
         <h3>Group &amp; Setup</h3>
         <ul>
           <li>Most setups work for 6–20 guests; larger groups available by request</li>
@@ -492,7 +449,8 @@
           <li>Fully licensed and insured for hosted party experiences</li>
         </ul>
       </div>
-      <div class="detail teal">
+      <div class="sv-inc">
+        <span class="sv-inc__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4-7-11a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
         <h3>Travel &amp; Location</h3>
         <ul>
           <li>Travel fee not included; depends on location</li>
@@ -500,76 +458,65 @@
           <li>Service area: Abbotsford &amp; Lower Mainland, BC</li>
         </ul>
       </div>
-      <div class="detail purple">
+      <div class="sv-inc">
+        <span class="sv-inc__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg></span>
         <h3>Safety &amp; Booking</h3>
         <ul>
           <li>Guided self-application only</li>
           <li>Weekend dates fill quickly — let's chat early</li>
-          <li>50% deposit required to secure your date</li>
+          <li>A deposit secures your date</li>
         </ul>
       </div>
     </div>
-    <div class="note">
-      Pricing depends on theme, location, number of guests and selected experience.
-      <strong>Contact us for pricing and availability.</strong>
-    </div>
+    <p class="sv-note">Pricing depends on theme, location, number of guests and selected experience. Contact us for pricing and availability.</p>
   </div>
 </section>
 
-<!-- PERFECT FOR -->
-<section class="section" style="padding-top:32px">
+<!-- ============== FAQ ============== -->
+<section class="sv-section sv-section--soft">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">perfect for ♥</span>
-      <h2>Who This Party Is Perfect For</h2>
-      <p class="lead">A magical, screen-free spa day designed to make every child feel celebrated.</p>
+    <div class="sv-head">
+      <span class="sv-eyebrow">good to know ✿</span>
+      <h2 class="sv-h2">Frequently Asked Questions</h2>
     </div>
-    <div class="card-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));max-width:1100px;margin:0 auto">
-      <article class="feature-card"><h3>Ages 5–12</h3><p>Designed for kids 5–12. Adaptable to teens and adult celebrations by request.</p></article>
-      <article class="feature-card"><h3>Boys &amp; Girls Welcome</h3><p>Décor and colors can be adjusted for mixed groups, including blue, green or other color-friendly themes.</p></article>
-      <article class="feature-card"><h3>Flexible Group Sizes</h3><p>Great for groups of 6–20 guests, with larger groups available by request depending on space, package and setup needs.</p></article>
-      <article class="feature-card"><h3>School &amp; Homeschool Groups</h3><p>A fun option for birthdays, school groups, homeschool gatherings and special celebrations.</p></article>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="section" style="padding-top:32px">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">good to know ✿</span>
-      <h2>Frequently Asked Questions</h2>
-    </div>
-    <div class="faq" style="max-width:820px;margin:0 auto">
-      <details class="faq-item">
+    <div class="sv-faq">
+      <details>
         <summary>Are boys welcome?</summary>
         <p>Boys are welcome too. Décor, robes and theme colors can be adapted for mixed groups with color-friendly options like blue, green, gold, purple or any custom palette.</p>
       </details>
-      <details class="faq-item">
-        <summary>Are the spa products safe for kids?</summary>
-        <p>Yes — we use gentle, kid-friendly spa-style products and guided activities. The colorful masks are applied by the children themselves with support from the host, and the cucumber relaxation moment uses spa-style simulated cucumber slices. Everything is designed to feel fun, age-appropriate and comfortable.</p>
-      </details>
-      <details class="faq-item">
-        <summary>What about hairstyling?</summary>
-        <p>Hairstyling includes colorful extensions for a fun glam look. The extensions are gentle, removable and can be kept when included in the package.</p>
-      </details>
-      <details class="faq-item">
+      <details>
         <summary>What ages is this best for?</summary>
         <p>Designed for ages 5–12. Activities can also be adapted to teens and adult celebrations by request. We'll help tailor the setup to your group.</p>
       </details>
-      <details class="faq-item">
+      <details>
+        <summary>Can we choose colors or themes?</summary>
+        <p>Yes! Every party can be personalized around your child's favorite colors or a theme — Barbie-inspired, Frozen-inspired, Disney Princess, Pink Bow, Angel &amp; Stitch, K-pop / Demon Hunters-inspired and more. Themed styling examples are inspired only and not affiliated with any character or brand owners.</p>
+      </details>
+      <details>
+        <summary>Are the masks applied by the children?</summary>
+        <p>Yes — the colorful spa-style masks are applied by the children themselves with support and guidance from the host. We use gentle, kid-friendly spa-style products.</p>
+      </details>
+      <details>
+        <summary>Are real cucumbers used?</summary>
+        <p>No — the spa-style cucumber relaxation moment uses simulated cucumber pieces, so it's mess-free and comfortable for every child.</p>
+      </details>
+      <details>
         <summary>How long is the party?</summary>
         <p>Approx. 2 hours of hosted activities — spa time, glam, runway, games, photos and certificates. Super Luxury VIP SPA can run longer.</p>
       </details>
-      <details class="faq-item">
-        <summary>What's the difference between the packages?</summary>
-        <p><strong>Glam Diva SPA Time</strong> is the core spa &amp; glam experience. <strong>Full Glam Diva Experience</strong> includes everything from Glam Diva SPA Time plus favorite-theme styling inspired by your child's chosen theme. <strong>Super Luxury VIP SPA</strong> is the ultimate photo-ready spa celebration — adds full themed décor, individual teepees decorated with lights (when space allows), personalized robe details, a decorated VIP luxury chair for the birthday girl, jewelry station with bracelet-making, balloon garland and a printed group photo for each girl.</p>
+      <details>
+        <summary>What's the difference between the Divas packages?</summary>
+        <p><strong>Glam Diva SPA Time</strong> is the core spa &amp; glam experience. <strong>Full Glam Diva Experience</strong> includes everything from Glam Diva SPA Time plus favorite-theme styling inspired by your child's chosen theme. <strong>Super Luxury VIP SPA</strong> is the ultimate photo-ready tier — adds full themed décor, individual teepees decorated with lights (when space allows), personalized robe details, a decorated VIP luxury chair, jewelry station with bracelet-making, balloon garland and a printed group photo for each girl.</p>
       </details>
-      <details class="faq-item">
-        <summary>How many kids can join?</summary>
-        <p>Most setups work beautifully for 6–20 guests. Larger groups may be available by request depending on the location, space and selected package.</p>
+      <details>
+        <summary>Is the Glitter Bar included?</summary>
+        <p>The Glitter Bar is an optional add-on, not automatically included in a package. It's a photo-ready sparkle station you can add to any Divas Glam tier or Mommy &amp; Me Spa Day — just ask and we'll let you know what's available.</p>
       </details>
-      <details class="faq-item">
+      <details>
+        <summary>What's the difference between Super Luxury VIP SPA and Slumber Party Teepee Setup?</summary>
+        <p>Super Luxury VIP SPA is a spa/glam party package — its teepees are part of the spa setup with premium styling. <strong>Slumber Party Teepee Setup</strong> is a separate overnight sleepover setup with bedding, themed décor, soft lighting, setup and next-day pickup. Slumber does not automatically include spa activities, robes, balloon garlands, jewelry station, VIP chair or the Glitter Bar — those can be requested separately when available.</p>
+      </details>
+      <details>
         <summary>Are you licensed?</summary>
         <p>Yes — Party Learners Kids Studio is fully licensed, permitted, and insured for hosted party experiences, for peace of mind.</p>
       </details>
@@ -577,16 +524,15 @@
   </div>
 </section>
 
-<section class="section">
+<!-- ============== 10. FINAL CTA ============== -->
+<section class="sv-final">
   <div class="container">
-    <div class="cta-band">
-      <span class="eyebrow">let's create magic ♥</span>
-      <h2>A Magical SPA Day for<br />Your <span class="yw">Little Diva</span></h2>
-      <p>Tell us your party date, location, theme and number of guests, and we'll help you choose the right experience.</p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn-primary">Request Details</a>
-        <a href="https://share.google/UC2ASsx1LRt7J7YGp" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Read Reviews</a>
-      </div>
+    <span class="sv-final__eyebrow">let's create magic ♥</span>
+    <h2 class="sv-final__title">Ready to plan a glam celebration?</h2>
+    <p class="sv-final__lead">Tell us your preferred date, location, guest count, and the Divas Glam experience you're interested in. We'll reply with the next steps.</p>
+    <div class="sv-final__actions">
+      <a href="contact.html" class="pv-btn">Request Package Details</a>
+      <a href="https://wa.me/16048284526?text=Hi!%20I%27d%20like%20to%20ask%20about%20a%20Divas%20Glam%20Spa%20Party%20with%20Party%20Learners%20Kids%20Studio." target="_blank" rel="noopener noreferrer" class="pv-btn pv-btn--ghost">Message us on WhatsApp</a>
     </div>
   </div>
 </section>
@@ -596,11 +542,8 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="brand footer-wordmark" aria-label="Party Learners Kids Studio">
-
           <span class="wm-line1">Party Learners</span>
-
           <span class="wm-line2">Kids Studio</span>
-
         </a>
         <p>Party Learners Kids Studio brings beautifully hosted themed party experiences to homes and venues across Abbotsford and the Lower Mainland.</p>
       </div>
@@ -610,7 +553,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="experiences.html">Experiences</a></li>
           <li><a href="experiences.html#add-ons">Add-Ons</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -632,7 +575,7 @@
           <li><a href="https://share.google/UC2ASsx1LRt7J7YGp" target="_blank" rel="noopener noreferrer" aria-label="Google Reviews"><img class="fc-logo" src="images/brand-google.png" alt="" width="22" height="22" loading="lazy" /> Google Reviews</a></li>
         </ul>
         <ul class="mt-2">
-          <li style="color:rgba(255,255,255,.7);font-size:.85rem">Based in Abbotsford · Serving the Lower Mainland, BC · Fully Licensed & Insured</li>
+          <li style="color:rgba(255,255,255,.7);font-size:.85rem">Based in Abbotsford · Serving the Lower Mainland, BC · Fully Licensed &amp; Insured</li>
         </ul>
       </div>
     </div>
@@ -657,7 +600,6 @@
   </span>
 </a>
 
-<script src="js/main.js?v=61"></script>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="js/main.js?v=65"></script>
 </body>
 </html>
