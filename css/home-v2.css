@@ -465,3 +465,73 @@
   .home-v2 .hx-dot.is-active { background: var(--party-pink); border-color: var(--party-pink); }
   .home-v2 .hx-hero__count { color: var(--party-purple-deep); }
 }
+
+/* ============================================================
+   SPRINT 6C — Conversion polish components
+   ============================================================ */
+
+/* Flagship "Most Popular" badge for Divas (beats the per-service nth-child color) */
+.home-v2 .hx-exp-grid .hx-exp:nth-child(1) .pv-badge.pv-badge--popular,
+.home-v2 .pv-badge.pv-badge--popular {
+  background: linear-gradient(135deg, var(--party-pink), var(--party-fuchsia));
+  color: #fff;
+  box-shadow: 0 8px 18px -8px rgba(196, 43, 115, .7);
+  letter-spacing: .04em;
+}
+
+/* Decision helper — "Not sure which experience fits best?" */
+.home-v2 .hx-pick { max-width: 780px; margin: 0 auto; display: grid; gap: 12px; }
+.home-v2 .hx-pick__row {
+  background: #fff; border: 1px solid var(--pv-line); border-left: 4px solid var(--party-pink);
+  border-radius: 14px; padding: 15px 20px; box-shadow: var(--pv-shadow-soft);
+}
+.home-v2 .hx-pick__name { display: block; font-family: var(--pv-serif); font-size: 1.06rem; color: var(--pv-plum); margin-bottom: 4px; }
+.home-v2 .hx-pick__for { font-size: .94rem; line-height: 1.5; color: var(--pv-ink-soft); }
+.home-v2 .hx-pick__for strong { color: var(--pv-ink); font-weight: 800; }
+.home-v2 .hx-pick .hx-pick__row:nth-child(1) { border-left-color: var(--party-pink); }
+.home-v2 .hx-pick .hx-pick__row:nth-child(2) { border-left-color: var(--party-aqua); }
+.home-v2 .hx-pick .hx-pick__row:nth-child(3) { border-left-color: var(--party-yellow); }
+.home-v2 .hx-pick .hx-pick__row:nth-child(4) { border-left-color: var(--party-orange); }
+.home-v2 .hx-pick .hx-pick__row:nth-child(5) { border-left-color: var(--party-purple); }
+
+/* Why Parents Choose — 6 value points */
+.home-v2 .hx-vals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 980px; margin: 0 auto; }
+.home-v2 .hx-val {
+  display: flex; gap: 12px; align-items: center;
+  background: #fff; border: 1px solid var(--pv-line); border-radius: 14px;
+  padding: 16px 18px; box-shadow: var(--pv-shadow-soft);
+}
+.home-v2 .hx-val__check {
+  flex: 0 0 auto; width: 28px; height: 28px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--party-aqua), var(--party-aqua-deep));
+  color: #fff; display: grid; place-items: center; font-size: .9rem; font-weight: 900;
+}
+.home-v2 .hx-val__text { font-size: .98rem; font-weight: 700; color: var(--pv-ink); line-height: 1.3; }
+.home-v2 .hx-vals .hx-val:nth-child(2) .hx-val__check { background: linear-gradient(135deg, var(--party-pink), var(--party-fuchsia)); }
+.home-v2 .hx-vals .hx-val:nth-child(3) .hx-val__check { background: linear-gradient(135deg, var(--party-yellow), var(--party-yellow-deep)); color: #5A3D00; }
+.home-v2 .hx-vals .hx-val:nth-child(4) .hx-val__check { background: linear-gradient(135deg, var(--party-purple), var(--party-purple-deep)); }
+.home-v2 .hx-vals .hx-val:nth-child(5) .hx-val__check { background: linear-gradient(135deg, var(--party-orange), var(--party-yellow-deep)); }
+.home-v2 .hx-vals .hx-val:nth-child(6) .hx-val__check { background: linear-gradient(135deg, var(--party-aqua), var(--party-purple)); }
+
+/* Mini FAQ accordion */
+.home-v2 .hx-faq { max-width: 780px; margin: 0 auto; display: grid; gap: 12px; }
+.home-v2 .hx-faq__item { background: #fff; border: 1px solid var(--pv-line); border-radius: 14px; box-shadow: var(--pv-shadow-soft); overflow: hidden; }
+.home-v2 .hx-faq__item summary {
+  cursor: pointer; list-style: none; padding: 16px 20px;
+  font-family: var(--pv-serif); font-size: 1.02rem; color: var(--pv-plum);
+  display: flex; justify-content: space-between; align-items: center; gap: 14px;
+}
+.home-v2 .hx-faq__item summary::-webkit-details-marker { display: none; }
+.home-v2 .hx-faq__item summary::after { content: '+'; font-size: 1.35rem; line-height: 1; color: var(--party-pink); transition: transform .2s ease; }
+.home-v2 .hx-faq__item[open] summary::after { transform: rotate(45deg); }
+.home-v2 .hx-faq__item p { margin: 0; padding: 0 20px 18px; font-size: .95rem; line-height: 1.6; color: var(--pv-ink-soft); }
+
+@media (max-width: 760px) {
+  .home-v2 .hx-vals { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .home-v2 .hx-vals { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-v2 .hx-faq__item summary::after { transition: none; }
+}
