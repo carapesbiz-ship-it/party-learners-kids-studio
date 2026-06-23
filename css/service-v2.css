@@ -221,6 +221,9 @@
 }
 @media (max-width: 420px) {
   .svc-v2 .sv-gallery { grid-template-columns: 1fr; grid-auto-rows: 220px; }
+  /* On a single-column grid a spanning feature tile would force a broken ~43px
+     implicit 2nd column — reset it so every tile is a clean full-width row. */
+  .svc-v2 .sv-gallery .gallery-item.feature { grid-column: auto; grid-row: auto; }
 }
 @media (prefers-reduced-motion: reduce) {
   .svc-v2 .pv-btn:hover { transform: none; }
