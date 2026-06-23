@@ -7,18 +7,35 @@
    ============================================================ */
 
 .home-v2 {
-  --pv-plum: #3A2438;
-  --pv-plum-soft: #5A3B54;
+  /* ---- Party Learners brand palette (exact hex from the original site/logo) ---- */
+  --party-pink: #E83E8C;          /* brand party pink — glam energy, primary CTA */
+  --party-fuchsia: #C42B73;       /* deeper pink — CTA depth */
+  --party-purple: #6B3FA0;        /* magic */
+  --party-purple-deep: #4B2A78;   /* headings, dark contrast */
+  --party-aqua: #2BBFB4;          /* playful turquoise accent */
+  --party-aqua-deep: #1E938A;
+  --party-yellow: #FFC83D;        /* cheerful highlights, stars */
+  --party-yellow-deep: #E0A41A;
+  --party-orange: #F5972A;        /* warm chef accent */
+  --party-cream: #FBF7F2;         /* clean premium base */
+  --party-cream-2: #FBF1F6;       /* whisper-pink soft section base */
+  --party-ink: #2D1B47;           /* brand ink — text */
+  --party-plum: #3A2438;          /* kept as elegant accent / photo overlay */
+  --party-gold: #B08D57;          /* kept as elegant accent only */
+
+  /* ---- pv-* tokens remapped onto the brand palette (drives existing rules) ---- */
+  --pv-plum: #4B2A78;             /* headings/dark → brand purple-deep (magical, premium) */
+  --pv-plum-soft: #6B3FA0;
   --pv-gold: #B08D57;
-  --pv-gold-bright: #C9A368;
-  --pv-gold-text: #8A6A39;       /* AA-safe gold for text on light */
-  --pv-blush: #E8A4B8;
-  --pv-blush-soft: #F4D7DF;
+  --pv-gold-bright: #FFC83D;      /* stars/cheerful → brand yellow */
+  --pv-gold-text: #C42B73;        /* eyebrows + text links → energetic fuchsia */
+  --pv-blush: #F4A9C4;
+  --pv-blush-soft: #FBE2EE;
   --pv-cream: #FBF7F2;
-  --pv-cream-2: #F4ECE2;
-  --pv-ink: #2E2630;
-  --pv-ink-soft: #6B6270;
-  --pv-line: rgba(58, 36, 56, .12);
+  --pv-cream-2: #FBF1F6;
+  --pv-ink: #2D1B47;
+  --pv-ink-soft: #5B4878;
+  --pv-line: rgba(75, 42, 120, .12);
   --pv-radius: 16px;
   --pv-radius-lg: 26px;
   --pv-shadow: 0 18px 44px -22px rgba(46, 38, 48, .35);
@@ -365,4 +382,86 @@
   .home-v2 .hx-slide { transition: none; }
   .home-v2 .pv-btn:hover, .home-v2 .pv-card:hover { transform: none; }
   .home-v2 .pv-card:hover .hx-exp__media img { transform: none; }
+}
+
+/* ============================================================
+   Sprint 2.6 — Party Learners colorful accent pass (COLOR ONLY)
+   Structure/layout untouched; brings logo colors back as playful
+   accents while keeping cream base + premium spacing/shadows.
+   ============================================================ */
+
+/* 2) Primary CTA → rich fuchsia/pink (was gold) */
+.home-v2 .pv-btn {
+  background: linear-gradient(135deg, var(--party-pink), var(--party-fuchsia));
+  color: #fff;
+  box-shadow: 0 10px 22px -12px rgba(232, 62, 140, .85);
+}
+.home-v2 .pv-btn:hover { box-shadow: 0 16px 30px -12px rgba(232, 62, 140, .95); }
+/* plum variant → brand purple (magic) */
+.home-v2 .pv-btn--plum { background: var(--party-purple-deep); color: #fff; box-shadow: 0 10px 22px -12px rgba(75, 42, 120, .6); }
+/* secondary outline on light → aqua */
+.home-v2 .pv-btn--ghost-plum { color: var(--party-aqua-deep); border-color: var(--party-aqua); }
+.home-v2 .pv-btn--ghost-plum:hover { background: rgba(43, 191, 180, .10); }
+/* text links → fuchsia */
+.home-v2 .pv-link { color: var(--party-fuchsia); }
+.home-v2 .pv-link:hover { color: var(--party-purple-deep); }
+
+/* 1) Hero info card — gold elegant label, pink accent line */
+.home-v2 .hx-slide__panel { border-top-color: var(--party-pink); }
+.home-v2 .hx-slide__label { color: var(--party-gold); }
+.home-v2 .hx-slide__secondary { border-bottom-color: var(--party-pink); }
+
+/* 3) Trust strip → light, cheerful (was dark plum) */
+.home-v2 .hx-trust {
+  background: linear-gradient(90deg, var(--party-cream-2), #FFFDF7 50%, var(--party-cream-2));
+  color: var(--party-ink);
+  border-top: 1px solid rgba(75, 42, 120, .08);
+  border-bottom: 1px solid rgba(75, 42, 120, .08);
+}
+.home-v2 .hx-trust__item { color: var(--party-ink); }
+.home-v2 .hx-trust__star { color: var(--party-yellow-deep); }
+.home-v2 .hx-trust__sep { background: var(--party-aqua); opacity: .8; }
+.home-v2 .hx-trust__sep:nth-of-type(2) { background: var(--party-pink); }
+.home-v2 .hx-trust__sep:nth-of-type(4) { background: var(--party-purple); }
+
+/* 5) Per-service badges (core experience cards) — playful color per service */
+.home-v2 .hx-exp-grid .hx-exp:nth-child(1) .pv-badge { background: var(--party-pink); color: #fff; }
+.home-v2 .hx-exp-grid .hx-exp:nth-child(2) .pv-badge { background: var(--party-aqua); color: #07332F; }
+.home-v2 .hx-exp-grid .hx-exp:nth-child(3) .pv-badge { background: var(--party-yellow); color: #5A3D00; }
+.home-v2 .hx-exp-grid .hx-exp:nth-child(4) .pv-badge { background: var(--party-purple); color: #fff; }
+
+/* 4) How It Works step numbers — cheerful color per step */
+.home-v2 .hx-steps .hx-step:nth-child(1) .hx-step__num { background: linear-gradient(135deg, var(--party-pink), #F7A8C4); color: #fff; }
+.home-v2 .hx-steps .hx-step:nth-child(2) .hx-step__num { background: linear-gradient(135deg, var(--party-aqua), #8FE0D8); color: #07332F; }
+.home-v2 .hx-steps .hx-step:nth-child(3) .hx-step__num { background: linear-gradient(135deg, var(--party-yellow), #FFE08A); color: #5A3D00; }
+
+/* 6) Add-on cards → soft pastel fills + colorful dashed borders + matching labels */
+.home-v2 .hx-addon-grid .pv-addon:nth-child(1) { border-color: var(--party-pink);  background: rgba(232, 62, 140, .05); }
+.home-v2 .hx-addon-grid .pv-addon:nth-child(2) { border-color: var(--party-aqua);  background: rgba(43, 191, 180, .06); }
+.home-v2 .hx-addon-grid .pv-addon:nth-child(3) { border-color: var(--party-purple); background: rgba(107, 63, 160, .05); }
+.home-v2 .hx-addon-grid .pv-addon:nth-child(1) .pv-addon__label { color: var(--party-fuchsia); background: rgba(232, 62, 140, .12); }
+.home-v2 .hx-addon-grid .pv-addon:nth-child(2) .pv-addon__label { color: var(--party-aqua-deep); background: rgba(43, 191, 180, .14); }
+.home-v2 .hx-addon-grid .pv-addon:nth-child(3) .pv-addon__label { color: var(--party-purple); background: rgba(107, 63, 160, .12); }
+
+/* 8) Theme chips — playful cycling border accents */
+.home-v2 .hx-chips .hx-chip:nth-child(4n+1) { border-color: var(--party-pink); }
+.home-v2 .hx-chips .hx-chip:nth-child(4n+2) { border-color: var(--party-aqua); }
+.home-v2 .hx-chips .hx-chip:nth-child(4n+3) { border-color: var(--party-yellow); }
+.home-v2 .hx-chips .hx-chip:nth-child(4n)   { border-color: var(--party-purple); }
+
+/* 9) Dots / carousel controls → fuchsia active for energy */
+.home-v2 .hx-dot.is-active { background: var(--party-pink); border-color: var(--party-pink); }
+.home-v2 .hx-hero__count b { color: var(--party-pink); }
+
+/* 10) Final CTA → joyful purple→fuchsia gradient (elegant, white-text safe) */
+.home-v2 .hx-final {
+  background: linear-gradient(135deg, var(--party-purple-deep) 0%, var(--party-purple) 48%, var(--party-fuchsia) 100%);
+}
+.home-v2 .hx-final .hx-eyebrow--light { color: #FFE08A; }
+.home-v2 .hx-next__list li span { background: var(--party-yellow); color: var(--party-purple-deep); }
+
+/* mobile: keep active dot fuchsia on the cream control band too */
+@media (max-width: 760px) {
+  .home-v2 .hx-dot.is-active { background: var(--party-pink); border-color: var(--party-pink); }
+  .home-v2 .hx-hero__count { color: var(--party-purple-deep); }
 }
