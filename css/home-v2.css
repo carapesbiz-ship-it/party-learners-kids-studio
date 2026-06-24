@@ -535,3 +535,33 @@
 @media (prefers-reduced-motion: reduce) {
   .home-v2 .hx-faq__item summary::after { transition: none; }
 }
+
+/* ============================================================
+   MEET JENNY — founder trust section
+   ============================================================ */
+.home-v2 .hx-meet { display: grid; grid-template-columns: 0.82fr 1fr; gap: 44px; align-items: center; max-width: 1080px; margin: 0 auto; }
+.home-v2 .hx-meet__media { position: relative; }
+.home-v2 .hx-meet__media img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 60% 50%; border-radius: var(--pv-radius-lg); box-shadow: var(--pv-shadow); display: block; }
+.home-v2 .hx-meet__badge { position: absolute; left: 16px; bottom: 16px; display: inline-flex; align-items: center; gap: 7px; background: #fff; color: var(--pv-plum); font-family: var(--pv-sans); font-weight: 800; font-size: .82rem; letter-spacing: .02em; padding: 9px 15px; border-radius: 999px; box-shadow: var(--pv-shadow-soft); }
+.home-v2 .hx-meet__badge::before { content: '♥'; color: var(--party-pink); font-size: .95rem; }
+.home-v2 .hx-meet__body .hx-eyebrow, .home-v2 .hx-meet__body .hx-h2 { text-align: left; }
+.home-v2 .hx-meet__body .hx-h2 { margin-top: 4px; }
+.home-v2 .hx-meet__bio p { font-size: 1rem; line-height: 1.7; color: var(--pv-ink-soft); margin: 0 0 13px; }
+.home-v2 .hx-meet__bio p:first-child { color: var(--pv-ink); font-weight: 700; font-size: 1.06rem; }
+.home-v2 .hx-meet__signature { font-family: 'Caveat', cursive; font-size: 1.8rem; line-height: 1; color: var(--party-fuchsia); margin: 2px 0 20px; }
+.home-v2 .hx-meet__tags { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-wrap: wrap; gap: 10px; }
+.home-v2 .hx-meet__tag { display: inline-flex; align-items: center; background: #fff; border: 1px solid var(--pv-line); border-radius: 999px; padding: 8px 14px; font-size: .85rem; font-weight: 700; color: var(--pv-plum); box-shadow: var(--pv-shadow-soft); }
+.home-v2 .hx-meet__tag::before { content: '✓'; color: var(--party-aqua-deep); font-weight: 900; margin-right: 7px; }
+.home-v2 .hx-meet__actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+@media (max-width: 860px) {
+  .home-v2 .hx-meet { grid-template-columns: 1fr; gap: 26px; max-width: 560px; }
+  .home-v2 .hx-meet__media img { aspect-ratio: 5 / 4; object-position: 60% 30%; }
+  .home-v2 .hx-meet__body .hx-eyebrow, .home-v2 .hx-meet__body .hx-h2 { text-align: center; }
+  .home-v2 .hx-meet__signature { text-align: center; }
+  .home-v2 .hx-meet__tags { justify-content: center; }
+  .home-v2 .hx-meet__actions { justify-content: center; }
+}
+@media (max-width: 480px) {
+  .home-v2 .hx-meet__actions .pv-btn { width: 100%; max-width: 360px; }
+}
